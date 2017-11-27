@@ -1,0 +1,162 @@
+﻿@model IEnumerable<FinalDAL.Lawyer>
+
+@{
+    ViewBag.Title = "SearchingLawyerByCategory";
+}
+<style>
+    .container {
+        height: 1000px;
+        width: 100%;
+        background-repeat: no-repeat;
+        background-image: linear-gradient(#028bbf, #028bbf);
+    }
+
+    .card-container.card {
+        max-width: 650px;
+        padding: 40px 40px;
+    }
+
+
+    /*
+            * Card component
+            */
+    .card {
+        background-color: #F7F7F7;
+        /* just in case there no content*/
+        padding: 20px 25px 30px;
+        margin: 0 auto 25px;
+        margin-top: 50px;
+        /* shadows and rounded borders */
+        -moz-border-radius: 2px;
+        -webkit-border-radius: 2px;
+        border-radius: 2px;
+        -moz-box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.3);
+        -webkit-box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.3);
+        box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.3);
+    }
+
+    .btn.btn-signin {
+        /*background-color: #4d90fe; */
+        background-color: rgb(104, 145, 162);
+        /* background-color: linear-gradient(rgb(104, 145, 162), rgb(12, 97, 33));*/
+        padding: 0px;
+        font-weight: 700;
+        font-size: 14px;
+        height: 36px;
+        -moz-border-radius: 3px;
+        -webkit-border-radius: 3px;
+        border-radius: 3px;
+        border: none;
+        -o-transition: all 0.218s;
+        -moz-transition: all 0.218s;
+        -webkit-transition: all 0.218s;
+        transition: all 0.218s;
+    }
+
+        .btn.btn-signin:hover,
+        .btn.btn-signin:active,
+        .btn.btn-signin:focus {
+            background-color: rgb(12, 97, 33);
+        }
+
+
+
+    .trash {
+        color: rgb(209, 91, 71);
+    }
+
+    .flag {
+        color: rgb(248, 148, 6);
+    }
+
+    .panel-body {
+        padding: 0px;
+    }
+
+    .panel-footer .pagination {
+        margin: 0;
+    }
+
+    .panel .glyphicon, .list-group-item .glyphicon {
+        margin-right: 5px;
+    }
+
+    .panel-body .radio, .checkbox {
+        display: inline-block;
+        margin: 0px;
+    }
+
+    .panel-body input[type=checkbox]:checked + label {
+        text-decoration: line-through;
+        color: rgb(128, 144, 160);
+    }
+
+    .list-group-item:hover, a.list-group-item:focus {
+        text-decoration: none;
+        background-color: rgb(245, 245, 245);
+    }
+
+    .list-group {
+        margin-bottom: 0px;
+    }
+</style>
+
+
+<div class="container">
+    <div class="card card-container">
+        <h2>Searching Result</h2>
+        <div class="row">
+            <div class="">
+                <div class="panel panel-primary">
+                    <div class="panel-heading">
+
+                    </div>
+                    <div class="panel-body">
+                        <ul class="list-group">
+
+                            <li class="list-group-item">
+                                <div class="row">
+
+                               
+                                    <div class="col-sm-6">
+                                        <b>Lawyer Name</b>
+                                    </div>
+
+                                    <div class="col-sm-6">
+                                    </div>
+                                </div>
+
+
+                            </li>
+
+                            <li class="list-group-item">
+                                @foreach (var item in Model)
+                                {
+                                    <div class="row">
+                                      
+                                        <div class="col-sm-6">
+                                            @Html.DisplayFor(modelItem => item.Name)
+
+
+                                        </div>
+
+                                        <div class="col-sm-6">
+                                            @Html.ActionLink("Go to lawyer Profile", "ProfileForOthers", "Lawyer", new { userID = item.UserID }, null)
+                                        </div>
+                                    </div>
+                                }
+                            </li>
+
+                        </ul>
+
+
+
+                    </div>
+
+                </div>
+            </div>
+        </div>
+        <input type="button" class="btn text-center regi_Sign_In" value="Back" onclick="@(" window.location.href='" + @Url.Action("Index", "Home") + "' ");" />
+
+    </div>
+</div>

@@ -1,0 +1,554 @@
+﻿@model FinalDAL.Lawyer
+
+@{
+    ViewBag.Title = "LawyerRegistration";
+}
+
+
+
+
+
+
+
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+
+
+    <link href="~/Content/bootstrap.css" rel="stylesheet" />
+    <link href="~/Content/bootstrap.min.css" rel="stylesheet" />
+    <link href="~/Content/bootstrap-theme.min.css" rel="stylesheet" />
+    <link href="~/Content/font-awesome.css" rel="stylesheet" />
+    <link href="~/Content/font-awesome.min.css" rel="stylesheet" />
+    <link href="~/Content/registration.css" rel="stylesheet" />
+
+    <script src="~/Scripts/jquery-2.2.4.js"></script>
+    <script src="~/Scripts/bootstrap-select.js"></script>
+    <script src="~/Scripts/bootstrap-select.min.js"></script>
+    <script src="~/Scripts/bootstrap.min.js"></script>
+    <script src="~/Scripts/Custom/registration.js"></script>
+
+
+    <div class="firmBodyWrapper">
+        <!-- Header starts  -->
+        <div class="header">
+            <div class="row">
+                <div class="col-md-3">
+                    <a href="#"><img src="~/Content/Images/LogoRegi.png" /></a>
+                    
+                </div>
+
+                <div class="col-md-7">
+                </div>
+
+                <div class="col-md-2">
+                    <div class="container-fluid text-center marginTop30">
+                        <button type="button" class="btn text-center regi_Sign_In">SIGN IN</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Header ends  -->
+        <!-- Main body starts  -->
+        <div class="middleBodyContainer">
+            <div class="firmProfileArea">
+                <div class="lawyerProfiletxt">
+                    <p class="text-capitalize text-center">create your <span class="lawyerProfileColor">lawyer profile</span></p>
+                </div>
+
+                <div class="row form_menu_container">
+
+                    <div class="col-md-6">
+                    </div>
+
+                    <div class="col-md-6">
+
+                        <!--  Personal details   -->
+                        <div class="accordion text-capitalize  list_style caRet">Personal details<i class="fa fa-caret-left" aria-hidden="true" style="float:right;"></i></div>
+                        <div class="panel basicDetailse_form">
+                            <h4 class="text-center text-uppercase accordionHead">PERsONAL DETAILS</h4>
+
+                            <!-- form container-->
+                            <div class="areaForInfo">
+
+                                <form class="paddingTop5Bottom1">
+
+                                    <div class="container-fluid form-group">
+                                        <label for="exampleInputEmail1" class="labelMarginLeft10">Lawyer ID</label>
+                                        @Html.EditorFor(model => model.LawyerID, new { htmlAttributes = new { @class = "form-controlform-control border_Radius2", type = "text", placeholder = "password" } })
+
+                                    </div>
+
+                                 
+
+                                    <div class="container-fluid form-group">
+                                        <label for="exampleInputEmail1" class="labelMarginLeft10">Password</label>
+                                        @Html.EditorFor(model => model.Password, new { htmlAttributes = new { @class = "form-controlform-control border_Radius2", type = "password", placeholder = "password" } })
+                                       
+                                    </div>
+
+                              
+
+
+                                    <div class="container-fluid form-group">
+                                        <label for="exampleInputEmail1" class="labelMarginLeft10">Gender</label>
+
+                                        @Html.EditorFor(model => model.Password, new { htmlAttributes = new { @class = "form-controlform-control border_Radius2", placeholder = "password" } })
+
+
+                                    </div>
+
+    
+
+                                    <div class="form-group container-fluid">
+                                        <label class="labelMarginLeft10">Nationality<small class="font_Size12"> (In Case of Foreigner)</small></label>
+                                        @Html.EditorFor(model => model.Nationality, new { htmlAttributes = new { @class = "form-controlform-control border_Radius2", placeholder = "password" } })
+                                    </div>
+
+                                    <div class="container-fluid form-group">
+                                        <label class="labelMarginLeft10">NID No.</label>
+                                        @Html.EditorFor(model => model.NID, new { htmlAttributes = new { @class = "form-controlform-control border_Radius2", placeholder = "password" } })
+                                    </div>
+
+                                    <div class="form-group container-fluid">
+                                        <label for="exampleInputEmail1" class="labelMarginLeft10">Present Address</label>
+                                        @Html.EditorFor(model => model.PresentAddress, new { htmlAttributes = new { @class = "form-controlform-control border_Radius2", placeholder = "password" } })
+                                    </div>
+
+                                    <div class="form-group container-fluid">
+                                        <label for="exampleInputEmail1" class="labelMarginLeft10">Permanent Address</label>
+                                        @Html.EditorFor(model => model.PermanentAddress, new { htmlAttributes = new { @class = "form-controlform-control border_Radius2", placeholder = "password" } })
+                                    </div>
+
+
+                                
+
+                                    <div class="form-group container-fluid">
+                                        <label for="exampleInputEmail1" class="labelMarginLeft10">Contact details</label>
+                                        <div class="paddingLeft130">
+                                            @Html.EditorFor(model => model.Mobile, new { htmlAttributes = new { @class = "form-control border_Radius2 marginBottom5", type = "number" ,placeholder = "password" } })
+
+                                            @Html.EditorFor(model => model.Email, new { htmlAttributes = new { @class = "form-control border_Radius2 marginBottom5", type = "email", placeholder = "password" } })
+
+                                        </div>
+                                    </div>
+                                </form>
+
+                                <button type="button" class="firm_button_nex">NEXT</button>
+
+                            </div>
+                        </div>
+
+
+
+                        <!--  Professional/Practice area   -->
+                        <div class="accordion text-capitalize  list_style caRet">professional / practice area<i class="fa fa-caret-left" aria-hidden="true" style="float:right;"></i></div>
+                        <div class="panel basicDetailse_form">
+                            <h4 class="text-center text-capitalize accordionHead">professional/practice area</h4>
+
+                            <div class="areaForInfo">
+                                <form class="paddingTop5Bottom1">
+
+                              
+
+                                    <div class="form-group container-fluid">
+                                        <label for="exampleInputEmail1" class="labelMarginLeft10">Bangladesh Bar Council Membership ID No.</label>
+                                        @Html.EditorFor(model => model.MembershipIdNo, new { htmlAttributes = new { @class="form-control border_Radius2", type = "text" ,placeholder="Bangladesh Bar Council Membership ID No." } })
+                                    </div>
+
+                                    <div class="form-group container-fluid">
+                                        <label for="exampleInputEmail1" class="labelMarginLeft10">Bangladesh Bar Enrolment Year</label>
+                                        @Html.EditorFor(model => model.EnrollmentYear, new { htmlAttributes = new { @class = "form-control border_Radius2", type = "text", placeholder = "Bangladesh Bar Council Membership ID No." } })
+
+                                    </div>
+
+                              
+
+                                    <div class="form-group container-fluid">
+                                        <label for="exampleInputEmail1" class="labelMarginLeft10">Career Goals</label>
+                                        @Html.EditorFor(model => model.CareerGoals, new { htmlAttributes = new { @class = "form-control border_Radius2", type = "text", placeholder = "Bangladesh Bar Council Membership ID No." } })
+                                    </div>
+
+                               
+
+                                    <div class="form-group container-fluid">
+                                        <label for="exampleInputEmail1" class="labelMarginLeft10">Career summery</label>
+                                        @Html.EditorFor(model => model.CareerSummary, new { htmlAttributes = new { @class = "form-control border_Radius2", type = "text", placeholder = "Bangladesh Bar Council Membership ID No." } })
+                                    </div>
+                                    <div class="form-group container-fluid">
+                                        <label for="exampleInputEmail1" class="labelMarginLeft10">Practise Area</label>
+                                        @Html.EditorFor(model => model.PractiseArea, new { htmlAttributes = new { @class = "form-control border_Radius2", type = "text", placeholder = "Bangladesh Bar Council Membership ID No." } })
+                                    </div>
+                                    <div class="form-group container-fluid">
+                                        <label for="exampleInputEmail1" class="labelMarginLeft10">Expertise</label>
+                                        @Html.EditorFor(model => model.Expertise, new { htmlAttributes = new { @class = "form-control border_Radius2", type = "text", placeholder = "Bangladesh Bar Council Membership ID No." } })
+                                    </div>
+                           
+
+                  
+
+
+
+                                </form>
+
+                                <button type="button" class="firm_button_nex">NEXT</button>
+                            </div>
+                        </div>
+
+
+                     
+
+                        <!--  Professional career summery  -->
+                        <div class="accordion text-capitalize  list_style caRet">professional career summery<small>(Experience)</small><i class="fa fa-caret-left" aria-hidden="true" style="float:right;"></i></div>
+                        <div class="panel basicDetailse_form">
+                            <h4 class="text-center text-uppercase accordionHead">professional career summery <small style="color: #128bbe;"> (Experience)</small></h4>
+
+                            <div class="areaForInfo">
+
+                                <form>
+                                    <div class="form-group">
+                                        <div class="row" style="margin-left:0; margin-right:0;">
+                                            <div class="col-md-6">
+                                                <input type="text" class="form-control" style="border-radius:2px;" placeholder="Job Position">
+
+                                                <input type="text" class="form-control" style="border-radius:2px; margin-top: 5px;" placeholder="Department">
+
+                                                <input type="text" class="form-control" style="border-radius:2px; margin-top: 5px;" placeholder="Responsibilities">
+
+                                                <div class="row" style="margin-top: 5px;">
+                                                    <div class="col-md-4">
+                                                        <select class="form-control" style="color: #f05a3d; border-radius:2px; padding: 3px;">
+                                                            <option disabled selected>Month</option>
+                                                            <option>Jan</option>
+                                                            <option>Feb</option>
+                                                            <option>Mar</option>
+                                                            <option>Apr</option>
+                                                            <option>May</option>
+                                                            <option>Jun</option>
+                                                            <option>Jul</option>
+                                                            <option>Aug</option>
+                                                            <option>Sep</option>
+                                                            <option>Oct</option>
+                                                            <option>Nov</option>
+                                                            <option>Dec</option>
+                                                        </select>
+                                                    </div>
+
+                                                    <div class="col-md-4">
+                                                        <input type="text" class="form-control" style="border-radius:2px;" placeholder="Day">
+                                                    </div>
+
+                                                    <div class="col-md-4">
+                                                        <input type="text" class="form-control" style="border-radius:2px;" placeholder="Year">
+                                                    </div>
+                                                </div>
+
+
+                                            </div>
+
+
+
+                                            <div class="col-md-6">
+                                                <input type="text" class="form-control" style="border-radius:2px;" placeholder="Company Name">
+
+                                                <input type="text" class="form-control" style="border-radius:2px; margin-top: 5px;" placeholder="Company Address">
+
+                                                <input type="text" class="form-control" style="border-radius:2px; margin-top: 5px;" placeholder="Company Business">
+
+                                                <div class="checkbox" style="margin-top: 5px;">
+                                                    <label style="margin-top:6px; font-size:17px;">
+                                                        <input type="checkbox" style="margin-top:5px;"> I am still working here
+                                                    </label>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </form>
+
+                            </div>
+                        </div>
+
+                        <!--   Language proficiency    -->
+                        <div class="accordion text-capitalize  list_style caRet">language proficiency<i class="fa fa-caret-left" aria-hidden="true" style="float:right;"></i></div>
+                        <div class="panel basicDetailse_form">
+                            <h4 class="text-center text-uppercase accordionHead">language proficiency</h4>
+
+                            <div class="areaForInfo">
+
+                                <form>
+                                    <div class="form-group" style="margin-left:16px; margin-right:16px;">
+                                        <input type="email" class="form-control" style="border-radius:2px;" placeholder="Language">
+                                    </div>
+
+                                    <div class="container-fluid row">
+                                        <div class="col-md-3 bottom_10margin">
+                                            <div class="customLabel">Skill Area</div>
+                                            <!--<input type="text" class="form-control" style="border-radius:2px; " id="" placeholder="Skill Area">-->
+                                        </div>
+
+                                        <div class="col-md-3 bottom_10margin">
+                                            <select class="form-control" style="color: #f05a3d; border-radius:2px;">
+                                                <option disabled selected>Reading</option>
+                                            </select>
+                                        </div>
+
+                                        <div class="col-md-3 bottom_10margin">
+                                            <div class="customLabel">Skill Area</div>
+                                        </div>
+
+                                        <div class="col-md-3 bottom_10margin">
+                                            <select class="form-control" style="color: #f05a3d; border-radius:2px;">
+                                                <option disabled selected>High</option>
+                                            </select>
+                                        </div>
+                                    </div>
+
+                                </form>
+
+                                <button type="button" class="firm_button_nex">ADD MORE</button>
+
+                            </div>
+                        </div>
+
+                        <!--  Reference  -->
+                        <div class="accordion text-capitalize  list_style caRet">reference<i class="fa fa-caret-left" aria-hidden="true" style="float:right;"></i></div>
+                        <div class="panel basicDetailse_form">
+                            <h4 class="text-center text-uppercase accordionHead">reference</h4>
+
+                            <div class="areaForInfo">
+
+                                <form>
+                                    <div class="form-group">
+                                        <div class="row" style="margin-left:0; margin-right:0;">
+                                            <div class="col-md-6 bottom_5margin">
+                                                <input type="text" class="form-control" style="border-radius:2px;" placeholder="Name">
+
+                                                <input type="text" class="form-control" style="border-radius:2px; margin-top: 5px;" placeholder="Organization">
+
+                                                <input type="text" class="form-control" style="border-radius:2px; margin-top: 5px;" placeholder="Phone (official)">
+
+                                                <input type="text" class="form-control" style="border-radius:2px; margin-top: 5px;" placeholder="Mobile (official)">
+
+                                                <input type="text" class="form-control" style="border-radius:2px; margin-top: 5px;" placeholder="Email (official)">
+
+                                                <input type="text" class="form-control" style="border-radius:2px; margin-top: 5px;" placeholder="Relation eith Candidate">
+
+                                            </div>
+
+
+
+                                            <div class="col-md-6">
+                                                <input type="text" class="form-control" style="border-radius:2px;" placeholder="Designation">
+
+                                                <input type="text" class="form-control" style="border-radius:2px; margin-top: 5px;" placeholder="Address">
+
+                                                <input type="text" class="form-control" style="border-radius:2px; margin-top: 5px;" placeholder="Phone (personal)">
+
+                                                <input type="text" class="form-control" style="border-radius:2px; margin-top: 5px;" placeholder="Mobile (personal)">
+
+                                                <input type="text" class="form-control" style="border-radius:2px; margin-top: 5px;" placeholder="Email (personal)">
+
+                                            </div>
+                                        </div>
+                                    </div>
+                                </form>
+
+                                <button type="button" class="firm_button_nex">ADD MORE</button>
+
+                            </div>
+                        </div>
+
+                        <!--  Payment   -->
+                        <div class="accordion text-capitalize  list_style caRet">payment<i class="fa fa-caret-left floatingRight" aria-hidden="true"></i></div>
+                        <div class="panel basicDetailse_form">
+                            <h4 class="text-center text-uppercase accordionHead">payment</h4>
+
+                            <div class="areaForInfo">
+                                <div class="paymentMethods">
+                                    <div class="container-fluid row">
+                                        <div class="container-fluid">
+                                            <div class="col-md-4 col-sm-4">
+                                                <img src="Contents/Images/bkash.jpg" />
+                                            </div>
+                                            <div class="col-md-8 col-sm-8 text-left">
+                                                <p>Pay your bKash account or local agent. Note that 1.5% bKash charge will apply.</p>
+                                            </div>
+                                        </div>
+
+                                        <div class="container-fluid pay_action_container bKash_payment">
+                                            <div class="container-fluid payText">
+                                                Amar Chai Lawyer: <div></div>
+                                            </div>
+
+                                            <div class="container-fluid payText">
+                                                Pay: <div></div>
+                                            </div>
+
+                                            <div class="container-fluid">
+                                                <strong class="font_Size17">Please remember:</strong>
+                                                <uL>
+                                                    <li>Ours s a <strong>Merchant Wallet</strong></li>
+                                                    <li>use reference number <strong>1</strong></li>
+                                                </uL>
+                                            </div>
+
+                                            <form>
+                                                <div class="container-fluid form-group">
+                                                    <p>Enter your 10-digit bKash transaction ID and click Pay:</p>
+                                                    <input type="text" class="form-control" placeholder="XXXXXXXXXXX">
+                                                </div>
+                                            </form>
+
+                                            <div class="container-fluid">
+                                                <div class="row">
+                                                    <div class="col-md-6 col-sm-6">
+                                                        <button type="button" class="payment_button payment_getway_buttons pay">PAY</button>
+                                                    </div>
+
+                                                    <div class="col-md-6 col-sm-6">
+                                                        <button type="button" class="payment_button payment_getway_buttons back" style="background-color: #74cdd6;">BACK</button>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <button type="button" class="payment_button payViabKash">Pay via bKash</button>
+                                </div>
+
+                                <div class="paymentMethods">
+                                    <div class="container-fluid row">
+                                        <div class="col-md-4 col-sm-4">
+                                            <img src="Contents/Images/credit-card.png" />
+                                        </div>
+                                        <div class="col-md-8 col-sm-8 text-left">
+                                            <p>Pay by your VISA, MasterCard, or internet banking account through SSLC Commerz gateway.Note that a channel specific transaction fee of up to 4% may apply.</p>
+                                        </div>
+                                    </div>
+
+                                    <div class="container-fluid pay_action_container electronicCard_payment">
+                                        <div class="container-fluid payText marginBottom5">
+                                            Pay: <div></div>
+                                        </div>
+
+                                        <div class="container-fluid">
+                                            <div class="row">
+                                                <div class="col-md-6 col-sm-6">
+                                                    <button type="button" class="payment_button payment_getway_buttons">PAY</button>
+                                                </div>
+
+                                                <div class="col-md-6 col-sm-6">
+                                                    <button type="button" class="payment_button payment_getway_buttons back">BACK</button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <button type="button" class="payment_button payviaCredit">Pay via Credit/Debit card</button>
+                                </div>
+
+                                <div class="paymentMethods">
+                                    <div class="container-fluid row marginBottom5">
+                                        <div class="col-md-4 col-sm-4">
+                                            <img src="Contents/Images/Taka.png" />
+                                        </div>
+
+                                        <div class="col-md-8 col-sm-8 text-left">
+                                            <p>Pay with cash from nearest branch of Abc Bank.</p>
+                                        </div>
+                                    </div>
+
+                                    <div class="container-fluid pay_action_container cash_payment">
+                                        <div class="bankTranfer_text">
+                                            <p>Deposit money to the following account:</p>
+                                            <strong>Amar Chai Lawyer</strong>
+                                            <p>ABC Bank Ltd.</p>
+                                            <p>Dhanmondi Branch</p>
+                                            <p>A/C # 171.105.222226</p>
+                                            <p>A/C Type: Current Deposit Account</p>
+                                            <strong>Pay: </strong><strong>420.00 BDT</strong>
+                                        </div>
+
+                                        <div class="container-fluid">
+                                            <p class="padding_top-bottom5">Upload your transaction receipt and click Pay:</p>
+                                            <form class="marginBottom5">
+                                                <input type="file" name="pic" accept="image/*">
+                                            </form>
+                                        </div>
+
+                                        <div class="container-fluid">
+                                            <div class="row">
+                                                <div class="col-md-6 col-sm-6">
+                                                    <button type="submit" class="payment_button payment_getway_buttons">PAY</button>
+                                                </div>
+
+                                                <div class="col-md-6 col-sm-6">
+                                                    <button type="button" class="payment_button payment_getway_buttons back">BACK</button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <button type="button" class="payment_button payViaCash">Pay via Cash Deposit</button>
+                                </div>
+
+                                <div class="paymentMethods">
+                                    <div class="container-fluid row marginBottom5">
+                                        <div class="col-md-4 col-sm-4">
+                                            <img src="Contents/Images/bank%20Transfer.png" />
+                                        </div>
+                                        <div class="col-md-8 col-sm-8 text-left">
+                                            <p>Pay via Electronic Fund /transfer(EFT) from your online Bank accounts.</p>
+                                        </div>
+                                    </div>
+
+                                    <div class="container-fluid pay_action_container EFT_payment">
+                                        <div class="bankTranfer_text">
+                                            <p>Send EFT to the following account:</p>
+                                            <strong>Amar Chai Lawyer</strong>
+                                            <p>ABC Bank Ltd.</p>
+                                            <p>Dhanmondi Branch</p>
+                                            <p>A/C # 171.105.222226</p>
+                                            <p>A/C Type: Current Deposit Account</p>
+                                            <strong>Pay: </strong><strong>420.00 BDT</strong>
+                                        </div>
+
+                                        <div class="container-fluid padding_top-bottom5 marginBottom5">
+                                            <p class="padding_top-bottom5">Upload your transaction receipt and click Pay:</p>
+                                            <form action="demo_form.asp">
+                                                <input type="file" name="pic" accept="image/*">
+                                            </form>
+                                        </div>
+
+                                        <div class="container-fluid">
+                                            <div class="row">
+                                                <div class="col-md-6 col-sm-6-6">
+                                                    <button type="submit" class="payment_button payment_getway_buttons">PAY</button>
+                                                </div>
+
+                                                <div class="col-md-6 col-sm-6">
+                                                    <button type="button" class="payment_button payment_getway_buttons back">BACK</button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <button type="button" class="payment_button payViaEFT">Pay via EFT</button>
+                                </div>
+                            </div>
+                        </div>
+                        <button class="btn btn-lg btn-primary btn-block btn-signin" type="submit">Sign Up</button>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+     
+
+    </div>
+}
+@Scripts.Render("~/bundles/jqueryval")
+
+
+
+
+<div>
+    @Html.ActionLink("Back to List", "Index")
+</div>

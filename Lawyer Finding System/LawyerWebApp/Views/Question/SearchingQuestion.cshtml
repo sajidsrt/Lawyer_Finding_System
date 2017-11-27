@@ -1,0 +1,29 @@
+﻿@model IEnumerable<FinalDAL.Question>
+
+@{
+    ViewBag.Title = "SearchingQuestion";
+}
+
+@section scripts
+    {
+<script src="~/Scripts/jquery-1.10.2.js"></script>
+<script src="~/Scripts/jquery-ui-1.10.4.custom.min.js"></script>
+  
+
+    <script type="text/javascript">
+    $(function () {
+        $("#txtSearch").autocomplete({
+            source: '@Url.Action("GetStudents")',
+            minLength: 1
+        });
+    });
+    </script>
+}
+
+@using (@Html.BeginForm())
+{
+    <b>Name: </b>
+        @Html.TextBox("searchTerm", null, new { id = "txtSearch" })
+        <input type="submit" value="Search" />
+}
+

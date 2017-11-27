@@ -1,0 +1,171 @@
+﻿@model IEnumerable<FinalDAL.Question>
+
+@{
+    ViewBag.Title = "QuestionList";
+}
+@{
+    var data = ViewData["user_id"];
+}
+
+@*<table class="table">
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Question1)
+            </th>
+            <th></th>
+        </tr>
+
+    @foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Question1)
+            </td>
+            <td>
+                @Html.ActionLink("Edit", "Edit", new { id=item.QuestionID }) |
+                @Html.ActionLink("Details", "Details", new { id=item.QuestionID }) |
+                @Html.ActionLink("Delete", "Delete", new { id=item.QuestionID })|
+                @Html.RouteLink("ADD Answer", new { action = "Create", controller = "Answer", id = item.QuestionID })
+
+
+            </td>
+        </tr>
+    }
+
+    </table>*@
+
+<style>
+    .container {
+        height: 1000px;
+        width: 100%;
+        background-repeat: no-repeat;
+        background-image: linear-gradient(#028bbf, #028bbf);
+    }
+
+        .card-container.card {
+            max-width: 650px;
+            padding: 40px 40px;
+        }
+
+
+
+    /*
+            * Card component
+            */
+    .card {
+        background-color: #F7F7F7;
+        /* just in case there no content*/
+        padding: 20px 25px 30px;
+        margin: 0 auto 25px;
+        margin-top: 50px;
+        /* shadows and rounded borders */
+        -moz-border-radius: 2px;
+        -webkit-border-radius: 2px;
+        border-radius: 2px;
+        -moz-box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.3);
+        -webkit-box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.3);
+        box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.3);
+    }
+
+    .btn.btn-signin {
+        /*background-color: #4d90fe; */
+        background-color: rgb(104, 145, 162);
+        /* background-color: linear-gradient(rgb(104, 145, 162), rgb(12, 97, 33));*/
+        padding: 0px;
+        font-weight: 700;
+        font-size: 14px;
+        height: 36px;
+        -moz-border-radius: 3px;
+        -webkit-border-radius: 3px;
+        border-radius: 3px;
+        border: none;
+        -o-transition: all 0.218s;
+        -moz-transition: all 0.218s;
+        -webkit-transition: all 0.218s;
+        transition: all 0.218s;
+    }
+
+        .btn.btn-signin:hover,
+        .btn.btn-signin:active,
+        .btn.btn-signin:focus {
+            background-color: rgb(12, 97, 33);
+        }
+
+
+
+    .trash {
+        color: rgb(209, 91, 71);
+    }
+
+    .flag {
+        color: rgb(248, 148, 6);
+    }
+
+    .panel-body {
+        padding: 0px;
+    }
+
+    .panel-footer .pagination {
+        margin: 0;
+    }
+
+    .panel .glyphicon, .list-group-item .glyphicon {
+        margin-right: 5px;
+    }
+
+    .panel-body .radio, .checkbox {
+        display: inline-block;
+        margin: 0px;
+    }
+
+    .panel-body input[type=checkbox]:checked + label {
+        text-decoration: line-through;
+        color: rgb(128, 144, 160);
+    }
+
+    .list-group-item:hover, a.list-group-item:focus {
+        text-decoration: none;
+        background-color: rgb(245, 245, 245);
+    }
+
+    .list-group {
+        margin: auto;
+        width: 70%;
+        height: 70%;
+    }
+</style>
+
+
+
+
+
+<div class="container">
+    <div class="card card-container">
+  <h2 style="text-align:center"><strong>Question List</strong> </h2>
+
+            <ul class="list-group">
+
+                <li class="list-group-item">
+
+
+                    @foreach (var item in Model)
+                    {
+
+                        @Html.DisplayFor(modelItem => item.Question1)
+
+
+
+                        <div class="pull-right action-buttons">
+
+                            @Html.RouteLink("ADD Answer", new { action = "Create", controller = "Answer", id = item.QuestionID, UserID = @data })
+                        </div>
+                        <br />
+                    }
+                </li>
+
+            </ul>
+        <div class="row">
+            @Html.RouteLink("Back", new { action = "Profile", controller = "Lawyer", UserID = @data })
+        </div>
+        </div>
+    </div>
+

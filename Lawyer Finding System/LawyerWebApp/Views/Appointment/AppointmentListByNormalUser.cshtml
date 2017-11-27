@@ -1,0 +1,64 @@
+﻿@model IEnumerable<FinalDAL.Appointment>
+
+@{
+    ViewBag.Title = "AppointmentListByNormalUser";
+}
+
+<h2>AppointmentListByNormalUser</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.LawyerID)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.NormalUserID)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.LawyerConfirm)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.NormalUserConfirm)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.LawyerID)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.NormalUserID)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.LawyerConfirm)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.NormalUserConfirm)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id = item.AppointmentID }) |
+            @Html.ActionLink("Details", "Details", new { id = item.AppointmentID }) |
+            @Html.ActionLink("Delete", "Delete", new { id = item.AppointmentID })|
+            @if (item.LawyerConfirm == "no" || item.LawyerConfirm == null)
+            {
+
+                @Html.ActionLink("Go to lawyer Profile", "ProfileForOthersLoggedInRejected", "Lawyer", new { userID = item.LawyerID }, null)
+            }
+            else
+            {
+                @Html.ActionLink("Go to lawyer Profile", "ProfileForOthersLoggedInAccepted", "Lawyer", new { userID = item.LawyerID }, null)
+
+            }
+            
+
+            </td>
+
+    </tr>
+}
+
+</table>

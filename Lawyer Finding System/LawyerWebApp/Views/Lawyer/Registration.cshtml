@@ -1,0 +1,454 @@
+﻿@model FinalDAL.Lawyer
+
+@{
+    ViewBag.Title = "Registration";
+}
+@{
+    List<SelectListItem> listItems = new List<SelectListItem>();
+    listItems.Add(new SelectListItem
+    {
+        Text = "Banking Law",
+        Value = "Banking Law"
+    });
+    listItems.Add(new SelectListItem
+    {
+        Text = "Company Law",
+        Value = "Company Law",
+    });
+    listItems.Add(new SelectListItem
+    {
+        Text = "Consumer Law",
+        Value = "Consumer Law"
+    });
+    listItems.Add(new SelectListItem
+    {
+        Text = "Copyright Law",
+        Value = "Copyright Law"
+    });
+    listItems.Add(new SelectListItem
+    {
+        Text = "Corporate Law",
+        Value = "Corporate Law"
+    }); listItems.Add(new SelectListItem
+    {
+        Text = "Criminal Law",
+        Value = "Criminal Law"
+    });
+    listItems.Add(new SelectListItem
+    {
+        Text = "Divorce Law",
+        Value = "Divorce Law"
+    });
+    listItems.Add(new SelectListItem
+    {
+        Text = "Environmental Law",
+        Value = "Environmental Law"
+    });
+    listItems.Add(new SelectListItem
+    {
+        Text = "Family Law",
+        Value = "Family Law"
+    });
+    listItems.Add(new SelectListItem
+    {
+        Text = "Health & Safety Law",
+        Value = "Health & Safety Law"
+    });
+    listItems.Add(new SelectListItem
+    {
+        Text = "Immigration Law",
+        Value = "Immigration Law"
+    });
+    listItems.Add(new SelectListItem
+    {
+        Text = "Islamic Law",
+        Value = "Islamic Law"
+    });
+    listItems.Add(new SelectListItem
+    {
+        Text = "Labor Law",
+        Value = "Labor Law"
+    });
+    listItems.Add(new SelectListItem
+    {
+        Text = "Land Law",
+        Value = "Land Law"
+    });
+    listItems.Add(new SelectListItem
+    {
+        Text = "Property Law",
+        Value = "Property Law"
+    });
+    listItems.Add(new SelectListItem
+    {
+        Text = "Tax Law",
+        Value = "Tax Law"
+    });
+    listItems.Add(new SelectListItem
+    {
+        Text = "Trademark Law",
+        Value = "Trademark Law"
+    });
+    listItems.Add(new SelectListItem
+    {
+        Text = "Trusts & Estates Law",
+        Value = "Trusts & Estates Law"
+    });
+
+}
+@{
+    List<SelectListItem> listItems2 = new List<SelectListItem>();
+    listItems2.Add(new SelectListItem
+    {
+        Text = "Barisal",
+        Value = "Barisal"
+    });
+    listItems2.Add(new SelectListItem
+    {
+        Text = "Dhaka",
+        Value = "Dhaka"
+    }); listItems2.Add(new SelectListItem
+    {
+        Text = "Chittagong",
+        Value = "Chittagong"
+    }); listItems2.Add(new SelectListItem
+    {
+        Text = "Khulna",
+        Value = "Khulna"
+    }); listItems2.Add(new SelectListItem
+    {
+        Text = "Mymensing",
+        Value = "Mymensing"
+    }); listItems2.Add(new SelectListItem
+    {
+        Text = "Rajshahi",
+        Value = "Rajshahi"
+    }); listItems2.Add(new SelectListItem
+    {
+        Text = "Rangpur",
+        Value = "Rangpur"
+    }); listItems2.Add(new SelectListItem
+    {
+        Text = "Sylhet",
+        Value = "Sylhet"
+    });
+
+
+}
+@{
+    List<SelectListItem> listItems3 = new List<SelectListItem>();
+    listItems3.Add(new SelectListItem
+    {
+        Text = "Barisal",
+        Value = "Barisal"
+    });
+    listItems3.Add(new SelectListItem
+    {
+        Text = "Dhaka",
+        Value = "Dhaka"
+    }); listItems3.Add(new SelectListItem
+    {
+        Text = "Chittagong",
+        Value = "Chittagong"
+    }); listItems3.Add(new SelectListItem
+    {
+        Text = "Khulna",
+        Value = "Khulna"
+    }); listItems3.Add(new SelectListItem
+    {
+        Text = "Mymensing",
+        Value = "Mymensing"
+    }); listItems3.Add(new SelectListItem
+    {
+        Text = "Rajshahi",
+        Value = "Rajshahi"
+    }); listItems3.Add(new SelectListItem
+    {
+        Text = "Rangpur",
+        Value = "Rangpur"
+    }); listItems3.Add(new SelectListItem
+    {
+        Text = "Sylhet",
+        Value = "Sylhet"
+    });
+
+
+}@{
+    List<SelectListItem> listItems4 = new List<SelectListItem>();
+    listItems4.Add(new SelectListItem
+    {
+        Text = "Barisal",
+        Value = "Barisal"
+    });
+    listItems4.Add(new SelectListItem
+    {
+        Text = "Dhaka",
+        Value = "Dhaka"
+    }); listItems4.Add(new SelectListItem
+    {
+        Text = "Chittagong",
+        Value = "Chittagong"
+    }); listItems4.Add(new SelectListItem
+    {
+        Text = "Khulna",
+        Value = "Khulna"
+    }); listItems4.Add(new SelectListItem
+    {
+        Text = "Mymensing",
+        Value = "Mymensing"
+    }); listItems4.Add(new SelectListItem
+    {
+        Text = "Rajshahi",
+        Value = "Rajshahi"
+    }); listItems4.Add(new SelectListItem
+    {
+        Text = "Rangpur",
+        Value = "Rangpur"
+    }); listItems4.Add(new SelectListItem
+    {
+        Text = "Sylhet",
+        Value = "Sylhet"
+    });
+
+
+}
+
+
+@if (ViewBag.Status != null && Convert.ToBoolean(ViewBag.Status))
+{
+    if (ViewBag.Message != null)
+    {
+        <div class="alert alert-success">
+            <strong>Success!</strong>@ViewBag.Message
+        </div>
+    }
+}
+else
+{
+
+    using (Html.BeginForm("Registration", "Lawyer", FormMethod.Post, new { enctype = "multipart/form-data" }))
+    {
+        @Html.AntiForgeryToken()
+
+        <link href="~/Content/bootstrap.css" rel="stylesheet" />
+        <link href="~/Content/bootstrap.min.css" rel="stylesheet" />
+        <link href="~/Content/bootstrap-theme.min.css" rel="stylesheet" />
+        <link href="~/Content/font-awesome.css" rel="stylesheet" />
+        <link href="~/Content/font-awesome.min.css" rel="stylesheet" />
+        <link href="~/Content/registration.css" rel="stylesheet" />
+
+        <script src="~/Scripts/jquery-2.2.4.js"></script>
+        <script src="~/Scripts/bootstrap-select.js"></script>
+        <script src="~/Scripts/bootstrap-select.min.js"></script>
+        <script src="~/Scripts/bootstrap.min.js"></script>
+        <script src="~/Scripts/Custom/registration.js"></script>
+
+
+        <div class="firmBodyWrapper">
+            <!-- Header starts  -->
+            <div class="header">
+                <div class="row">
+                    <div class="col-md-3">
+                        <a href="#"><img src="~/Content/Images/LogoRegi.png" /></a>
+
+                    </div>
+
+                    <div class="col-md-7">
+                    </div>
+
+                    <div class="col-md-2">
+                        <div class="container-fluid text-center marginTop30">
+                            <input type="button" class="btn text-center regi_Sign_In" value="SIGN IN" onclick="@(" window.location.href='" + @Url.Action("Login", "Lawyer") + "' ");" />
+                            <input type="button" class="btn text-center regi_Sign_In" value="Back" onclick="@(" window.location.href='" + @Url.Action("Index", "Home") + "' ");" />
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Header ends  -->
+            <!-- Main body starts  -->
+            <div class="middleBodyContainer">
+                <div class="firmProfileArea">
+                    <div class="lawyerProfiletxt">
+                        <p class="text-capitalize text-center">create your <span class="lawyerProfileColor">lawyer profile</span></p>
+                    </div>
+
+                    <div class="row form_menu_container">
+
+                        <div class="col-md-6">
+                        </div>
+
+                        <div class="col-md-6">
+
+                            <!--  Personal details   -->
+                            <div class="accordion text-capitalize  list_style caRet">Personal details<i class="fa fa-caret-left" aria-hidden="true" style="float:right;"></i></div>
+                            <div class="panel basicDetailse_form">
+                                <h4 class="text-center text-uppercase accordionHead">PERsONAL DETAILS</h4>
+                                <div class="form-horizontal">
+                                    @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+                                    <div class="areaForInfo">
+                                        <div class="form-group container-fluid">
+                                            <label for="exampleInputEmail1" class="labelMarginLeft10">Photo</label>
+                                            <input type="file" name="file" id="file" width="160" height="190" />
+                                        </div>
+                                        <div class="form-group container-fluid">
+                                            <label for="exampleInputEmail1" class="labelMarginLeft10">Lawyer Name</label>
+                                            @Html.EditorFor(model => model.Name, new { htmlAttributes = new { @class = "form-control" } })
+                                        </div>
+                                        <div class="form-group container-fluid">
+                                            <label for="exampleInputEmail1" class="labelMarginLeft10">Lawyer ID</label>
+                                            @Html.EditorFor(model => model.LawyerID, new { htmlAttributes = new { @class = "form-control border_Radius2", type = "text" } })
+                                        </div>
+
+                                        <div class="form-group container-fluid">
+                                            <label for="exampleInputEmail1" class="labelMarginLeft10">Password</label>
+                                            @Html.EditorFor(model => model.Password, new { htmlAttributes = new { @class = "form-control border_Radius2", type = "password" } })
+                                        </div>
+                                        <div class="form-group container-fluid">
+                                            <label for="exampleInputEmail1" class="labelMarginLeft10">Confirm Password</label>
+                                            @Html.EditorFor(model => model.ConfirmPassword, new { htmlAttributes = new { @class = "form-control border_Radius2", type = "password" } })
+                                        </div>
+                                        <div class="form-group container-fluid">
+                                            <label for="exampleInputEmail1" class="labelMarginLeft10">Gender</label>
+                                            @Html.EditorFor(model => model.Gender, new { htmlAttributes = new { @class = "form-control border_Radius2", type = "text" } })
+                                        </div>
+
+
+
+                                        <div class="form-group container-fluid">
+                                            <label for="exampleInputEmail1" class="labelMarginLeft10"> Nationality</label>
+                                            @Html.EditorFor(model => model.Nationality, new { htmlAttributes = new { @class = "form-control border_Radius2", type = "text"} })
+                                        </div>
+                                        <div class="form-group container-fluid">
+                                            <label for="exampleInputEmail1" class="labelMarginLeft10">National Identity Number</label>
+                                            @Html.EditorFor(model => model.NID, new { htmlAttributes = new { @class = "form-control border_Radius2", type = "text" } })
+                                        </div>
+
+                                      
+                                        <div class="form-group container-fluid">
+                                            <label for="exampleInputEmail1" class="labelMarginLeft10">Contact details</label>
+                                            <div class="paddingLeft130">
+                                                @Html.EditorFor(model => model.Mobile, new { htmlAttributes = new { @class = "form-control border_Radius2 marginBottom5", placeholder = "Contact number" } })
+
+                                                @Html.EditorFor(model => model.Email, new { htmlAttributes = new { @class = "form-control border_Radius2 marginBottom5", placeholder = "Email" } })
+
+                                            </div>
+                                        </div>
+
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="accordion text-capitalize  list_style caRet">professional / practice area<i class="fa fa-caret-left" aria-hidden="true" style="float:right;"></i></div>
+                            <div class="panel basicDetailse_form">
+                                <h4 class="text-center text-capitalize accordionHead">professional/practice area</h4>
+
+                                <div class="areaForInfo">
+
+
+
+
+                                    <div class="form-group container-fluid">
+                                        <label for="exampleInputEmail1" class="labelMarginLeft10">Bangladesh Bar Council Membership ID No.</label>
+                                        @Html.EditorFor(model => model.MembershipIdNo, new { htmlAttributes = new { @class = "form-control border_Radius2", type = "text" } })
+
+
+                                    </div>
+
+                                    <div class="form-group container-fluid">
+                                        <label for="exampleInputEmail1" class="labelMarginLeft10">Bangladesh Bar Enrolment Year</label>
+                                        @Html.EditorFor(model => model.EnrollmentYear, new { htmlAttributes = new { @class = "form-control border_Radius2", type = "text" } })
+
+
+                                    </div>
+
+
+
+                                    <div class="form-group container-fluid">
+                                        <label for="exampleInputEmail1" class="labelMarginLeft10">Career Goals</label>
+                                        @Html.EditorFor(model => model.CareerGoals, new { htmlAttributes = new { @class = "form-control border_Radius2", type = "text" } })
+                                    </div>
+
+
+
+                                    <div class="form-group container-fluid">
+                                        <label for="exampleInputEmail1" class="labelMarginLeft10">Career summery</label>
+                                        @Html.EditorFor(model => model.CareerSummary, new { htmlAttributes = new { @class = "form-control border_Radius2", type = "text" } })
+                                    </div>
+                                    <div class="form-group container-fluid">
+                                        <label for="exampleInputEmail1" class="labelMarginLeft10">Practise Area</label>
+                                        @Html.EditorFor(model => model.PractiseArea, new { htmlAttributes = new { @class = "form-control border_Radius2", type = "text" } })
+                                    </div>
+                                    <div class="form-group container-fluid">
+                                        <label for="exampleInputEmail1" class="labelMarginLeft10">Expertise</label> <br />
+                                        @Html.DropDownListFor(model => model.Expertise, listItems, "-- Select Status --", new { @class = "form-control border_Radius2" })
+                                    </div>
+
+
+
+
+
+
+
+
+                                </div>
+                            </div>
+
+                            <div class="accordion text-capitalize  list_style caRet">Address Details<i class="fa fa-caret-left" aria-hidden="true" style="float:right;"></i></div>
+                            <div class="panel basicDetailse_form">
+                                <h4 class="text-center text-capitalize accordionHead">Address Details</h4>
+
+                                <div class="areaForInfo">
+
+
+
+                                    <div class="form-group container-fluid">
+                                        <label for="exampleInputEmail1" class="labelMarginLeft10">Present Address</label>
+                                        @Html.DropDownListFor(model => model.PresentAddress, listItems4, "-- Select --", new { @class = "form-control border_Radius2" })
+                                    </div>
+                                    <div class="form-group container-fluid">
+                                        <label for="exampleInputEmail1" class="labelMarginLeft10">Permanent Address</label>
+                                        @Html.DropDownListFor(model => model.PermanentAddress, listItems4, "-- Select --", new { @class = "form-control border_Radius2" })
+                                    </div>
+                                    <div class="form-group container-fluid">
+                                        <label for="exampleInputEmail1" class="labelMarginLeft10">Office Address</label>
+                                        @Html.DropDownListFor(model => model.OfficeAddress, listItems4, "-- Select --", new { @class = "form-control border_Radius2" })
+                                    </div>
+
+
+
+
+
+
+
+                                </div>
+                            </div>
+
+
+
+                            <button class="btn btn-lg btn-primary btn-block btn-signin" id="targetId" type="submit">Sign Up</button>
+                        </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+           
+
+       
+        if (ViewBag.Message != null)
+        {
+                <div class="alert alert-danger">
+                    <strong>Error!</strong>@ViewBag.Message
+                </div>
+                }
+                }
+                }
+
+<script type="text/javascript">
+    $("#targetId").click(function () {
+        alert("Go to your Mail to Complete your Registration");
+    });
+</script>            
+
+                <script src="~/Scripts/jquery.validate.min.js"></script>
+                <script src="~/Scripts/jquery.validate.unobtrusive.min.js"></script>

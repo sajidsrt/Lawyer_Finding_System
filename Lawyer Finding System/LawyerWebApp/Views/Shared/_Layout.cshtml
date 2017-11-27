@@ -1,0 +1,55 @@
+﻿@using Microsoft.AspNet.Identity
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewBag.Title - Lawyer</title>
+    <link rel="icon" type="image/png" sizes="96x96" href="~/Content/Images/favicon-96x96.png">
+    <link href="~/Content/bootstrap.css" rel="stylesheet" />
+    <link href="~/Content/animate.css" rel="stylesheet" />
+    <link href="~/Content/check_box.css" rel="stylesheet" />
+    <link href="~/Content/main.css" rel="stylesheet" />
+    <link href="~/Content/font-awesome.css" rel="stylesheet" />
+    <link href="~/Content/lawyerProfileDashboard.css" rel="stylesheet" />
+    <link href="~/Content/custommodal.css" rel="stylesheet" />
+    <script src="~/Scripts/modernizr-2.6.2.js"></script>
+    <script src="~/Scripts/jquery-1.10.2.js"></script>
+    <script src="~/Scripts/jquery-1.10.2.min.js"></script>
+    <script src="~/Scripts/modernizr-2.6.2.js"></script>
+    <link href="~/Content/jquery-ui-1.10.4.custom.min.css" rel="stylesheet" />
+    <script src="~/Scripts/jquery-ui-1.10.4.custom.min.js"></script>
+    <script src="~/Scripts/angular.js"></script>
+    <script src="~/Scripts/angular-cookies.js"></script>
+    <script src="~/Scripts/ngStorage.js"></script>
+    <script src="~/Scripts/angular-route.js"></script>
+</head>
+<body>
+
+    <div class="mainWrapper">
+        @RenderBody()
+    </div>
+    <script src="~/Scripts/bootstrap.js"></script>
+    <script src="~/Scripts/Custom/registration.js"></script>
+    <script src="~/Scripts/Custom/main.js"></script>
+    <script src="~/Scripts/bootstrap.min.js"></script>
+    <script src="~/App/NgModel/app.js"></script>
+
+    <script src="~/App/NgService/LoginService.js"></script>
+    <script src="~/App/NgController/LoginController.js"></script>
+    <script src="~/App/NgController/lawyerRegistrationController.js"></script>
+    <script src="~/App/NgController/studentRegistrationController.js"></script>
+    <script src="~/Scripts/jquery.validate.min.js"></script>
+    <script src="~/Scripts/jquery.validate.unobtrusive.min.js"></script>
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/bootstrap")
+    @RenderSection("scripts", required: false)
+</body>
+</html>
+<script>
+$('#nav').affix({
+      offset: {
+        top: $('header').height()
+      }
+});
+</script>

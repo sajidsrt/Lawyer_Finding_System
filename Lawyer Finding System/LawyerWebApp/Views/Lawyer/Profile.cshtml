@@ -1,0 +1,316 @@
+﻿@using FinalDAL
+@model FinalDAL.Lawyer
+@{
+    ViewBag.Title = "Profile";
+}
+@{
+    var data = Model.PhotoPath;
+    var data2 = ViewData["user_id"];
+
+}
+
+<link href="~/Content/bootstrap.css" rel="stylesheet" />
+<link href="~/Content/bootstrap.min.css" rel="stylesheet" />
+<link href="~/Content/bootstrap-theme.min.css" rel="stylesheet" />
+<link href="~/Content/font-awesome.css" rel="stylesheet" />
+<link href="~/Content/font-awesome.min.css" rel="stylesheet" />
+<link href="~/Content/lawyerProfileDashboard.css" rel="stylesheet" />
+<div class="dashBoardBodyWrapper">
+    <div class="container-fluid containerFluidMargin">
+        <!--Search bar starts-->
+        <div class="row searchBar">
+            <div class="col-md-8 col-sm-8"></div>
+
+            <div class="col-md-3 col-sm-3">
+
+            </div>
+
+            <div class="col-md-1 col-sm-1"></div>
+        </div>
+        <!--Search bar ends-->
+        <!--ProfilDiv starts-->
+        <div class="profileBackground">
+            <div class="profileDivWhite"></div>
+
+            <div class="profileDiv">
+                <div class="row">
+                    <div class="col-md-12 col-sm-12">
+                        <div class="row showProfileInfoContainer">
+                            <div class="col-md-4 col-sm-4">
+                                <div class="profile_picture">
+                                    <img src="~/images/@data" width="190" height="190" />
+                                </div>
+                            </div>
+
+                            <div class="col-md-7 col-sm-7">
+                                <div class="profile_info">
+                                    <h1>@Html.DisplayFor(model => model.Name)</h1>
+                                    <div class="sub_info text-capitalize">
+                                        <p>currently working at <strong>IIT</strong></p>
+                                        <p>Studied at <strong>University of Dhaka</strong></p>
+                                        <p>lives in <strong>@Html.DisplayFor(model => model.PresentAddress)</strong></p>
+                                        <p>office at <strong>@Html.DisplayFor(model => model.OfficeAddress)</strong></p>
+                                    </div>
+                                </div>
+                            </div>
+
+
+                            <div class="col-md-1 col-sm-1">
+                                <input type="button" class="btn btn-success btn-group-lg" value="Log out" onclick="@("window.location.href='" + @Url.Action("Logout", "Lawyer") + "'");" />
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+
+
+            </div>
+        </div>
+        <!--ProfilDiv ends-->
+        <!--Title bar starts-->
+        <div class="container-fluid ">
+            <div class="title_bar text-capitalize text-center">
+                <p>overview</p>
+            </div>
+        </div>
+        <!--Title bar starts-->
+        <!--Dashboard starts-->
+        <div class="container-fluid">
+            <div class="row dashBoardContainer">
+                <div class="col-md-3">
+                    <ui class="list-group">
+                        <li class="list-group-item">
+                            @Html.RouteLink("Question List", new { action = "QuestionList", controller = "Home", id = @data2, @type = "button", @class = "btn btn-success" })
+                        </li>
+                        <li class="list-group-item">
+                            @Html.RouteLink("Answer List", new { action = "AnswerList", controller = "Answer", id = @data2, @type = "button", @class = "btn btn-success" })
+
+
+                        </li>
+                        <li class="list-group-item">
+                       
+                        @Html.ActionLink("Update Profile", "Edit", new { id = Model.UserID })
+
+                        </li>
+                        <li class="list-group-item">
+                            @Html.ActionLink("Delete Profile", "Delete", new { id = Model.UserID })
+
+                        </li>
+                        <li class="list-group-item">
+                            @Html.RouteLink("Appointment List", new { action = "AppointmentListByLawyer", controller = "Appointment", id = Model.UserID})
+
+
+                        </li>
+                    </ui>
+
+                </div>
+
+                <div class="col-md-9">
+                    <div class="view_action">
+                        <!--over view ends-->
+                        <!--over view ends-->
+                        <!--Personal Details starts-->
+                        <div class="container-fluid">
+                            <div class="row personal_details_div">
+                                <h4 class="text-capitalize">Personal Details</h4>
+
+
+
+                                <div class="seperator_1"></div>
+                                <div class="row">
+                                    <div class="col-md-4 col-sm-4 col-xs-4 text-capitalize">
+                                        <p>gender</p>
+                                    </div>
+
+                                    <div class="col-md-8 col-sm-8 col-xs-8 text-capitalize">
+                                        @Html.DisplayFor(model => model.Gender)
+                                    </div>
+
+                                </div>
+
+
+                                <div class="seperator_1"></div>
+                                <div class="row">
+                                    <div class="col-md-4 col-sm-4 col-xs-4 text-capitalize">
+                                        <p>Lawyer ID</p>
+                                    </div>
+
+                                    <div class="col-md-8 col-sm-8 col-xs-8 text-capitalize">
+                                        @Html.DisplayFor(model => model.LawyerID)
+
+
+                                    </div>
+
+
+                                </div>
+
+                                <div class="seperator_1"></div>
+                                <div class="row">
+                                    <div class="col-md-4 col-sm-4 col-xs-4 text-capitalize">
+                                        <p>nationality</p>
+                                    </div>
+
+                                    <div class="col-md-8 col-sm-8 col-xs-8 text-capitalize">
+                                        @Html.DisplayFor(model => model.Nationality)
+                                    </div>
+
+                                </div>
+
+                                <div class="seperator_1"></div>
+                                <div class="row">
+                                    <div class="col-md-4 col-sm-4 col-xs-4 text-capitalize">
+                                        <p>NID no.</p>
+                                    </div>
+
+                                    <div class="col-md-8 col-sm-8 col-xs-8 text-capitalize">
+                                        @Html.DisplayFor(model => model.NID)
+                                    </div>
+
+                                </div>
+
+
+
+                                <div class="seperator_1"></div>
+                                <div class="row">
+                                    <div class="col-md-4 col-sm-4 col-xs-4 text-capitalize">
+                                        <p>present address</p>
+                                    </div>
+
+                                    <div class="col-md-8 col-sm-8 col-xs-8 text-capitalize">
+                                        @Html.DisplayFor(model => model.PresentAddress)
+                                    </div>
+
+                                </div>
+
+                                <div class="seperator_1"></div>
+                                <div class="row">
+                                    <div class="col-md-4 col-sm-4 col-xs-4 text-capitalize">
+                                        <p>permanent address</p>
+                                    </div>
+
+                                    <div class="col-md-8 col-sm-8 col-xs-8 text-capitalize">
+                                        @Html.DisplayFor(model => model.PermanentAddress)
+                                    </div>
+
+
+                                </div>
+
+                                <div class="seperator_1"></div>
+                                <div class="row">
+                                    <div class="col-md-4 col-sm-4 col-xs-4 text-capitalize">
+                                        <p>office address</p>
+                                    </div>
+
+                                    <div class="col-md-8 col-sm-8 col-xs-8 text-capitalize">
+                                        @Html.DisplayFor(model => model.OfficeAddress)
+                                    </div>
+
+
+                                </div>
+                                <div class="seperator_1"></div>
+                                <div class="row">
+                                    <div class="col-md-4 col-sm-4 col-xs-4 text-capitalize">
+                                        <p>Prctic Area</p>
+                                    </div>
+
+                                    <div class="col-md-8 col-sm-8 col-xs-8 text-capitalize">
+                                        @Html.DisplayFor(model => model.PractiseArea)
+                                    </div>
+
+
+                                </div>
+                            </div>
+                        </div>
+                        <div class="container-fluid">
+                            <div class="row personal_details_div">
+                                <h4 class="text-capitalize">Carrier Information</h4>
+
+
+
+                                <div class="seperator_1"></div>
+                                <div class="row">
+                                    <div class="col-md-4 col-sm-4 col-xs-4 text-capitalize">
+                                        <p>Carrier Summary</p>
+                                    </div>
+
+                                    <div class="col-md-8 col-sm-8 col-xs-8 text-capitalize">
+                                        @Html.DisplayFor(model => model.CareerSummary)
+                                    </div>
+
+
+                                </div>
+
+
+
+
+                                <div class="seperator_1"></div>
+                                <div class="row">
+                                    <div class="col-md-4 col-sm-4 col-xs-4 text-capitalize">
+                                        <p>Carrier Goal</p>
+                                    </div>
+
+                                    <div class="col-md-8 col-sm-8 col-xs-8 text-capitalize">
+                                        @Html.DisplayFor(model => model.CareerGoals)
+                                    </div>
+
+                                </div>
+
+                            </div>
+                        </div>
+                        <div class="container-fluid">
+                            <div class="row personal_details_div">
+                                <h4 class="text-capitalize">Professional Details</h4>
+
+
+
+                                <div class="seperator_1"></div>
+                                <div class="row">
+                                    <div class="col-md-4 col-sm-4 col-xs-4 text-capitalize">
+                                        <p>Enrollment Year</p>
+                                    </div>
+
+                                    <div class="col-md-8 col-sm-8 col-xs-8 text-capitalize">
+                                        @Html.DisplayFor(model => model.EnrollmentYear)
+                                    </div>
+
+
+                                </div>
+
+
+
+
+                                <div class="seperator_1"></div>
+                                <div class="row">
+                                    <div class="col-md-4 col-sm-4 col-xs-4 text-capitalize">
+                                        <p>Expertise</p>
+                                    </div>
+
+                                    <div class="col-md-8 col-sm-8 col-xs-8 text-capitalize">
+                                        @Html.DisplayFor(model => model.Expertise)
+                                    </div>
+
+
+                                </div>
+
+                            </div>
+                        </div>
+
+
+
+                    </div>
+                </div>
+            </div>
+            <!--Dashboard ends-->
+
+        </div>
+    </div>
+</div>
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+    <script src="~/Scripts/jquery-2.2.4.js"></script>
+    <script src="~/Scripts/bootstrap-select.js"></script>
+    <script src="~/Scripts/bootstrap-select.min.js"></script>
+    <script src="~/Scripts/bootstrap.min.js"></script>
+    <script src="~/Scripts/Custom/registration.js"></script>
+
+}

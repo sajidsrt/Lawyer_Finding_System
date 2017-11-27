@@ -1,0 +1,440 @@
+﻿@model FinalDAL.Lawyer
+
+
+@{
+    ViewBag.Title = "Edit";
+    var data = Model.UserID;
+}
+
+
+
+@{
+    List<SelectListItem> listItems = new List<SelectListItem>();
+    listItems.Add(new SelectListItem
+    {
+        Text = "Banking Law",
+        Value = "Banking Law"
+    });
+    listItems.Add(new SelectListItem
+    {
+        Text = "Company Law",
+        Value = "Company Law",
+    });
+    listItems.Add(new SelectListItem
+    {
+        Text = "Consumer Law",
+        Value = "Consumer Law"
+    });
+    listItems.Add(new SelectListItem
+    {
+        Text = "Copyright Law",
+        Value = "Copyright Law"
+    });
+    listItems.Add(new SelectListItem
+    {
+        Text = "Corporate Law",
+        Value = "Corporate Law"
+    }); listItems.Add(new SelectListItem
+    {
+        Text = "Criminal Law",
+        Value = "Criminal Law"
+    });
+    listItems.Add(new SelectListItem
+    {
+        Text = "Divorce Law",
+        Value = "Divorce Law"
+    });
+    listItems.Add(new SelectListItem
+    {
+        Text = "Environmental Law",
+        Value = "Environmental Law"
+    });
+    listItems.Add(new SelectListItem
+    {
+        Text = "Family Law",
+        Value = "Family Law"
+    });
+    listItems.Add(new SelectListItem
+    {
+        Text = "Health & Safety Law",
+        Value = "Health & Safety Law"
+    });
+    listItems.Add(new SelectListItem
+    {
+        Text = "Immigration Law",
+        Value = "Immigration Law"
+    });
+    listItems.Add(new SelectListItem
+    {
+        Text = "Islamic Law",
+        Value = "Islamic Law"
+    });
+    listItems.Add(new SelectListItem
+    {
+        Text = "Labor Law",
+        Value = "Labor Law"
+    });
+    listItems.Add(new SelectListItem
+    {
+        Text = "Land Law",
+        Value = "Land Law"
+    });
+    listItems.Add(new SelectListItem
+    {
+        Text = "Property Law",
+        Value = "Property Law"
+    });
+    listItems.Add(new SelectListItem
+    {
+        Text = "Tax Law",
+        Value = "Tax Law"
+    });
+    listItems.Add(new SelectListItem
+    {
+        Text = "Trademark Law",
+        Value = "Trademark Law"
+    });
+    listItems.Add(new SelectListItem
+    {
+        Text = "Trusts & Estates Law",
+        Value = "Trusts & Estates Law"
+    });
+
+}
+@{
+    List<SelectListItem> listItems2 = new List<SelectListItem>();
+    listItems2.Add(new SelectListItem
+    {
+        Text = "Barisal",
+        Value = "Barisal"
+    });
+    listItems2.Add(new SelectListItem
+    {
+        Text = "Dhaka",
+        Value = "Dhaka"
+    }); listItems2.Add(new SelectListItem
+    {
+        Text = "Chittagong",
+        Value = "Chittagong"
+    }); listItems2.Add(new SelectListItem
+    {
+        Text = "Khulna",
+        Value = "Khulna"
+    }); listItems2.Add(new SelectListItem
+    {
+        Text = "Mymensing",
+        Value = "Mymensing"
+    }); listItems2.Add(new SelectListItem
+    {
+        Text = "Rajshahi",
+        Value = "Rajshahi"
+    }); listItems2.Add(new SelectListItem
+    {
+        Text = "Rangpur",
+        Value = "Rangpur"
+    }); listItems2.Add(new SelectListItem
+    {
+        Text = "Sylhet",
+        Value = "Sylhet"
+    });
+
+
+}
+@{
+    List<SelectListItem> listItems3 = new List<SelectListItem>();
+    listItems3.Add(new SelectListItem
+    {
+        Text = "Barisal",
+        Value = "Barisal"
+    });
+    listItems3.Add(new SelectListItem
+    {
+        Text = "Dhaka",
+        Value = "Dhaka"
+    }); listItems3.Add(new SelectListItem
+    {
+        Text = "Chittagong",
+        Value = "Chittagong"
+    }); listItems3.Add(new SelectListItem
+    {
+        Text = "Khulna",
+        Value = "Khulna"
+    }); listItems3.Add(new SelectListItem
+    {
+        Text = "Mymensing",
+        Value = "Mymensing"
+    }); listItems3.Add(new SelectListItem
+    {
+        Text = "Rajshahi",
+        Value = "Rajshahi"
+    }); listItems3.Add(new SelectListItem
+    {
+        Text = "Rangpur",
+        Value = "Rangpur"
+    }); listItems3.Add(new SelectListItem
+    {
+        Text = "Sylhet",
+        Value = "Sylhet"
+    });
+
+
+}@{
+    List<SelectListItem> listItems4 = new List<SelectListItem>();
+    listItems4.Add(new SelectListItem
+    {
+        Text = "Barisal",
+        Value = "Barisal"
+    });
+    listItems4.Add(new SelectListItem
+    {
+        Text = "Dhaka",
+        Value = "Dhaka"
+    }); listItems4.Add(new SelectListItem
+    {
+        Text = "Chittagong",
+        Value = "Chittagong"
+    }); listItems4.Add(new SelectListItem
+    {
+        Text = "Khulna",
+        Value = "Khulna"
+    }); listItems4.Add(new SelectListItem
+    {
+        Text = "Mymensing",
+        Value = "Mymensing"
+    }); listItems4.Add(new SelectListItem
+    {
+        Text = "Rajshahi",
+        Value = "Rajshahi"
+    }); listItems4.Add(new SelectListItem
+    {
+        Text = "Rangpur",
+        Value = "Rangpur"
+    }); listItems4.Add(new SelectListItem
+    {
+        Text = "Sylhet",
+        Value = "Sylhet"
+    });
+
+
+}
+
+
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+
+    <link href="~/Content/bootstrap.css" rel="stylesheet" />
+    <link href="~/Content/bootstrap.min.css" rel="stylesheet" />
+    <link href="~/Content/bootstrap-theme.min.css" rel="stylesheet" />
+    <link href="~/Content/font-awesome.css" rel="stylesheet" />
+    <link href="~/Content/font-awesome.min.css" rel="stylesheet" />
+    <link href="~/Content/registration.css" rel="stylesheet" />
+
+    <script src="~/Scripts/jquery-2.2.4.js"></script>
+    <script src="~/Scripts/bootstrap-select.js"></script>
+    <script src="~/Scripts/bootstrap-select.min.js"></script>
+    <script src="~/Scripts/bootstrap.min.js"></script>
+    <script src="~/Scripts/Custom/registration.js"></script>
+    <div class="firmBodyWrapper">
+        <!-- Header starts  -->
+        <div class="header">
+            <div class="row">
+                <div class="col-md-3">
+                    <a href="#"><img src="~/Content/Images/LogoRegi.png" /></a>
+
+                </div>
+
+                <div class="col-md-7">
+                </div>
+
+                <div class="col-md-2">
+                    <div class="container-fluid text-center marginTop30">
+                        @Html.RouteLink("Back", new { action = "Profile", controller = "Lawyer", UserID = @data })
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="middleBodyContainer">
+            <div class="firmProfileArea">
+                <div class="lawyerProfiletxt">
+                    <p class="text-capitalize text-center">Delete your <span class="lawyerProfileColor">lawyer profile</span></p>
+                </div>
+                <div class="row form_menu_container">
+
+                    <div class="col-md-6">
+                    </div>
+
+                    <div class="col-md-6">
+                        <div class="form-horizontal">
+
+                            @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+                            @Html.HiddenFor(model => model.UserID)
+
+                            <div class="form-group">
+                                @Html.LabelFor(model => model.PhotoPath, htmlAttributes: new { @class = "control-label col-md-2" })
+                                <div class="col-md-10">
+                                    @Html.EditorFor(model => model.PhotoPath, new { htmlAttributes = new { @class = "form-control" } })
+                                    @Html.ValidationMessageFor(model => model.PhotoPath, "", new { @class = "text-danger" })
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                @Html.LabelFor(model => model.LawyerID, htmlAttributes: new { @class = "control-label col-md-2" })
+                                <div class="col-md-10">
+                                    @Html.EditorFor(model => model.LawyerID, new { htmlAttributes = new { @class = "form-control" } })
+                                    @Html.ValidationMessageFor(model => model.LawyerID, "", new { @class = "text-danger" })
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                @Html.LabelFor(model => model.Password, htmlAttributes: new { @class = "control-label col-md-2" })
+                                <div class="col-md-10">
+                                    @Html.EditorFor(model => model.Password, new { htmlAttributes = new { @class = "form-control" } })
+                                    @Html.ValidationMessageFor(model => model.Password, "", new { @class = "text-danger" })
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                @Html.LabelFor(model => model.Gender, htmlAttributes: new { @class = "control-label col-md-2" })
+                                <div class="col-md-10">
+                                    @Html.EditorFor(model => model.Gender, new { htmlAttributes = new { @class = "form-control" } })
+                                    @Html.ValidationMessageFor(model => model.Gender, "", new { @class = "text-danger" })
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                @Html.LabelFor(model => model.PractiseArea, htmlAttributes: new { @class = "control-label col-md-2" })
+                                <div class="col-md-10">
+                                    @Html.EditorFor(model => model.PractiseArea, new { htmlAttributes = new { @class = "form-control" } })
+                                    @Html.ValidationMessageFor(model => model.PractiseArea, "", new { @class = "text-danger" })
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                @Html.LabelFor(model => model.MembershipIdNo, htmlAttributes: new { @class = "control-label col-md-2" })
+                                <div class="col-md-10">
+                                    @Html.EditorFor(model => model.MembershipIdNo, new { htmlAttributes = new { @class = "form-control" } })
+                                    @Html.ValidationMessageFor(model => model.MembershipIdNo, "", new { @class = "text-danger" })
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                @Html.LabelFor(model => model.CareerSummary, htmlAttributes: new { @class = "control-label col-md-2" })
+                                <div class="col-md-10">
+                                    @Html.EditorFor(model => model.CareerSummary, new { htmlAttributes = new { @class = "form-control" } })
+                                    @Html.ValidationMessageFor(model => model.CareerSummary, "", new { @class = "text-danger" })
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                @Html.LabelFor(model => model.CareerGoals, htmlAttributes: new { @class = "control-label col-md-2" })
+                                <div class="col-md-10">
+                                    @Html.EditorFor(model => model.CareerGoals, new { htmlAttributes = new { @class = "form-control" } })
+                                    @Html.ValidationMessageFor(model => model.CareerGoals, "", new { @class = "text-danger" })
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                @Html.LabelFor(model => model.Expertise, htmlAttributes: new { @class = "control-label col-md-2" })
+                                <div class="col-md-10">
+                                    @Html.EditorFor(model => model.Expertise, new { htmlAttributes = new { @class = "form-control" } })
+                                    @Html.ValidationMessageFor(model => model.Expertise, "", new { @class = "text-danger" })
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                @Html.LabelFor(model => model.EnrollmentYear, htmlAttributes: new { @class = "control-label col-md-2" })
+                                <div class="col-md-10">
+                                    @Html.EditorFor(model => model.EnrollmentYear, new { htmlAttributes = new { @class = "form-control" } })
+                                    @Html.ValidationMessageFor(model => model.EnrollmentYear, "", new { @class = "text-danger" })
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                @Html.LabelFor(model => model.PresentAddress, htmlAttributes: new { @class = "control-label col-md-2" })
+                                <div class="col-md-10">
+                                    @Html.EditorFor(model => model.PresentAddress, new { htmlAttributes = new { @class = "form-control" } })
+                                    @Html.ValidationMessageFor(model => model.PresentAddress, "", new { @class = "text-danger" })
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                @Html.LabelFor(model => model.PermanentAddress, htmlAttributes: new { @class = "control-label col-md-2" })
+                                <div class="col-md-10">
+                                    @Html.EditorFor(model => model.PermanentAddress, new { htmlAttributes = new { @class = "form-control" } })
+                                    @Html.ValidationMessageFor(model => model.PermanentAddress, "", new { @class = "text-danger" })
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                @Html.LabelFor(model => model.NID, htmlAttributes: new { @class = "control-label col-md-2" })
+                                <div class="col-md-10">
+                                    @Html.EditorFor(model => model.NID, new { htmlAttributes = new { @class = "form-control" } })
+                                    @Html.ValidationMessageFor(model => model.NID, "", new { @class = "text-danger" })
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                @Html.LabelFor(model => model.Nationality, htmlAttributes: new { @class = "control-label col-md-2" })
+                                <div class="col-md-10">
+                                    @Html.EditorFor(model => model.Nationality, new { htmlAttributes = new { @class = "form-control" } })
+                                    @Html.ValidationMessageFor(model => model.Nationality, "", new { @class = "text-danger" })
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                @Html.LabelFor(model => model.Mobile, htmlAttributes: new { @class = "control-label col-md-2" })
+                                <div class="col-md-10">
+                                    @Html.EditorFor(model => model.Mobile, new { htmlAttributes = new { @class = "form-control" } })
+                                    @Html.ValidationMessageFor(model => model.Mobile, "", new { @class = "text-danger" })
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                @Html.LabelFor(model => model.Email, htmlAttributes: new { @class = "control-label col-md-2" })
+                                <div class="col-md-10">
+                                    @Html.EditorFor(model => model.Email, new { htmlAttributes = new { @class = "form-control" } })
+                                    @Html.ValidationMessageFor(model => model.Email, "", new { @class = "text-danger" })
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                @Html.LabelFor(model => model.Name, htmlAttributes: new { @class = "control-label col-md-2" })
+                                <div class="col-md-10">
+                                    @Html.EditorFor(model => model.Name, new { htmlAttributes = new { @class = "form-control" } })
+                                    @Html.ValidationMessageFor(model => model.Name, "", new { @class = "text-danger" })
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                @Html.LabelFor(model => model.OfficeAddress, htmlAttributes: new { @class = "control-label col-md-2" })
+                                <div class="col-md-10">
+                                    @Html.EditorFor(model => model.OfficeAddress, new { htmlAttributes = new { @class = "form-control" } })
+                                    @Html.ValidationMessageFor(model => model.OfficeAddress, "", new { @class = "text-danger" })
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <div class="col-md-2">
+                                </div>
+                                <div class="col-md-10">
+                                    <input type="submit" value="Delete Profile" class="btn btn-lg btn-primary btn-block btn-signin" />
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+}
+
+<div>
+    @Html.ActionLink("Back to List", "Index")
+</div>
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}
+

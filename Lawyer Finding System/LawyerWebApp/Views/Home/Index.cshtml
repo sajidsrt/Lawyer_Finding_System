@@ -1,0 +1,1708 @@
+﻿@model FinalDAL.Question
+
+@{
+    ViewBag.Title = "Create";
+}
+@section scripts
+    {
+<link href="~/Content/jquery-ui-1.10.4.custom.min.css" rel="stylesheet" />
+<script src="~/Scripts/jquery-1.10.2.js"></script>
+<script src="~/Scripts/jquery-ui-1.10.4.custom.min.js"></script>
+   <script type="text/javascript">
+    $(function () {
+        $("#txtSearch").autocomplete({
+            source: '@Url.Action("GetStudents","Question")',
+            minLength: 1
+        });
+    });
+</script>
+}
+
+
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+
+    <style>
+        .ui.autocomplete {
+            color: black;
+        }
+    </style>
+    <div class="row searchBar" ng-controller="loginController">
+        <div class="container-fluid">
+            <div class="button_holder">
+
+                <!--<div class="input-group srchArea">
+                    <input type="text" class="form-control subscribeMail" placeholder="Lawyer, Law firm, Article">
+                    <span class="input-group-btn">
+                        <button type="button" class="btn  button_separetor clkButtn" style="background-color:#1db898; color:white; border-top-left-radius: 0; border-bottom-left-radius: 0;">SEARCH</button>
+                    </span>
+                </div>-->
+                <ui>
+                    <input type="button" class="btn btn-success" value="Sign in" onclick="@(" window.location.href='" + @Url.Action("Login", "Lawyer") + "' ");" />
+                    <input type="button" class="btn btn-success" value="Sign up" onclick="@(" window.location.href='" + @Url.Action("Registration", "Lawyer") + "' ");" />
+                </ui>
+                <ui>
+                    <input type="button" class="btn btn-success" value="Get Appointment?" onclick="@(" window.location.href='" + @Url.Action("Login", "NormalUser") + "' ");" />
+                </ui>
+                @*<ul type="button" class="btn  button_separetor">
+                        <li class="dropdown">
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown"><b>SIGN IN</b></a>
+
+                            <ul class="dropdown-menu dropdown-lr animated slideInRight" role="menu">
+                                <div class="col-lg-12">
+                                    <div class="text-center"><h3><b>SIGN IN</b></h3></div>
+
+                                    <form id="ajax-login-form" action="#" method="post" role="form" autocomplete="off">
+                                        <div class="form-group">
+                                            <!--<label for="username">Username</label>-->
+                                            <input type="text" name="username" id="username" tabindex="1" class="form-control" placeholder="Username" value="" autocomplete="off" ng-model="username">
+                                        </div>
+
+                                        <div class="form-group">
+                                            <!--<label for="password">Password</label>-->
+                                            <input type="password" name="password" id="passWord" tabindex="2" class="form-control" placeholder="Password" autocomplete="off" ng-model="password">
+                                        </div>
+                                        <img ng-if="dataLoading" src="data:image/gif;base64,R0lGODlhEAAQAPIAAP///wAAAMLCwkJCQgAAAGJiYoKCgpKSkiH/C05FVFNDQVBFMi4wAwEAAAAh/hpDcmVhdGVkIHdpdGggYWpheGxvYWQuaW5mbwAh+QQJCgAAACwAAAAAEAAQAAADMwi63P4wyklrE2MIOggZnAdOmGYJRbExwroUmcG2LmDEwnHQLVsYOd2mBzkYDAdKa+dIAAAh+QQJCgAAACwAAAAAEAAQAAADNAi63P5OjCEgG4QMu7DmikRxQlFUYDEZIGBMRVsaqHwctXXf7WEYB4Ag1xjihkMZsiUkKhIAIfkECQoAAAAsAAAAABAAEAAAAzYIujIjK8pByJDMlFYvBoVjHA70GU7xSUJhmKtwHPAKzLO9HMaoKwJZ7Rf8AYPDDzKpZBqfvwQAIfkECQoAAAAsAAAAABAAEAAAAzMIumIlK8oyhpHsnFZfhYumCYUhDAQxRIdhHBGqRoKw0R8DYlJd8z0fMDgsGo/IpHI5TAAAIfkECQoAAAAsAAAAABAAEAAAAzIIunInK0rnZBTwGPNMgQwmdsNgXGJUlIWEuR5oWUIpz8pAEAMe6TwfwyYsGo/IpFKSAAAh+QQJCgAAACwAAAAAEAAQAAADMwi6IMKQORfjdOe82p4wGccc4CEuQradylesojEMBgsUc2G7sDX3lQGBMLAJibufbSlKAAAh+QQJCgAAACwAAAAAEAAQAAADMgi63P7wCRHZnFVdmgHu2nFwlWCI3WGc3TSWhUFGxTAUkGCbtgENBMJAEJsxgMLWzpEAACH5BAkKAAAALAAAAAAQABAAAAMyCLrc/jDKSatlQtScKdceCAjDII7HcQ4EMTCpyrCuUBjCYRgHVtqlAiB1YhiCnlsRkAAAOwAAAAAAAAAAAA==" />
+                                        <div class="form-group">
+                                            <div class="row">
+                                                <div class="col-xs-7">
+                                                    <input type="submit" class="btn btn-success" id="login" ng-click="login()" />
+                                                    <input type="checkbox" tabindex="3" name="remember" id="remember">
+                                                    <label for="remember"> Remember Me</label>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="form-group">
+                                            <div class="row">
+                                                <div class="col-lg-12">
+                                                    <div class="text-center">
+                                                        <a href="#" tabindex="5" class="forgot-password">Forgot Password?</a>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <input type="hidden" class="hide" name="token" id="token" value="ae1b6">
+                                    </form>
+                                </div>
+                            </ul>
+                        </li>
+                    </ul>
+                    <ul type="button" class="btn  button_separetor">
+                        <li class="dropdown">
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown"><b>SIGN UP</b></a>
+
+                            <ul class="dropdown-menu dropdown-lr animated slideInRight" role="menu">
+                                <div class="col-lg-12">
+                                    <div class="text-center"><h3><b>SIGN UP</b></h3></div>
+
+                                    <form id="ajax-login-form" action="#" method="post" role="form" autocomplete="off">
+                                        <div class="form-group">
+                                            <!--<label for="username">Username</label>-->
+                                            <input type="text" name="username" id="username" tabindex="1" class="form-control" placeholder="Username" value="" autocomplete="off" ng-model="username">
+                                        </div>
+
+                                        <div class="form-group">
+                                            <!--<label for="password">Password</label>-->
+                                            <input type="password" name="password" id="passWord" tabindex="2" class="form-control" placeholder="Password" autocomplete="off" ng-model="password">
+                                        </div>
+                                        <img ng-if="dataLoading" src="data:image/gif;base64,R0lGODlhEAAQAPIAAP///wAAAMLCwkJCQgAAAGJiYoKCgpKSkiH/C05FVFNDQVBFMi4wAwEAAAAh/hpDcmVhdGVkIHdpdGggYWpheGxvYWQuaW5mbwAh+QQJCgAAACwAAAAAEAAQAAADMwi63P4wyklrE2MIOggZnAdOmGYJRbExwroUmcG2LmDEwnHQLVsYOd2mBzkYDAdKa+dIAAAh+QQJCgAAACwAAAAAEAAQAAADNAi63P5OjCEgG4QMu7DmikRxQlFUYDEZIGBMRVsaqHwctXXf7WEYB4Ag1xjihkMZsiUkKhIAIfkECQoAAAAsAAAAABAAEAAAAzYIujIjK8pByJDMlFYvBoVjHA70GU7xSUJhmKtwHPAKzLO9HMaoKwJZ7Rf8AYPDDzKpZBqfvwQAIfkECQoAAAAsAAAAABAAEAAAAzMIumIlK8oyhpHsnFZfhYumCYUhDAQxRIdhHBGqRoKw0R8DYlJd8z0fMDgsGo/IpHI5TAAAIfkECQoAAAAsAAAAABAAEAAAAzIIunInK0rnZBTwGPNMgQwmdsNgXGJUlIWEuR5oWUIpz8pAEAMe6TwfwyYsGo/IpFKSAAAh+QQJCgAAACwAAAAAEAAQAAADMwi6IMKQORfjdOe82p4wGccc4CEuQradylesojEMBgsUc2G7sDX3lQGBMLAJibufbSlKAAAh+QQJCgAAACwAAAAAEAAQAAADMgi63P7wCRHZnFVdmgHu2nFwlWCI3WGc3TSWhUFGxTAUkGCbtgENBMJAEJsxgMLWzpEAACH5BAkKAAAALAAAAAAQABAAAAMyCLrc/jDKSatlQtScKdceCAjDII7HcQ4EMTCpyrCuUBjCYRgHVtqlAiB1YhiCnlsRkAAAOwAAAAAAAAAAAA==" />
+                                        <div class="form-group">
+                                            <div class="row">
+                                                <div class="col-xs-7">
+                                                    <input type="submit" class="btn btn-success" id="login" ng-click="login()" />
+                                                    <input type="checkbox" tabindex="3" name="remember" id="remember">
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="form-group">
+                                            <div class="row">
+                                                <div class="col-lg-12">
+                                                    <div class="text-center">
+                                                        <a href="#" tabindex="5" class="forgot-password">Forgot Password?</a>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <input type="hidden" class="hide" name="token" id="token" value="ae1b6">
+                                    </form>
+                                </div>
+                            </ul>
+                        </li>
+                    </ul>*@
+            </div>
+        </div>
+    </div>
+
+
+    <div class="mainWrapper">
+
+        <!--   askLawyercontainer  starts  -->
+        <div class="askLawyercontainer">
+
+
+
+
+
+            <div class="container container_problem">
+
+                <div class="logo">
+                </div>
+                <div class="slogaan">
+                    <p class="text-center">Effective Legal Solutions at Your Doorstep</p>
+                </div>
+
+
+
+                <div class="row ask_aLawyer_wrapper">
+
+
+                    <div class="col-md-6">
+
+                        <div class="input_box">
+
+                            @Html.TextBox("searchTerm", null, new { id = "txtSearch", @class = "form-control input_area", @placeholder = "Tell us your problem" })
+                        </div>
+                        <input type="submit" id="search" name="search" class="btn k6ask_btn center-block ask_aLawyer_button" value="ASK A LAWYER" />
+
+
+
+
+                    </div>
+                    <div class="col-md-6">
+                        <div class="input_box">
+
+                            @Html.EditorFor(model => model.Question1, new { htmlAttributes = new { @class = "form-control input_area", @placeholder = "Tell us your problem", @id = "AddQuestionText" } })
+                        </div>
+                        <input name="add" id="AddQuestionButton" class="btn k6ask_btn center-block ask_aLawyer_button" type="submit" value="ADD A QUESTION" />
+                    </div>
+
+                </div>
+           
+            </div>
+
+            <!--  Menu starts  -->
+            <div class="container-fluid containerFluid_Prob">
+                <div class="container">
+
+                    <nav class="row nav nav-tabs nav-justified justified_border">
+                        <li class="col-md-1 dropUp">
+                            <a href="#">Lawyer</a>
+                            <div class="dropUp_content">
+                                <a href="#">Search By Law Category</a>
+                                <a href="#">Search By Practice Location</a>
+                                <a href="#">Search ADR Practitioner</a>
+                                <a href="#">Open Law Practice Profile</a>
+                                <a href="#">Packages for Lawyers</a>
+                            </div>
+                        </li>
+                        <li class="col-md-1 dropUp">
+                            <a href="#">Law Firms</a>
+                            <div class="dropUp_content">
+                                <a href="#">Search By Law Category</a>
+                                <a href="#">Search By Practice Location</a>
+                                <a href="#">Search ADR Practitioner</a>
+                                <a href="#">Open Law Firm Profile</a>
+                                <a href="#">Packages for Law Firms</a>
+                            </div>
+                        </li>
+                        <li class="col-md-1 dropUp">
+                            <a href="#">News</a>
+                            <div class="dropUp_content">
+                                <a href="#">Recent Law News & Updates</a>
+                                <a href="#">Search By Practice Location</a>
+                                <a href="#">National Law News</a>
+                                <a href="#">Law Reviews</a>
+                                <a href="#">Case Analytics</a>
+                                <a href="#">Articles</a>
+                                <a href="#">Legal Research</a>
+                            </div>
+                        </li>
+                        <li class="col-md-1 dropUp">
+                            <a href="#">Schools</a>
+                            <div class="dropUp_content">
+                                <a href="#"> Law Schools Within Bangladesh</a>
+                                <a href="#"> Foreign Law Schools </a>
+                                <a href="#">Students of Law</a>
+                                <a href="#">Study Guidance</a>
+                            </div>
+                        </li>
+                        <li class="col-md-1 dropUp">
+                            <a href="#">Legal Aid</a>
+                            <div class="dropUp_content">
+                                <a href="#">Free Legal Aids in Bangladesh</a>
+                                <a href="#">Special Legal Aid Organizations</a>
+                                <a href="#">Report a Problem</a>
+                            </div>
+                        </li>
+                        <li class="col-md-1 dropUp">
+                            <a href="#">Legal Rights</a>
+                            <div class="dropUp_content">
+                                <a href="#">Laws Explained</a>
+                                <a href="#">Case Studies</a>
+                                <a href="#">Constitution of Bangladesh</a>
+                                <a href="#">Important Links</a>
+                            </div>
+                        </li>
+                        <li class="col-md-1 dropUp">
+                            <a href="#">Services</a>
+                            <div class="dropUp_content">
+                                <a href="#">Paralegal Works</a>
+                                <a href="#">Legal Documentations</a>
+                                <a href="#">Forms</a>
+                            </div>
+                        </li>
+                    </nav>
+
+                </div>
+            </div>
+            <!--  Menu ends  -->
+
+        </div>
+        <!--   askLawyercontainer  ends  -->
+        <!-- slider_rapper start -->
+        <div class="container-fluid slider_rapper_Container">
+            <div class="slider_rapper">
+
+                <div class="container-fluid ">
+                    <div class="row">
+
+                        <div class="carousel slide multi-item-carousel " id="theCarousel">
+
+                            <!-- Indicators -->
+                            <ol class="carousel-indicators">
+                                <!--Css value changed in main.css-->
+                                <li data-target="#theCarousel" data-slide-to="0" class="active"></li>
+                                <li data-target="#theCarousel" data-slide-to="1"></li>
+                                <li data-target="#theCarousel" data-slide-to="2"></li>
+                                <li data-target="#theCarousel" data-slide-to="3"></li>
+                                <li data-target="#theCarousel" data-slide-to="4"></li>
+                            </ol>
+
+                            <div class="carousel-inner slidePadding">
+
+                                <div class="item eachSliderItem active">
+
+                                    <div class="col-md-3 col-sm-4 colMdPadding" id="carouselHover1">
+                                        <div class="slideBox defaultDiv hoverClass1">
+                                            <img src="~/Content/Images/icon/5.png" />
+                                            <p class="text-center text-capitalize">Banking law</p>
+                                        </div>
+                                        <div class="slideTxt showDiv hiddenDiv hideClass1">
+                                            <img src="~/Content/Images/icon/5.png" />
+                                            <h1 class="text-center text-capitalize">Banking law</h1>
+                                            <p style="font-family:sans-serif;color:white">
+                                                Banking law include many government regulations under which financial institutions do their daily functions.
+                                                Attorneys who practice in this area of the law handle everything from customer disputes and complaints against a bank, to complex litigation between domestic and foreign institutions, their investors, the government and other parties.
+                                                Frequently banking law attorneys are hired to provide advice concerning regulatory compliance. Banks may choose to maintain in-house counsel for this purpose, or to seek assistance from an independent law firm.
+                                            </p>
+                                        </div>
+                                    </div>
+
+                                    <div class="col-md-3 col-sm-4 colMdPadding" id="carouselHover2">
+                                        <div class="slideBox defaultDiv hoverClass2">
+                                            <img src="~/Content/Images/icon/5.png" />
+                                            <p class="text-center text-capitalize">company law</p>
+                                        </div>
+                                        <div class="slideTxt showDiv hiddenDiv hideClass2">
+                                            <img src="~/Content/Images/icon/5.png" />
+                                            <h1 class="text-center text-capitalize">company law</h1>
+                                            <p class="">
+                                                There are many variations of passages of Lorem Ipsum available, but majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly beliv=evable. If you are going to use a passage of lorem ipsum, you need to be sure there isn't anything embarrassing hidden in the middle of text. All the lorem ipsum generators on the internet tend to repeat predefined churks as necessary, making this the irst true generator on the internet. It use a dictionary of over 200 Latin words,combine with a handful of model sentence structures,to generate Lorem ipsum is therefore always free from retition,injeted humour, or non-characteriatic words etc.
+                                            </p>
+                                        </div>
+                                    </div>
+
+                                    <div class="col-md-3 col-sm-4 colMdPadding" id="carouselHover3">
+                                        <div class="slideBox defaultDiv hoverClass3">
+                                            <img src="~/Content/Images/icon/5.png" />
+                                            <p class="text-center text-capitalize">Criminal law</p>
+                                        </div>
+                                        <div class="slideTxt showDiv hiddenDiv hideClass3">
+                                            <img src="~/Content/Images/icon/5.png" />
+                                            <h1 class="text-center text-capitalize">Criminal law</h1>
+                                            <p class="">
+                                                Criminal law or penal law is the body of law that relates to crime. It regulates social conduct and proscribes whatever is threatening, harmful, or otherwise endangering to the property, health, safety, and moral welfare of people. It includes the punishment of people who violate these laws.
+                                            </p>
+                                        </div>
+                                    </div>
+
+                                    <div class="col-md-3 col-sm-4 colMdPadding" id="carouselHover4">
+                                        <div class="slideBox defaultDiv hoverClass4">
+                                            <img src="~/Content/Images/icon/5.png" />
+                                            <p class="text-center text-capitalize">corporate law</p>
+                                        </div>
+                                        <div class="slideTxt showDiv hiddenDiv hideClass4">
+                                            <img src="~/Content/Images/icon/5.png" />
+                                            <h1 class="text-center text-capitalize">corporate law</h1>
+                                            <p class="">
+                                                Corporate Law which broadly includes Corporations law & Company Law works with formation and operations of corporations and related to Commercial and Contract Law.
+                                                A corporation is considered as a legal entity created under the laws of the state. State laws regulate the creation, organization and dissolution of corporations. A corporation creates a legal or “artificial person” or entity that has standing to sue and be sued, enter into contracts, and perform other duties necessary to maintain a business, separate from its stockholders.
+                                            </p>
+                                        </div>
+                                    </div>
+
+                                </div>
+
+
+                                <div class="item eachSliderItem">
+
+                                    <div class="col-md-3 col-sm-4 colMdPadding" id="carouselHover5">
+                                        <div class="slideBox defaultDiv hoverClass5">
+                                            <img src="~/Content/Images/icon/5.png" />
+                                            <p class="text-center text-capitalize">copyright law</p>
+                                        </div>
+                                        <div class="slideTxt showDiv hiddenDiv hideClass5">
+                                            <img src="~/Content/Images/icon/5.png" />
+                                            <h1 class="text-center text-capitalize">copyright law</h1>
+                                            <p class="">
+                                                Copyright is a form of protection grounded in the Constitution and granted by law for original works of authorship fixed in a tangible medium of expression. Copyright covers both published and unpublished works. Copyright, a form of intellectual property law, protects original works of authorship including literary, dramatic, musical, and artistic works, such as poetry, novels, movies, songs, computer software, and architecture. Copyright does not protect facts, ideas, systems, or methods of operation, although it may protect the way these things are expressed
+                                            </p>
+                                        </div>
+                                    </div>
+
+                                    <div class="col-md-3 col-sm-4 colMdPadding" id="carouselHover6">
+                                        <div class="slideBox defaultDiv hoverClass6">
+                                            <img src="~/Content/Images/icon/5.png" />
+                                            <p class="text-center text-capitalize">consumer law</p>
+                                        </div>
+                                        <div class="slideTxt showDiv hiddenDiv hideClass6">
+                                            <img src="~/Content/Images/icon/5.png" />
+                                            <h1 class="text-center text-capitalize">consumer law</h1>
+                                            <p class="">
+                                                Consumer Law is the national law for fair trading and consumer protection. Consumer protection is a group of laws and organizations designed to ensure the rights of consumers as well as fair trade, competition and accurate information in the marketplace. The laws are designed to prevent businesses that engage in fraud or specified unfair practices from gaining an advantage over competitors.
+                                            </p>
+                                        </div>
+                                    </div>
+
+                                    <div class="col-md-3 col-sm-4 colMdPadding" id="carouselHover7">
+                                        <div class="slideBox defaultDiv hoverClass7">
+                                            <img src="~/Content/Images/icon/5.png" />
+                                            <p class="text-center text-capitalize">divorce law</p>
+                                        </div>
+                                        <div class="slideTxt showDiv hiddenDiv hideClass7">
+                                            <img src="~/Content/Images/icon/5.png" />
+                                            <h1 class="text-center text-capitalize">divorce law</h1>
+                                            <p class="">
+                                                We've all dreamed of finding lifelong love, but not every romance was made to last. Getting a divorce can have serious, long-term effects, both emotionally and legally. There are also strict legal requirements that cover everything from choosing a method of legal separation, to selecting where and how to file, to deciding how the other related matters to be handled. The divorce process can be confusing, especially without legal assistance.
+                                            </p>
+                                        </div>
+                                    </div>
+
+                                    <div class="col-md-3 col-sm-4 colMdPadding" id="carouselHover8">
+                                        <div class="slideBox defaultDiv hoverClass8">
+                                            <img src="~/Content/Images/icon/5.png" />
+                                            <p class="text-center text-capitalize">environmental law</p>
+                                        </div>
+                                        <div class="slideTxt showDiv hiddenDiv hideClass8">
+                                            <img src="~/Content/Images/icon/5.png" />
+                                            <h1 class="text-center text-capitalize">environmental law</h1>
+                                            <p class="">
+                                                Banking law include many government regulations under which financial institutions do their daily functions.
+                                                Attorneys who practice in this area of the law handle everything from customer disputes and complaints against a bank, to complex litigation between domestic and foreign institutions, their investors, the government and other parties.
+                                                Frequently banking law attorneys are hired to provide advice concerning regulatory compliance. Banks may choose to maintain in-house counsel for this purpose, or to seek assistance from an independent law firm.
+                                            </p>
+                                        </div>
+                                    </div>
+
+                                </div>
+
+                                <div class="item eachSliderItem">
+
+                                    <div class="col-md-3 col-sm-4 colMdPadding" id="carouselHover9">
+                                        <div class="slideBox defaultDiv hoverClass9">
+                                            <img src="~/Content/Images/icon/5.png" />
+                                            <p class="text-center text-capitalize">family law</p>
+                                        </div>
+                                        <div class="slideTxt showDiv hiddenDiv hideClass9">
+                                            <img src="~/Content/Images/icon/5.png" />
+                                            <h1 class="text-center text-capitalize">family law</h1>
+                                            <p class="">
+                                                Banking law include many government regulations under which financial institutions do their daily functions.
+                                                Attorneys who practice in this area of the law handle everything from customer disputes and complaints against a bank, to complex litigation between domestic and foreign institutions, their investors, the government and other parties.
+                                                Frequently banking law attorneys are hired to provide advice concerning regulatory compliance. Banks may choose to maintain in-house counsel for this purpose, or to seek assistance from an independent law firm.
+                                            </p>
+                                        </div>
+                                    </div>
+
+                                    <div class="col-md-3 col-sm-4 colMdPadding" id="carouselHover10">
+                                        <div class="slideBox defaultDiv hoverClass10">
+                                            <img src="~/Content/Images/icon/5.png" />
+                                            <p class="text-center text-capitalize">health and safety law</p>
+                                        </div>
+                                        <div class="slideTxt showDiv hiddenDiv hideClass10">
+                                            <img src="~/Content/Images/icon/5.png" />
+                                            <h1 class="text-center text-capitalize">health and safety law</h1>
+                                            <p class="">
+                                                Banking law include many government regulations under which financial institutions do their daily functions.
+                                                Attorneys who practice in this area of the law handle everything from customer disputes and complaints against a bank, to complex litigation between domestic and foreign institutions, their investors, the government and other parties.
+                                                Frequently banking law attorneys are hired to provide advice concerning regulatory compliance. Banks may choose to maintain in-house counsel for this purpose, or to seek assistance from an independent law firm.
+                                            </p>
+                                        </div>
+                                    </div>
+
+                                    <div class="col-md-3 col-sm-4 colMdPadding" id="carouselHover11">
+                                        <div class="slideBox defaultDiv hoverClass11">
+                                            <img src="~/Content/Images/icon/5.png" />
+                                            <p class="text-center text-capitalize">islamic law</p>
+                                        </div>
+                                        <div class="slideTxt showDiv hiddenDiv hideClass11">
+                                            <img src="~/Content/Images/icon/5.png" />
+                                            <h1 class="text-center text-capitalize">islamic law</h1>
+                                            <p class="">
+                                                Banking law include many government regulations under which financial institutions do their daily functions.
+                                                Attorneys who practice in this area of the law handle everything from customer disputes and complaints against a bank, to complex litigation between domestic and foreign institutions, their investors, the government and other parties.
+                                                Frequently banking law attorneys are hired to provide advice concerning regulatory compliance. Banks may choose to maintain in-house counsel for this purpose, or to seek assistance from an independent law firm.
+                                            </p>
+                                        </div>
+                                    </div>
+
+                                    <div class="col-md-3 col-sm-4 colMdPadding" id="carouselHover12">
+                                        <div class="slideBox defaultDiv hoverClass12">
+                                            <img src="~/Content/Images/icon/5.png" />
+                                            <p class="text-center text-capitalize">immigration law</p>
+                                        </div>
+                                        <div class="slideTxt showDiv hiddenDiv hideClass12">
+                                            <img src="~/Content/Images/icon/5.png" />
+                                            <h1 class="text-center text-capitalize">immigration law</h1>
+                                            <p class="">
+                                                Banking law include many government regulations under which financial institutions do their daily functions.
+                                                Attorneys who practice in this area of the law handle everything from customer disputes and complaints against a bank, to complex litigation between domestic and foreign institutions, their investors, the government and other parties.
+                                                Frequently banking law attorneys are hired to provide advice concerning regulatory compliance. Banks may choose to maintain in-house counsel for this purpose, or to seek assistance from an independent law firm.
+                                            </p>
+                                        </div>
+                                    </div>
+
+                                </div>
+
+                                <div class="item eachSliderItem">
+
+                                    <div class="col-md-3 col-sm-4 colMdPadding" id="carouselHover13">
+                                        <div class="slideBox defaultDiv hoverClass13">
+                                            <img src="~/Content/Images/icon/5.png" />
+                                            <p class="text-center text-capitalize">labor law</p>
+                                        </div>
+                                        <div class="slideTxt showDiv hiddenDiv hideClass13">
+                                            <img src="~/Content/Images/icon/5.png" />
+                                            <h1 class="text-center text-capitalize">labor law</h1>
+                                            <p class="">
+                                                Banking law include many government regulations under which financial institutions do their daily functions.
+                                                Attorneys who practice in this area of the law handle everything from customer disputes and complaints against a bank, to complex litigation between domestic and foreign institutions, their investors, the government and other parties.
+                                                Frequently banking law attorneys are hired to provide advice concerning regulatory compliance. Banks may choose to maintain in-house counsel for this purpose, or to seek assistance from an independent law firm.
+                                            </p>
+                                        </div>
+                                    </div>
+
+                                    <div class="col-md-3 col-sm-4 colMdPadding" id="carouselHover14">
+                                        <div class="slideBox defaultDiv hoverClass14">
+                                            <img src="~/Content/Images/icon/5.png" />
+                                            <p class="text-center text-capitalize">land law</p>
+                                        </div>
+                                        <div class="slideTxt showDiv hiddenDiv hideClass14">
+                                            <img src="~/Content/Images/icon/5.png" />
+                                            <h1 class="text-center text-capitalize">land law</h1>
+                                            <p class="">
+                                                Banking law include many government regulations under which financial institutions do their daily functions.
+                                                Attorneys who practice in this area of the law handle everything from customer disputes and complaints against a bank, to complex litigation between domestic and foreign institutions, their investors, the government and other parties.
+                                                Frequently banking law attorneys are hired to provide advice concerning regulatory compliance. Banks may choose to maintain in-house counsel for this purpose, or to seek assistance from an independent law firm.
+                                            </p>
+                                        </div>
+                                    </div>
+
+                                    <div class="col-md-3 col-sm-4 colMdPadding" id="carouselHover15">
+                                        <div class="slideBox defaultDiv hoverClass15">
+                                            <img src="~/Content/Images/icon/5.png" />
+                                            <p class="text-center text-capitalize">property law</p>
+                                        </div>
+                                        <div class="slideTxt showDiv hiddenDiv hideClass15">
+                                            <img src="~/Content/Images/icon/5.png" />
+                                            <h1 class="text-center text-capitalize">property law</h1>
+                                            <p class="">
+                                                Banking law include many government regulations under which financial institutions do their daily functions.
+                                                Attorneys who practice in this area of the law handle everything from customer disputes and complaints against a bank, to complex litigation between domestic and foreign institutions, their investors, the government and other parties.
+                                                Frequently banking law attorneys are hired to provide advice concerning regulatory compliance. Banks may choose to maintain in-house counsel for this purpose, or to seek assistance from an independent law firm.
+                                            </p>
+                                        </div>
+                                    </div>
+
+                                    <div class="col-md-3 col-sm-4 colMdPadding" id="carouselHover16">
+                                        <div class="slideBox defaultDiv hoverClass16">
+                                            <img src="~/Content/Images/icon/5.png" />
+                                            <p class="text-center text-capitalize">tax law</p>
+                                        </div>
+                                        <div class="slideTxt showDiv hiddenDiv hideClass16">
+                                            <img src="~/Content/Images/icon/5.png" />
+                                            <h1 class="text-center text-capitalize">tax law</h1>
+                                            <p class="">
+                                                Banking law include many government regulations under which financial institutions do their daily functions.
+                                                Attorneys who practice in this area of the law handle everything from customer disputes and complaints against a bank, to complex litigation between domestic and foreign institutions, their investors, the government and other parties.
+                                                Frequently banking law attorneys are hired to provide advice concerning regulatory compliance. Banks may choose to maintain in-house counsel for this purpose, or to seek assistance from an independent law firm.
+                                            </p>
+                                        </div>
+                                    </div>
+
+                                </div>
+
+                                <div class="item eachSliderItem">
+
+                                    <div class="col-md-3 col-sm-4 colMdPadding" id="carouselHover17">
+                                        <div class="slideBox defaultDiv hoverClass17">
+                                            <img src="~/Content/Images/icon/5.png" />
+                                            <p class="text-center text-capitalize">trademark law</p>
+                                        </div>
+                                        <div class="slideTxt showDiv hiddenDiv hideClass17">
+                                            <img src="~/Content/Images/icon/5.png" />
+                                            <h1 class="text-center text-capitalize">trademark law</h1>
+                                            <p class="">
+                                                Banking law include many government regulations under which financial institutions do their daily functions.
+                                                Attorneys who practice in this area of the law handle everything from customer disputes and complaints against a bank, to complex litigation between domestic and foreign institutions, their investors, the government and other parties.
+                                                Frequently banking law attorneys are hired to provide advice concerning regulatory compliance. Banks may choose to maintain in-house counsel for this purpose, or to seek assistance from an independent law firm.
+                                            </p>
+                                        </div>
+                                    </div>
+
+                                    <div class="col-md-3 col-sm-4 colMdPadding" id="carouselHover18">
+                                        <div class="slideBox defaultDiv hoverClass18">
+                                            <img src="~/Content/Images/icon/5.png" />
+                                            <p class="text-center text-capitalize">trusts and estates law</p>
+                                        </div>
+                                        <div class="slideTxt showDiv hiddenDiv hideClass18">
+                                            <img src="~/Content/Images/icon/5.png" />
+                                            <h1 class="text-center text-capitalize">trusts and estates law</h1>
+                                            <p class="">
+                                                Banking law include many government regulations under which financial institutions do their daily functions.
+                                                Attorneys who practice in this area of the law handle everything from customer disputes and complaints against a bank, to complex litigation between domestic and foreign institutions, their investors, the government and other parties.
+                                                Frequently banking law attorneys are hired to provide advice concerning regulatory compliance. Banks may choose to maintain in-house counsel for this purpose, or to seek assistance from an independent law firm.
+                                            </p>
+                                        </div>
+                                    </div>
+
+
+
+                                    <div class="col-md-3 col-sm-4 colMdPadding" id="carouselHover19">
+                                        <div class="slideBox defaultDiv hoverClass19">
+                                            <img src="~/Content/Images/icon/5.png" />
+                                            <p class="text-center text-capitalize">Banking law</p>
+                                        </div>
+                                        <div class="slideTxt showDiv hiddenDiv hideClass19">
+                                            <img src="~/Content/Images/icon/5.png" />
+                                            <h1 class="text-center text-capitalize">Banking law</h1>
+                                            <p class="">
+                                                Banking law include many government regulations under which financial institutions do their daily functions.
+                                                Attorneys who practice in this area of the law handle everything from customer disputes and complaints against a bank, to complex litigation between domestic and foreign institutions, their investors, the government and other parties.
+                                                Frequently banking law attorneys are hired to provide advice concerning regulatory compliance. Banks may choose to maintain in-house counsel for this purpose, or to seek assistance from an independent law firm.
+                                            </p>
+                                        </div>
+                                    </div>
+
+                                </div>
+
+
+                            </div>
+
+                        </div>
+
+                    </div>
+                </div>
+
+            </div>
+        </div>
+        <!-- slider_rapper end -->
+        <!--  MakeAppointment_wrapper starts  -->
+        <div class="container-fluid MakeAppointment_Container">
+            <div class="row MakeAppointment_wrapper">
+                <div class="col-md-2" style="padding-left:0;">
+                    <div class="container-fluid containerFluid_find_lawyer_by">
+                        <button type="button" class="text-capitalize btn  find_lawyer_by" data-toggle="modal" data-target="#findLawyerByModal">find lawyer by</button>
+                    </div>
+
+                    <div class="container-fluid containerFluid_find_lawyer_by">
+                        <button type="button" class="btn category_box" data-toggle="modal" data-target="#catagoryModal">CATEGORY</button>
+                    </div>
+                </div>
+
+                <div class="col-md-8 manyProblem_colMd">
+                    <div class=" container-fluid MakeAppointmentContent">
+                        <div class="MakeAppointmentContent_Subcontainer">
+                            <p>Make Appointment & Get a Lawyer for Legal Advice.</p>
+                            <p>Find Your Needed One From Hundreds of Brilliant Lawyers.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-2">
+                    <div class="container-fluid find_lawyer">
+                        <input type="button" class="btn btn-info" value="Find Lawyer" onclick="location.href='@Url.Action(" FindLawyer", "Home" )'" />
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!--  MakeAppointment_wrapper ends  -->
+        <!--  Lawyer_profile_wrapper starts  -->
+        <div class="container-fluid Lawyer_profile_Container">
+            <div class="row Lawyer_profile_Wrapper">
+                <div class="col-md-4 col-sm-6 col-lg-4">
+                    <div class="Lawyer_profile">
+                        <p style="color: #028bbf; font-size:40px; margin-top:10px;">Lawyer</p>
+                        <h1 style="color: #028bbf; font-size:80px; margin-top:10px; margin-left: 30px;">Profile</h1>
+                        <p class="text-center" style="margin-bottom: 3px;"><a href="#" style="">amarchailawyer.com</a></p>
+                        <p class="text-justify" style="font-size:16px; padding:3px;  line-height: 25px">
+                            Presents great opportunity to alive a complete personalized page on the web. Now you can showcase your career, your achievements, winning cases, affiliations &amp; many other things that makes you stand apart from the crowd!
+                        </p>
+                    </div>
+                </div>
+
+                <div class="col-md-8 col-sm-6 col-lg-8 profileImg_padding">
+                    <div class="profileImg">
+                        <div class="container-fluid signUpButton_position">
+                            <input type="button" class="btn btn-info" style="float:right" value="Sign Up Here" onclick="location.href='@Url.Action("Create", "Lawyer" )'" />
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!--  Lawyer_profile_wrapper ends  -->
+        <!--   lawFirm_wrapper starts  -->
+        <!--   lawFirm_wrapper ends  -->
+        <!-- locality_wrapper starts  -->
+        <div class="container-fluid locality_Container">
+            <div class="row locality_Wrapper">
+                <div class="col-md-6 button_group">
+                    <div class="col-md-6">
+
+                        <button type="button" class="btn btn-danger custom_btn">
+                            <a href="@Url.Action("SearchingLawyer", new { txtSearch="Barisal" , controller="Lawyer" })">
+                                <span style="color:white">BARISAL</span>
+                            </a>
+                        </button>
+                        <button type="button" class="btn btn-danger custom_btn">
+                            <a href="@Url.Action("SearchingLawyer", new { txtSearch="Dhaka" , controller="Lawyer" })">
+                                <span style="color:white">DHAKA</span>
+                            </a>
+                        </button>
+                        <button type="button" class="btn btn-danger custom_btn">
+                            <a href="@Url.Action("SearchingLawyer", new { txtSearch="Chittagong" , controller="Lawyer" })">
+                                <span style="color:white">CHITTAGONG</span>
+                            </a>
+                        </button>
+                        <button type="button" class="btn btn-danger custom_btn">
+                            <a href="@Url.Action("SearchingLawyer", new { txtSearch="Khulna" , controller="Lawyer" })">
+                                <span style="color:white">KHULNA</span>
+                            </a>
+                        </button>
+
+                    </div>
+
+                    <div class="col-md-6">
+                        <button type="button" class="btn btn-danger custom_btn">
+                            <a href="@Url.Action("SearchingLawyer", new { txtSearch="Mymensing" , controller="Lawyer" })">
+                                <span style="color:white">MYMENSING</span>
+                            </a>
+                        </button>
+                        <button type="button" class="btn btn-danger custom_btn">
+                            <a href="@Url.Action("SearchingLawyer", new { txtSearch="Rajshahi" , controller="Lawyer" })">
+                                <span style="color:white">RAJSHAHI</span>
+                            </a>
+                        </button>
+                        <button type="button" class="btn btn-danger custom_btn">
+                            <a href="@Url.Action("SearchingLawyer", new { txtSearch="Rangpur" , controller="Lawyer" })">
+                                <span style="color:white">RANGPUR</span>
+                            </a>
+                        </button>
+                        <button type="button" class="btn btn-danger custom_btn">
+                            <a href="@Url.Action("SearchingLawyer", new { txtSearch="Sylhet" , controller="Lawyer" })">
+                                <span style="color:white">SYLHET</span>
+                            </a>
+                        </button>
+
+                    </div>
+                </div>
+
+                <div class="col-md-6 map_area_ColMd">
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="map_area">
+                                <img src="~/Content/Images/icon/6.png">
+                            </div>
+                        </div>
+
+                        <div class="col-md-6 localityTxt">
+                            <h2>FIND LAWYER IN</h2>
+                            <h1>LOCALITY</h1>
+
+                            <img src="~/Content/Images/icon/compus.png">
+
+                            <div class="container-fluid buttonPosition">
+                                <button type="button" class="text-uppercase btn  map_area_findLayer_button" data-toggle="modal" data-target="#findLawyerLocalityModal">find lawyer</button>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+        <!-- locality_wwrapper ends  -->
+        <!-- needAny_wrapper  starts -->
+        <!-- needAny_wrapper  ends -->
+        <!-- knowYourLegalGroup  starts -->
+        <div class="container-fluid knowYourLegalGroup">
+            <div class="row knowYourLegalGroup_wrapper">
+                <div class="container knowYourContainer">
+                    <div class="container-fluid knowYourTxt">
+                        <p class="text-center">KNOW YOUR LEGAL RIGHT!</p>
+                    </div>
+
+                    <div class="triangleEffect"></div>
+                </div>
+
+
+
+                <div class="container otherText">
+                    <p class="text-center">Get Up To Date Information on</p>
+                    <p class="text-center">CIVIL RIGHTS, NEW LAWS & NSIGHTS</p>
+                    <P class="text-center">of Their Proper Usage.</P>
+                </div>
+
+                <div class="container-fluid haveALook_ButtonPosition">
+                    <button type="button" class="text-uppercase btn haveALook_Button" data-toggle="modal" data-target="#letsHaveaLookModal">let's have a look</button>
+                </div>
+
+            </div>
+        </div>
+        <!-- knowYourLegalGroup  ends -->
+        <!-- needAny_wrapper  starts -->
+        <!-- needAny_wrapper  ends -->
+        <!-- needAny_wrapper  starts -->
+        <!--     footer_container  start  -->
+        <div class="container-fluid footer_container">
+            <div class="col-md-1 colMdSeparetor">
+
+            </div>
+            <div class="col-md-5 colMdSeparetor">
+                <div class="aboutUs_container">
+                    <h4 class="text-uppercase">About us</h4><hr>
+                    <strong>Amar Chai Lawyer</strong>
+                    <p>ariations of passages of Lorem Ipsum available.But the majority have suffered alteration in some from, by unjected humor, or randomised words whice don"t look even slightly believable.</p>
+                </div>
+            </div>
+            <div class="col-md-1 colMdSeparetor">
+
+            </div>
+            <div class="col-md-5 colMdSeparetor">
+                <div class="aboutUs_container">
+                    <h4 class="text-uppercase">About us</h4><hr>
+                    <strong>Sajidul Islam</strong>
+                    <p>University Of Dhaka</p>
+                </div>
+            </div>
+        </div>
+
+
+        <div id="footer">
+            © sajidsrt
+        </div>
+
+        <!--     footer_container  ends  -->
+
+    </div>
+
+
+
+
+
+
+
+    <!-- Modal section begins-->
+    <!-- Ask A Lawyer Modal starts-->
+    <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+        <div class="modal-dialog customDialog" role="document">
+            <div class="moddalWrapper">
+                <div class="contentArea">
+                    <h2 class="text-capitalize text-center">tell us your problem</h2>
+                    <div class="seperator">
+                    </div>
+
+                    <div class="modaltxt">
+                        <p class="text-center">Do you have any pproblem?</p>
+                        <p class="text-capitalize text-center">need legal counsel? or lega advice to accomplish a task?</p>
+                    </div>
+
+                    <div class="text-capitalize text-center tellUs">tell us, we are here to guide you & it's free!</div>
+
+                    <div class="modalInput">
+                        <textarea type="text" class="form-control modalInput_area" rows="9" placeholder="Tell us your problem"></textarea>
+                    </div>
+
+                    <div class="container-fluid">
+                        <div class="row">
+                            <div class="col-md-2">
+                            </div>
+                            <div class="col-md-8">
+                                <form class="addFileBox" action="#" method="post" enctype="multipart/form-data">
+                                    <span id='addFileButton'>Select File</span>
+                                    <input type="file" name="pic" accept="audio/*,video/*,image/*">
+                                    <span id='val' class="text-center"></span>
+                                    <!--<button type="submit" class="inpButton">Submit</button>-->
+                                </form>
+                            </div>
+                            <div class="col-md-2">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="container-fluid modalButtons">
+                    <button class="btn buttonCancel" data-dismiss="modal" aria-hidden="true">Cancel</button>
+                    <button id="next" class="btn buttonNext">Next</button>
+                </div>
+
+            </div>
+        </div>
+    </div><!-- /myModal -->
+
+
+    <div class="modal fade" id="modalLogin" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+        <div class="modal-dialog customDialog" role="document">
+            <div class="logInModdalWrapper">
+                <div class="row inputArea">
+                    <div class="col-md-3">
+                    </div>
+
+                    <div class="col-md-6">
+                        <div class="usernamePasswordContainer">
+                            <form class="form-group">
+                                <div class="input-group userNaname_container">
+                                    <span class="input-group-addon" style="border-radius: 0;">
+                                        <i class="fa fa-user icon_color" aria-hidden="true"></i>
+                                    </span>
+                                    <input type='text' class="form-control" placeholder="Username" style="border-radius: 0;" />
+                                </div>
+
+                                <div class="input-group password_container">
+                                    <span class="input-group-addon" style="border-radius: 0;">
+                                        <i class="fa fa-lock icon_color" aria-hidden="true"></i>
+                                    </span>
+                                    <input type='text' class="form-control" placeholder="Password" style="border-radius: 0;" />
+                                </div>
+
+                                <div class="row">
+                                    <div class="col-md-6">
+                                        <div class="checkbox">
+                                            <label>
+                                                <input type="checkbox"> Check me out
+                                            </label>
+                                        </div>
+                                    </div>
+
+                                    <div class="col-md-6">
+                                        <div id="forgotPassword">
+                                            <a href="#">Forgot password?</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </form>
+
+                            <button type="button" class="btn LogInBtn">
+                                Login
+                            </button>
+
+                            <div class="container-fluid notAmemberYet">
+                                <p>Not a Member Yet?</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-md-3">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div><!--  /LogIn panel-->
+
+
+    <div class="modal fade" id="modalDisclaimerPolicy" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+        <div class="modal-dialog customDialog" role="document">
+            <div class="DisclaimerPolicyWrapper">
+                <div class="DisclaimerPolicycontentArea">
+                    <div class="row">
+                        <div class="col-md-7">
+                        </div>
+                        <div class="col-md-5">
+                            <div class="row user">
+                                <div class="col-md-8">
+                                    <div class="text-center userName"><p>Username</p></div>
+                                </div>
+                                <div class="col-md-4">
+                                    <div class="userImg"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="disclaimer">
+                        <h1 class="text-left">Disclaimer</h1>
+                        <div class="seperator"></div>
+
+                        <div class="disclaimer_Text">
+                            <p class="text-justify">
+                                Your privacy is very important to us. Youe identity & other information wiil
+                                be protected under the legal guidance of Bangladesh Supreme Court.
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="policy">
+                        <h1 class="text-left">Policy</h1>
+                        <div class="seperator"></div>
+
+                        <div class="policy_Text">
+                            <p class="text-justify">
+                                In case of a proper problem write up to us through our website, we would provide a primsry
+                                resonse withn 2 hours! Based on your problem nature we would provide fartheer guideline & counsel.
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="checkbox text-center">
+                        <label>
+                            <input type="checkbox"> By clicking NEXT, acceping the terms and condition of <strong>AMAr CHAI LAYER</strong>
+                        </label>
+                    </div>
+                </div>
+
+                <div class="container-fluid modalButtons">
+                    <button class="btn buttonCancel" data-dismiss="modal" aria-hidden="true">Cancel</button>
+                    <button id="next2" class="btn buttonNext">Next</button>
+                </div>
+
+            </div>
+        </div>
+    </div><!--/DisclaimerPlicy Modal-->
+
+
+
+    <div class="modal fade" id="modalConfirmation" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+        <div class="modal-dialog customDialog" role="document">
+            <div class="confirmationModdalWrapper">
+                <div class="thankYouContent">
+                    <div class="circle"></div>
+
+                    <div class="thankYouTxt">
+                        <h2 class="text-center">Thank you very much for submitting your problem to us.<br>We are working on it.</h2>
+
+                        <p class="text-justify">In case of proper problem write up to us through our website, we would provide a primary respons within 2 hours! Based on your problem nature we would provide father guideline & counsel.</p>
+                    </div>
+                </div>
+
+                <div class="container-fluid modalButtons">
+                    <button id="next4" class="btn center-block buttonOk" data-dismiss="modal" aria-hidden="true">OK</button>
+                </div>
+
+            </div>
+        </div>
+    </div><!--   /modalConfirmation  -->
+
+
+
+
+
+    <div class="modal fade" id="secondModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+        <div class="modal-dialog customDialog" role="document">
+            <div class="secondModalWrapper">
+                <div class="formArea">
+                    <h2 class="text-capitalize text-center">provide necessary information</h2>
+                    <div class="seperator">
+                    </div>
+
+                    <div class="container-fluid giveInfo">
+                        <div class="row formPadding">
+                            <input type="text" class="form-control formName " id="name" placeholder="Name*">
+                        </div>
+
+                        <div class="row formPadding">
+                            <div class="col-md-6 modalRightPadding">
+                                <input type="text" class="form-control formName" id="mobile" placeholder="mobile*">
+                            </div>
+
+                            <div class="col-md-6 modalLeftPadding ">
+                                <div class="form-group heightProblem">
+                                    <div class='input-group date' id='datetimepicker1'>
+                                        <input type='text' class="form-control" placeholder="Date of Birth*" style="border-radius: 0;" />
+                                        <span class="input-group-addon" style="border-radius: 0;">
+                                            <i class="fa fa-calendar"></i>
+                                        </span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="row formPadding">
+                            <div class="col-md-6 modalRightPadding">
+                                <input type="text" class="form-control formName" id="Gender" placeholder="Gender*">
+                            </div>
+
+                            <div class="col-md-6 modalLeftPadding">
+                                <input type="text" class="form-control formName" id="Email" placeholder="Email">
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <div class="col-md-12 txtPadding">
+                                <textarea type="text" class="form-control formName" rows="3" placeholder="Tell us your problem"></textarea>
+                            </div>
+                        </div>
+
+                        <div class="confarmation">
+                            Use this information or sign up?? &nbsp;&nbsp;
+
+                            <label class="radio-inline">
+                                <input type="radio" name="inlineRadioOptions" id="inlineRadio1" value="option2">YES
+                            </label>
+
+                            <label class="radio-inline">
+                                <input type="radio" name="inlineRadioOptions" id="inlineRadio2" value="option2"> NO
+                            </label>
+                        </div>
+                    </div>
+
+                    <div class="container-fluid user_info">
+                        <div class="row formPadding">
+                            <input type="text" class="form-control formName " id="Username" placeholder="Username*">
+                        </div>
+
+                        <div class="row formPadding">
+                            <div class="col-md-6 modalRightPadding">
+                                <input type="text" class="form-control formName" id="Password" placeholder="Password*">
+                            </div>
+
+                            <div class="col-md-6 modalLeftPadding">
+                                <input type="text" class="form-control formName" id="ConfirmPassword" placeholder="Confirm Password*">
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+
+                <div class="container-fluid modalButtons">
+                    <button class="btn buttonCancel" data-dismiss="modal" aria-hidden="true">Back</button>
+                    <button id="next2" class="btn buttonNext">Next</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+    <!-- 3rd Modal -->
+    <!--<div class="modal fade" id="thirdModdal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+        <div class="modal-dialog customDialog" role="document">
+            <div class="thirdModdalWrapper">
+                <div class="row contentArea">
+                    <div class="col-md-6 position1">
+                        <div class="whiteBg"></div>
+                        <div class="text-justify frontBG">
+                            <h2 class="text-center" style="font-size:26px; color:white;">Disclaimer</h2>
+                            <div class="seperator" style="width:100px; margin-bottom:7px;"></div>
+                            Your privacy is very important to us. Youe identity & other information wiil be protected under
+         the legal guidance of Bangladesh Supreme Court.
+                        </div>
+                    </div>
+
+                    <div class="col-md-6 position1">
+                        <div class="whiteBgRightSide"></div>
+                        <div class="text-justify frontBGRightSide">
+                            <h2 class="text-center" style="font-size:26px; color:white;">Policy</h2>
+                            <div class="seperator" style="width:100px; margin-bottom:7px;"></div>
+                            In case of a proper problem write up to us through our website, we would provide a primsry resonse
+         withn 2 hours! Based on your problem nature we would provide fartheer guideline & counsel.
+                        </div>
+                    </div>
+                </div>
+
+                <div class="container-fluid modalButtons">
+                    <button class="btn buttonCancel" data-dismiss="modal" aria-hidden="true">Back</button>
+                    <button id="next2" class="btn buttonNext">Next</button>
+                </div>
+
+            </div>
+        </div>
+    </div>-->
+    <!-- Ask A Lawyer Modal starts-->
+    <!-- findLawyerByModal starts  -->
+    <div class="modal fade" id="findLawyerByModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+        <div class="modal-dialog customDialogBox" role="document">
+            <div class="dialogBox">
+                <h2 class="text-center">We Promise to Bring the Best of Lawyer Service to the Clients</h2>
+                <div class="seperator" style="width:500px; margin-bottom:7px; margin-left:auto; margin-right:auto; background-color:black;"></div>
+
+                <p class="text-left" style="font-size:15px">
+                    Our Effort Entails
+                </p>
+
+                <ul>
+                    <li>Commitment, Credibility & Accuracy in Legal Counselling</li>
+                    <li>Timely Trustworthy Service</li>
+                    <li>Sometimes Best Solution Is the Simplest One, We Promise to Provide Simple Solution</li>
+                    <li>Quick Appointment with Your Desired Attorney/Lawyer.</li>
+                    <li>Easy Access to Various Legal Proceedings</li>
+                    <li>Affordable Quality Service</li>
+                </ul>
+
+                <p>There are many sections & segments of law under which a citizen is protected by the constitution. Here is the chance to find lawyers by their practice area and engage with them to avail a proper law service.</p>
+            </div>
+        </div>
+    </div>
+    <!-- findLawyerByModal ends  -->
+    <!-- catagoryModal starts  -->
+    <div class="modal fade" id="catagoryModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+        <div class="modal-dialog customDialogBox" role="document">
+            <div class="dialogBox">
+                <h2 class="text-center">Catagories</h2>
+                <div class="seperator" style="width:500px; margin-bottom:7px; margin-left:auto; margin-right:auto; margin-bottom:15px; background-color:black;"></div>
+                <div class="row">
+                  
+                    <div class="col-lg-5">
+                        <button type="button" class="btn btn-primary custom_btn">
+                            <a href="@Url.Action("SearchingLawyerByCategory", new { txtSearch="Banking Law" , controller="Lawyer" })">
+                                <span style="color:white">Banking Law</span>
+                            </a>
+                        </button>
+
+                        
+                        <button type="button" class="btn btn-primary custom_btn">
+                            <a href="@Url.Action("SearchingLawyerByCategory", new { txtSearch="Tax Law" , controller="Lawyer" })">
+                                <span style="color:white">Tax Law</span>
+                            </a>
+                        </button>
+                        <button type="button" class="btn btn-primary custom_btn">
+                            <a href="@Url.Action("SearchingLawyerByCategory", new { txtSearch="Trademark Law" , controller="Lawyer" })">
+                                <span style="color:white">Trademark Law</span>
+                            </a>
+                        </button>
+                        <button type="button" class="btn btn-primary custom_btn">
+                            <a href="@Url.Action("SearchingLawyerByCategory", new { txtSearch="Company Law" , controller="Lawyer" })">
+                                <span style="color:white">Company Law</span>
+                            </a>
+                        </button>
+                        <button type="button" class="btn btn-primary custom_btn">
+                            <a href="@Url.Action("SearchingLawyerByCategory", new { txtSearch="Consumer Law" , controller="Lawyer" })">
+                                <span style="color:white">Consumer Law</span>
+                            </a>
+                        </button>
+                        <button type="button" class="btn btn-primary custom_btn">
+                            <a href="@Url.Action("SearchingLawyerByCategory", new { txtSearch="Copyright Law" , controller="Lawyer" })">
+                                <span style="color:white">Copyright Law</span>
+                            </a>
+                        </button>
+                        <button type="button" class="btn btn-primary custom_btn">
+                            <a href="@Url.Action("SearchingLawyerByCategory", new { txtSearch="Islamic Law" , controller="Lawyer" })">
+                                <span style="color:white">Islamic Law</span>
+                            </a>
+                        </button>
+                        <button type="button" class="btn btn-primary custom_btn">
+                            <a href="@Url.Action("SearchingLawyerByCategory", new { txtSearch="Labor Law" , controller="Lawyer" })">
+                                <span style="color:white">Labor Law</span>
+                            </a>
+                        </button>
+                        <button type="button" class="btn btn-primary custom_btn">
+                            <a href="@Url.Action("SearchingLawyerByCategory", new { txtSearch="Land Law" , controller="Lawyer" })">
+                                <span style="color:white">Land Law</span>
+                            </a>
+                        </button>
+                    </div>
+                    <div class="col-lg-2">
+                        </div>
+
+                        <div class="col-lg-5">
+                            <button type="button" class="btn btn-primary custom_btn">
+                                <a href="@Url.Action("SearchingLawyerByCategory", new { txtSearch="Divorce Law" , controller="Lawyer" })">
+                                    <span style="color:white">Divorce Law</span>
+                                </a>
+                            </button>
+                            <button type="button" class="btn btn-primary custom_btn">
+                                <a href="@Url.Action("SearchingLawyerByCategory", new { txtSearch="Property Law" , controller="Lawyer" })">
+                                    <span style="color:white">Property Law</span>
+                                </a>
+                            </button>
+                            <button type="button" class="btn btn-primary custom_btn">
+                                <a href="@Url.Action("SearchingLawyerByCategory", new { txtSearch="Corporate Law" , controller="Lawyer" })">
+                                    <span style="color:white">Corporate Law</span>
+                                </a>
+                            </button>
+                            <button type="button" class="btn btn-primary custom_btn">
+                                <a href="@Url.Action("SearchingLawyerByCategory", new { txtSearch="Criminal Law" , controller="Lawyer" })">
+                                    <span style="color:white">Criminal Law</span>
+                                </a>
+                            </button>
+
+                            <button type="button" class="btn btn-primary custom_btn">
+                                <a href="@Url.Action("SearchingLawyerByCategory", new { txtSearch="Trusts & Estates Law" , controller="Lawyer" })">
+                                    <span style="color:white">Trust & Estate Law</span>
+                                </a>
+                            </button>
+                            <button type="button" class="btn btn-primary custom_btn">
+                                <a href="@Url.Action("SearchingLawyerByCategory", new { txtSearch="Environmental Law" , controller="Lawyer" })">
+                                    <span style="color:white">Environmental Law</span>
+                                </a>
+                            </button>
+                            <button type="button" class="btn btn-primary custom_btn">
+                                <a href="@Url.Action("SearchingLawyerByCategory", new { txtSearch="Family Law" , controller="Lawyer" })">
+                                    <span style="color:white">Family Law</span>
+                                </a>
+                            </button>
+                            <button type="button" class="btn btn-primary custom_btn">
+                                <a href="@Url.Action("SearchingLawyerByCategory", new { txtSearch="Health & Safety Law" , controller="Lawyer" })">
+                                    <span style="color:white">Health & Safety Law</span>
+                                </a>
+                            </button>
+
+                            <button type="button" class="btn btn-primary custom_btn">
+                                <a href="@Url.Action("SearchingLawyerByCategory", new { txtSearch="Immigration Law" , controller="Lawyer" })">
+                                    <span style="color:white">Immigration Law</span>
+                                </a>
+                            </button>
+                        </div>
+                  
+                                                          </div>
+            </div>
+        </div>
+
+    </div>
+    <!-- catagoryModal ends  -->
+    <!-- findLawyerModal ends  -->
+    <div class="modal fade" id="findLawyerModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+        <div class="modal-dialog customDialogBox" role="document">
+            <div class="dialogBox">
+                <h2 class="text-center">We are here to Make Your Law Practice More Profound & Facilitate Your Noble Effort to Make a Difference in Your Society</h2>
+                <div class="seperator" style="width:500px; margin-bottom:7px; margin-left:auto; margin-right:auto; background-color:black;"></div>
+
+                <p class="text-center">We Are Coming Soon…Stay Tuned for a Fast, Reliable & Completely Online Lawyer Services!</p>
+            </div>
+        </div>
+    </div>
+    <!-- findLawyerModal ends  -->
+    <!-- LawyerProfileModal ends  -->
+    <div class="modal fade" id="LawyerProfileModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+        <div class="modal-dialog customDialogBox" role="document">
+            <div class="dialogBox">
+                <h2 class="text-center">We are here to Make Your Law Practice More Profound & Facilitate Your Noble Effort to Make a Difference in Your Society</h2>
+                <div class="seperator" style="width:500px; margin-bottom:7px; margin-left:auto; margin-right:auto; background-color:black;"></div>
+
+                <div class="fontSpace">
+                    <p class="text-justify">Our Services to Lawyers </p>
+                    <ul>
+                        <li> Best professional profile to bring your unique identity to clients</li>
+                        <li> Ease & means to communicate with valued clients online</li>
+                        <li>Opportunity to take your practice to national level (covering all district at once!)</li>
+                        <li>Engage with other exceptional legal minds by publishing your research work, case analysis & law reviews.</li>
+                        <li>Write in public interest for better law services in the country</li>
+                        <li>Avail the best law interns by choosing from the hundreds of available law student in Amar Chai Lawyer!</li>
+                        <li>Affordable pricing to host your valuable practice with us.</li>
+                        <li>24/7 support & other facilities available</li>
+                    </ul>
+                </div>
+
+                <p>We offer a wide range of legal practitioners for direct consultancy and advice. Need an appointment of your desired lawyer? You are just one click away. Get it done home.</p>
+
+                <p class="text-center">We Are Coming Soon…Stay Tuned for a Fast, Reliable & Completely Online Lawyer Services!</p>
+            </div>
+        </div>
+    </div>
+    <!-- LawyerProfileModal ends  -->
+    <!-- LawyerFirmModal ends  -->
+    <div class="modal fade" id="LawyerFirmModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+        <div class="modal-dialog customDialogBox" role="document">
+            <div class="dialogBox">
+                <h2 class="text-center">Law Firm Profile</h2>
+                <div class="seperator" style="width:500px; margin-bottom:7px; margin-left:auto; margin-right:auto; background-color:black;"></div>
+
+                <div class="fontSpace">
+                    <p class="text-justify">For the First Time, with Amar Chai Lawyer, there is a Great Opportunity to Avail a Complete Firm Profile Page on the Web! </p>
+                    <p class="text-justify">Now firms can showcase Their Portfolio, All the Achievements of Its Lifetime, Winning Cases, Affiliations, Current Clients & many other things that makes the firm stand apart from the crowd!</p>
+                    <p class="text-justify">Get Connected with Service Seekers Online! Individual Legal Counsel Seekers, Corporations with the Need of Legal Consultancy & Many Other Opportunities from Home & Abroad is Now Open for Enlisted Firms at Amar Chai Lawyer! </p>
+                    <p class="text-justify">Be Part of the Biggest Online Law Services in Bangladesh! </p>
+                </div>
+
+                <p class="text-justify" style="margin-bottom:5px;">How to be a Part of Amar Chai Lawyer?</p>
+                <ol>
+                    <li>Provide the Necessary Information to Open a Firm Account. (You can do it online, for assistance just give our customer care a call)</li>
+                    <li>Incorporate Information for Affiliated Lawyers of the Firms</li>
+                    <li>Confirm Payment</li>
+                </ol>
+
+                <p>We offer a wide range of legal practitioners for direct consultancy and advice. Need an appointment of your desired lawyer? You are just one click away. Get it done home.</p>
+
+                <p class="text-center">We Are Coming Soon…Stay Tuned for a Fast, Reliable & Completely Online Lawyer Services!</p>
+            </div>
+        </div>
+    </div>
+    <!-- LawyerFirmModal ends  -->
+    <!-- findLawyerLocalityModal ends  -->
+    <div class="modal fade" id="findLawyerLocalityModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+        <div class="modal-dialog customDialogBox" role="document">
+            <div class="dialogBox">
+                <h2 class="text-center">Local Lawyers on the Web!</h2>
+                <div class="seperator" style="width:500px; margin-bottom:7px; margin-left:auto; margin-right:auto; background-color:black;"></div>
+
+                <p class="text-left">People from all over Bangladesh has the equal right to avail law services. For the first time, Amar Chai Lawyer presents the opportunity to find lawyers from every locality!</p>
+
+                <p class="text-left">Law practitioners from each district court will be enlisted here in Amar Chai Lawyer!!!</p>
+
+                <p>Three Simple Steps:</p>
+
+                <ol>
+                    <li>Select Your Locality</li>
+                    <li>Find Your Needed Lawyer</li>
+                    <li> Make Appointment</li>
+                </ol>
+
+                <p>We offer a wide range of legal practitioners for direct consultancy and advice. Need an appointment of your desired lawyer? You are just one click away. Get it done home.</p>
+            </div>
+        </div>
+    </div>
+    <!-- findLawyerLocalityModal ends  -->
+    <!-- LawyerProfileModal ends  -->
+    <div class="modal fade" id="LawyerProfileModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+        <div class="modal-dialog customDialogBox" role="document">
+            <div class="dialogBox">
+                <h2 class="text-center">We are here to Make Your Law Practice More Profound & Facilitate Your Noble Effort to Make a Difference in Your Society</h2>
+                <div class="seperator" style="width:500px; margin-bottom:7px; margin-left:auto; margin-right:auto; background-color:black;"></div>
+
+                <p class="text-left">Our Services to Lawyers :</p>
+
+                <ul>
+                    <li>Best professional profile to bring your unique identity to clients</li>
+                    <li>Ease & means to communicate with valued clients online</li>
+                    <li> Opportunity to take your practice to national level (covering all district at once!)</li>
+                    <li> Engage with other exceptional legal minds by publishing your research work, case analysis & law reviews.</li>
+                    <li>Write in public interest for better law services in the country</li>
+                    <li>Avail the best law interns by choosing from the hundreds of available law student in Amar Chai Lawyer!</li>
+                    <li>Affordable pricing to host your valuable practice with us.</li>
+                    <li>24/7 support & other facilities available</li>
+                </ul>
+
+                <p>We offer a wide range of legal practitioners for direct consultancy and advice. Need an appointment of your desired lawyer? You are just one click away. Get it done home.</p>
+            </div>
+        </div>
+    </div>
+    <!-- LawyerProfileModal ends  -->
+    <!-- adrLawyerModal ends  -->
+    <div class="modal fade" id="adrLawyerModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+        <div class="modal-dialog customDialogBox" role="document">
+            <div class="dialogBox">
+                <h2 class="text-center">Need Any Alternative Remedy? Want to Solve Your Legal Issue Mutually? - Find A Relevant Mediator, Negotiator & Arbitrator Here.</h2>
+                <div class="seperator" style="width:500px; margin-bottom:7px; margin-left:auto; margin-right:auto; background-color:black;"></div>
+
+                <p class="text-justify" style="font-size:15px; margin-top:20px; margin-bottom:20px; padding:10px;">Alternative Dispute Resolution (ADR) is a new frontier for law practitioners in Bangladesh. Due to the emergence of ADR practice, lawyers who practices these exceptional legal proceedings are specially facilitated in Amar Chai Lawyer. Enhance your Idea about some ALTERNATIVE LEGAL METHOD to resolve your problems. ALTERNATIVE DISPUTE RESOLUTION (ADR).- This will open a wide range of mode & possibilities to resolve your sufferings through some alternative ways without going to the court!</p>
+
+                <p class="text-justify" style="padding:3px;">We offer a wide range of legal practitioners for direct consultancy and advice. Need an appointment of your desired lawyer? You are just one click away. Get it done home.</p>
+
+                <p class="text-center">We Are Coming Soon…Stay Tuned for a Fast, Reliable & Completely Online Lawyer Services!</p>
+            </div>
+        </div>
+    </div>
+    <!-- adrLawyerModal ends  -->
+    <!-- SpecialPurposeModal ends  -->
+    <div class="modal fade" id="SpecialPurposeModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+        <div class="modal-dialog customDialogBox" role="document">
+            <div class="dialogBox">
+                <h2 class="text-center">Special Purpose</h2>
+                <div class="seperator" style="width:500px; margin-bottom:7px; margin-left:auto; margin-right:auto; background-color:black;"></div>
+
+                <p class="text-left" style="font-size:15px; margin-top:20px; ">
+                    Amar Chai Lawyer is the first complete law service solution providing platform in Bangladesh. Here lawyers are committed to provide fast and appropriate legal counsel to solution seeking people online.
+                </p>
+
+                <p class="text-left">Citizens of Bangladesh now can get </p>
+                <ul style="margin-top:-10px;">
+                    <li> Free primary legal advice, </li>
+                    <li> Proper information regarding does & don’ts in a situation and </li>
+                    <li> Effective legal solution from anywhere in the world!</li>
+                </ul>
+
+                <div class="fontSpace">
+                    <p class="text-justify">Any legal problem, in need to do a legal procedure for property, litigations & business, now citizens have to do only one thing: just let us know!</p>
+                    <p class="text-justify">Best legal support in every law category online!</p>
+                    <p class="text-justify">Absolutely zero hassle to talk to a lawyer!</p>
+                    <p class="text-justify">Gain crucial legal insight and the best lawyer in your own locality!</p>
+                    <p class="text-justify">istressed citizens can now report any social discrepancy to us or our partner organizations directly, these are the people </p>
+                    <p class="text-justify">who dedicated their lives to help out distressed people!</p>
+                    <p class="text-justify">Lawyers can now contribute in society as a citizen & as a lawyer by providing their thoughts in exclusive law blog!</p>
+                </div>
+
+                <p class="text-justify">We offer a wide range of legal practitioners for direct consultancy and advice. Need an appointment of your desired lawyer? You are just one click away. Get it done home.</p>
+                <p class="text-center">We Are Coming Soon…Stay Tuned for a Fast, Reliable & Completely Online Lawyer Services!</p>
+            </div>
+        </div>
+    </div>
+    <!-- SpecialPurposeModal ends  -->
+    <!-- letsHaveaLookModal ends  -->
+    <div class="modal fade" id="letsHaveaLookModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+        <div class="modal-dialog customDialogBox" role="document">
+            <div class="dialogBox">
+                <h2 class="text-center">Know Your Legal Rights</h2>
+                <div class="seperator" style="width:500px; margin-bottom:7px; margin-left:auto; margin-right:auto; background-color:black;"></div>
+
+                <div class="fontSpace">
+                    <ol start="A">
+                        <li>
+                            Absolute Rights:
+                            <ol start="1">
+                                <li>
+
+                                    Equality before law
+
+                                </li>
+                                <li>
+
+                                    Discrimination on grounds of religion etc
+
+                                </li>
+                                <li>
+                                    Equity of opportunity in public employment
+
+                                </li>
+                                <li>
+                                    Prohibition of foreign titles etc
+                                </li>
+                                <li>
+                                    Safe guards as to arrest and detention
+                                </li>
+                                <li>
+                                    Prohibition of forced labour
+                                </li>
+                                <li>
+                                    Protection in respect of trial and punishment
+                                </li>
+                                <li>
+                                    Enforcement of Fundamental Rights
+                                </li>
+
+                            </ol>
+
+                        </li>
+                        <li>
+                            Rights on which reasonable restriction can be imposed:
+                            <ol start="1">
+                                <li>
+
+                                    Freedom of movement
+
+                                </li>
+                                <li>
+
+                                    Freedom of Assembly
+                                </li>
+                                <li>
+                                    Freedom of Association
+
+                                </li>
+                                <li>
+                                    Freedom of thought and conscience and of speech
+                                </li>
+                                <li>
+                                    Freedom of religion
+                                </li>
+                                <li>
+                                    Protection of home and correspondence
+                                </li>
+
+                            </ol>
+
+                        </li>
+                        <li>
+                            Fundamental rights which has been practically left to the legislature:
+                            <ol start="1">
+                                <li>
+
+                                    Right to protection of law
+                                </li>
+                                <li>
+
+                                    Protection of right to life and personal liberty
+                                </li>
+                                <li>
+                                    Right to lawful profession, occupation or business
+
+                                </li>
+                                <li>
+                                    Protection of property right
+                                </li>
+
+                            </ol>
+
+                        </li>
+                    </ol>
+
+                </div>
+
+            </div>
+        </div>
+    </div>
+    <!-- letsHaveaLookModal ends  -->
+    <!-- newsnUpdatesModal ends  -->
+    <div class="modal fade" id="newsnUpdatesModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+        <div class="modal-dialog customDialogBox" role="document">
+            <div class="dialogBox">
+                <h2 class="text-center">Law News & Updates</h2>
+                <div class="seperator" style="width:500px; margin-bottom:7px; margin-left:auto; margin-right:auto; background-color:black;"></div>
+
+                <div class="fontSpace">
+                    <p class="text-justify">One of the major contribution of Amar Chai Lawyer is to bring the exclusive news & updates of law arena to everyone. </p>
+
+                    <p class="text-justify">Connectivity is what makes a diverse & rich profession much more vibrant & progressive. Connectivity is what lawyers & law students thrive to excel at their profession. We understand the need & we are committed to deliver a seamless & reliable news service for law professionals!</p>
+
+                    <p class="text-justify">National & international law news, updates & sensations will be covered to bring law practitioners, students of law and other law enthusiasts up to the speed with current happenings!</p>
+
+                    <p class="text-justify">Over the years, new services of laws will be unveiled through this service to make law practice in Bangladesh more elegant & noteworthy.</p>
+                </div>
+
+                <p class="text-left">NOTICE BOARD: Every law related organizations, journalists or other interested persons are welcome to pop up in our website for latest updates, announcements, Job calls, Advertisements etc.</p>
+
+                <p class="text-center">We Are Coming Soon…Stay Tuned for a Fast, Reliable & Completely Online Lawyer Services!</p>
+            </div>
+        </div>
+    </div>
+    <!-- newsnUpdatesModal ends  -->
+    <!-- reviewnAnalyticsModal ends  -->
+    <div class="modal fade" id="reviewnAnalyticsModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+        <div class="modal-dialog customDialogBox" role="document">
+            <div class="dialogBox">
+                <h2 class="text-center">Law Reviews, Case Analytics & Research</h2>
+                <div class="seperator" style="width:500px; margin-bottom:7px; margin-left:auto; margin-right:auto; background-color:black;"></div>
+
+                <div class="fontSpace">
+                    <p class="text-justify">Law practitioners are proud professionals with rich study background and illustrious career. It is their nature to find enthusiasm to contribute in society by sharing knowledge, share glory of winning a case and guide others to a better professional way.</p>
+
+                    <p class="text-justify">Amar Chai Lawyer has enormous respect to that enthusiasm and has made room for showcasing the noble works of exceptionally professional law practitioners.</p>
+
+                    <p class="text-justify">Here professionals can publish their insightful law reviews, engaging & detailed case analytics and share their research works on various acclaimed topics.</p>
+                </div>
+
+                <p class="text-center">We Are Coming Soon…Stay Tuned for a Fast, Reliable & Completely Online Lawyer Services!</p>
+            </div>
+        </div>
+    </div>
+    <!-- reviewnAnalyticsModal ends  -->
+    <!-- lawStudentModal ends  -->
+    <div class="modal fade" id="lawStudentModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+        <div class="modal-dialog customDialogBox" role="document">
+            <div class="dialogBox">
+                <h2 class="text-center">Are You a Law Student? We Are Here with A Helping Hand!</h2>
+                <div class="seperator" style="width:500px; margin-bottom:7px; margin-left:auto; margin-right:auto; background-color:black;"></div>
+
+                <p class="text-justify">Whether you are at home or abroad, now you can open a profile & construct CV here in Amar Chai Lawyer. You can update your CV & interact with lawyers & law firms. It will be a chance for you to stay connected with law community. Also you can respond to vacancy notices & internship opportunities by law firms by sending over your CV easily. In short, we welcome the future lawyers to start their journey with us.</p>
+
+                <p class="text-justify">Here in Amar Chai Lawyer, any student can create profile. The profile showcases student’s background, current activities & his/her excellence in law arena.</p>
+
+                <ul>
+                    <li>Create your profile and give the world a very good first impression!</li>
+                    <li>Let your profile be enriched with all the hard work you do to excel in law.</li>
+                    <li>Be connected with the largest lawyer network in Bangladesh</li>
+                    <li>Know more about Legal studies in Bangladesh and Overseas.</li>
+                    <li>Share your views and legal thoughts to the exclusive law blog.</li>
+                    <li>Gain crucial legal insight and cultivate internship & research scopes</li>
+                </ul>
+
+                <p class="text-left">We provide you a great opportunity to know more and flourish your ideas about legal studies in Bangladesh and overseas.</p>
+
+                <p class="text-left">Contribute in your society by providing your thoughts in exclusive law blog!</p>
+
+                <p class="text-left">What are you waiting for, get connected!</p>
+
+                <p class="text-center">We Are Coming Soon…Stay Tuned for a Fast, Reliable & Completely Online Lawyer Services!</p>
+            </div>
+        </div>
+    </div>
+    <!-- lawStudentModal ends  -->
+    <!-- lawSchoolModal ends  -->
+    <div class="modal fade" id="lawSchoolModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+        <div class="modal-dialog customDialogBox" role="document">
+            <div class="dialogBox">
+                <h2 class="text-center"> Law Schools</h2>
+                <div class="seperator" style="width:500px; margin-bottom:7px; margin-left:auto; margin-right:auto; background-color:black;"></div>
+
+                <div class="fontSpace">
+                    <p class="text-justify">Law schools are the beacons of law service & excellence. Amar Chai Lawyer is presenting a unique opportunity for law schools to showcase their long, rich & reputed history. Through a unique & complete law service solution such as Amar Chai Lawyer, law schools can contribute & engage with many aspiring young minds who wants to be a lawyer & stay connected with many more alumni of their own.</p>
+
+                    <p class="text-justify">Gain Crucial Coverage to Aspiring Law Students & Citizens of Bangladesh</p>
+
+                    <p class="text-justify">Provide Insights to Law Studies and Make Opportunities for Students to Cultivate Internship & Research Scopes</p>
+                </div>
+
+                <p class="text-left">We provide law schools a great opportunity to showcase more and flourish their domain of service over legal studies in Bangladesh and overseas.</p>
+
+                <p class="text-center">We Are Coming Soon…Stay Tuned for a Fast, Reliable & Completely Online Lawyer Services!</p>
+            </div>
+        </div>
+    </div>
+    <!-- lawSchoolModal ends  -->
+    <!-- ProblemnSolutionsModal ends  -->
+    <div class="modal fade" id="ProblemnSolutionsModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+        <div class="modal-dialog customDialogBox" role="document">
+            <div class="dialogBox">
+                <h2 class="text-center">Social Problem & Solutions</h2>
+                <div class="seperator" style="width:500px; margin-bottom:7px; margin-left:auto; margin-right:auto; background-color:black;"></div>
+
+                <div class="fontSpace">
+                    <p class="text-justify">Various reputed firms, organizations & NGOs are working hard to reach people who need legal help. Amar Chai Lawyer has determination to honor their effort and give them a new set of helping hand! Here people who need legal support can tell their problem to anyone they want. Our mission is to hear more people, reach to the people who even cannot have the ability to physically seek help, make people comfortable saying what help they need from their home & give them more security in the process.</p>
+
+                    <p class="text-justify">Many social problems go un-noticed but not with citizens who care for their surroundings. Environmental degradation, child labor, drug trafficking, extortion & many more problems can be notified to proper authorities. Amar Chai Lawyer presents the unique opportunity to report such problems. Here anybody can send a problem to any authorities and to us, our team will notify the proper authority for the reported problem right away!</p>
+
+                </div>
+
+                <p class="text-center">We Are Coming Soon…Stay Tuned for a Fast, Reliable & Completely Online Lawyer Services!</p>
+            </div>
+        </div>
+    </div>
+    <!-- ProblemnSolutionsModal ends  -->
+    <!-- odal section ends-->
+    <div class="modal fade" id="myModal4" role="dialog">
+        <div class="modal-dialog">
+
+            <!-- Modal content-->
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                    <h4 class="modal-title">Modal Header</h4>
+                </div>
+                <div class="modal-body">
+                    <p>Some text in the modal.</p>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                </div>
+            </div>
+
+        </div>
+    </div>
+}
+<script>
+    $('#button1').click(function () {
+        window.location.href = '/Home/SearchLawyerByBankingLaw';
+        return false;
+    });
+
+    $(document).ready(function () {
+        $("#AddQuestionButton").click(function () {
+            if ($("#AddQuestionText").val() == "") {
+                alert("There is no value in textbox");
+            }
+        });
+    });
+
+    $(document).ready(function () {
+        $("#search").click(function () {
+            if ($("#autoText").val() == "") {
+                alert("There is no value in textbox");
+            }
+        });
+    });
+</script>
+<div>
+    @Html.ActionLink("Back to List", "Index")
+</div>
