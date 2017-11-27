@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="f9fa2a93d9314d298a9c0ccbd3af751e" Name="Diagram1">
+        <EntityTypeShape EntityType="LawyerDBModel.Answer" Width="1.5" PointX="3" PointY="5.75" />
+        <EntityTypeShape EntityType="LawyerDBModel.Appointment" Width="1.5" PointX="3" PointY="2.625" />
+        <EntityTypeShape EntityType="LawyerDBModel.Lawyer" Width="1.5" PointX="0.75" PointY="3.875" />
+        <EntityTypeShape EntityType="LawyerDBModel.NormalUser" Width="1.5" PointX="0.75" PointY="0.75" />
+        <EntityTypeShape EntityType="LawyerDBModel.Question" Width="1.5" PointX="0.75" PointY="11" />
+        <EntityTypeShape EntityType="LawyerDBModel.Rating" Width="1.5" PointX="3" PointY="11.875" />
+        <AssociationConnector Association="LawyerDBModel.FK_Answer_Lawyer" />
+        <AssociationConnector Association="LawyerDBModel.FK_Answer_Question" />
+        <AssociationConnector Association="LawyerDBModel.FK_Appointment_Lawyer" />
+        <AssociationConnector Association="LawyerDBModel.FK_Appointment_NormalUser" />
+        <AssociationConnector Association="LawyerDBModel.FK_Rating_Lawyer" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

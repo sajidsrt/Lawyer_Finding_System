@@ -1,0 +1,10 @@
+E:\final_26_11\FinalDAL\bin\Debug\FinalDAL.dll.config
+E:\final_26_11\FinalDAL\bin\Debug\FinalDAL.dll
+E:\final_26_11\FinalDAL\bin\Debug\FinalDAL.pdb
+E:\final_26_11\FinalDAL\bin\Debug\EntityFramework.dll
+E:\final_26_11\FinalDAL\bin\Debug\EntityFramework.SqlServer.dll
+E:\final_26_11\FinalDAL\bin\Debug\EntityFramework.xml
+E:\final_26_11\FinalDAL\bin\Debug\EntityFramework.SqlServer.xml
+E:\final_26_11\FinalDAL\obj\Debug\FinalDAL.dll
+E:\final_26_11\FinalDAL\obj\Debug\FinalDAL.pdb
+E:\final_26_11\FinalDAL\obj\Debug\FinalDAL.csprojResolveAssemblyReference.cache

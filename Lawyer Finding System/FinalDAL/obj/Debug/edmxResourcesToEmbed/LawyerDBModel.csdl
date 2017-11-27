@@ -1,0 +1,174 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="LawyerDBModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityContainer Name="LawyerDBEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="Answers" EntityType="LawyerDBModel.Answer" />
+    <EntitySet Name="Appointments" EntityType="LawyerDBModel.Appointment" />
+    <EntitySet Name="Lawyers" EntityType="LawyerDBModel.Lawyer" />
+    <EntitySet Name="NormalUsers" EntityType="LawyerDBModel.NormalUser" />
+    <EntitySet Name="Questions" EntityType="LawyerDBModel.Question" />
+    <EntitySet Name="Ratings" EntityType="LawyerDBModel.Rating" />
+    <AssociationSet Name="FK_Answer_Lawyer" Association="LawyerDBModel.FK_Answer_Lawyer">
+      <End Role="Lawyer" EntitySet="Lawyers" />
+      <End Role="Answer" EntitySet="Answers" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Answer_Question" Association="LawyerDBModel.FK_Answer_Question">
+      <End Role="Question" EntitySet="Questions" />
+      <End Role="Answer" EntitySet="Answers" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Appointment_Lawyer" Association="LawyerDBModel.FK_Appointment_Lawyer">
+      <End Role="Lawyer" EntitySet="Lawyers" />
+      <End Role="Appointment" EntitySet="Appointments" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Appointment_NormalUser" Association="LawyerDBModel.FK_Appointment_NormalUser">
+      <End Role="NormalUser" EntitySet="NormalUsers" />
+      <End Role="Appointment" EntitySet="Appointments" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Rating_Lawyer" Association="LawyerDBModel.FK_Rating_Lawyer">
+      <End Role="Lawyer" EntitySet="Lawyers" />
+      <End Role="Rating" EntitySet="Ratings" />
+    </AssociationSet>
+  </EntityContainer>
+  <EntityType Name="Answer">
+    <Key>
+      <PropertyRef Name="AnswerID" />
+    </Key>
+    <Property Name="AnswerID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Answer1" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="QuestionID" Type="Int32" />
+    <Property Name="UserID" Type="Int32" />
+    <NavigationProperty Name="Lawyer" Relationship="LawyerDBModel.FK_Answer_Lawyer" FromRole="Answer" ToRole="Lawyer" />
+    <NavigationProperty Name="Question" Relationship="LawyerDBModel.FK_Answer_Question" FromRole="Answer" ToRole="Question" />
+  </EntityType>
+  <EntityType Name="Appointment">
+    <Key>
+      <PropertyRef Name="AppointmentID" />
+    </Key>
+    <Property Name="AppointmentID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="LawyerID" Type="Int32" />
+    <Property Name="NormalUserID" Type="Int32" />
+    <Property Name="LawyerConfirm" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="NormalUserConfirm" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="Lawyer" Relationship="LawyerDBModel.FK_Appointment_Lawyer" FromRole="Appointment" ToRole="Lawyer" />
+    <NavigationProperty Name="NormalUser" Relationship="LawyerDBModel.FK_Appointment_NormalUser" FromRole="Appointment" ToRole="NormalUser" />
+  </EntityType>
+  <EntityType Name="Lawyer">
+    <Key>
+      <PropertyRef Name="UserID" />
+    </Key>
+    <Property Name="LawyerID" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="PhotoPath" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="UserID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Password" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+    <Property Name="Gender" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+    <Property Name="PractiseArea" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="MembershipIdNo" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="CareerSummary" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="CareerGoals" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Expertise" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="EnrollmentYear" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="PresentAddress" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="PermanentAddress" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="NID" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Nationality" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Mobile" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Email" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Name" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="OfficeAddress" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="ActivationCode" Type="Guid" />
+    <Property Name="IsEmailVerified" Type="Boolean" />
+    <Property Name="ConfirmPassword" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+    <Property Name="ResetPasswordCode" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="Answers" Relationship="LawyerDBModel.FK_Answer_Lawyer" FromRole="Lawyer" ToRole="Answer" />
+    <NavigationProperty Name="Appointments" Relationship="LawyerDBModel.FK_Appointment_Lawyer" FromRole="Lawyer" ToRole="Appointment" />
+    <NavigationProperty Name="Ratings" Relationship="LawyerDBModel.FK_Rating_Lawyer" FromRole="Lawyer" ToRole="Rating" />
+  </EntityType>
+  <EntityType Name="NormalUser">
+    <Key>
+      <PropertyRef Name="UserID" />
+    </Key>
+    <Property Name="Name" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="UserID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="UserName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Address" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Password" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="Appointments" Relationship="LawyerDBModel.FK_Appointment_NormalUser" FromRole="NormalUser" ToRole="Appointment" />
+  </EntityType>
+  <EntityType Name="Question">
+    <Key>
+      <PropertyRef Name="QuestionID" />
+    </Key>
+    <Property Name="QuestionID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Question1" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="Answers" Relationship="LawyerDBModel.FK_Answer_Question" FromRole="Question" ToRole="Answer" />
+  </EntityType>
+  <EntityType Name="Rating">
+    <Key>
+      <PropertyRef Name="RatingID" />
+    </Key>
+    <Property Name="RatingID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="RatingValue" Type="Int32" />
+    <Property Name="RatingTime" Type="DateTime" Precision="3" />
+    <Property Name="LawyerID" Type="Int32" />
+    <NavigationProperty Name="Lawyer" Relationship="LawyerDBModel.FK_Rating_Lawyer" FromRole="Rating" ToRole="Lawyer" />
+  </EntityType>
+  <Association Name="FK_Answer_Lawyer">
+    <End Type="LawyerDBModel.Lawyer" Role="Lawyer" Multiplicity="0..1" />
+    <End Type="LawyerDBModel.Answer" Role="Answer" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Lawyer">
+        <PropertyRef Name="UserID" />
+      </Principal>
+      <Dependent Role="Answer">
+        <PropertyRef Name="UserID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Answer_Question">
+    <End Type="LawyerDBModel.Question" Role="Question" Multiplicity="0..1" />
+    <End Type="LawyerDBModel.Answer" Role="Answer" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Question">
+        <PropertyRef Name="QuestionID" />
+      </Principal>
+      <Dependent Role="Answer">
+        <PropertyRef Name="QuestionID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Appointment_Lawyer">
+    <End Type="LawyerDBModel.Lawyer" Role="Lawyer" Multiplicity="0..1" />
+    <End Type="LawyerDBModel.Appointment" Role="Appointment" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Lawyer">
+        <PropertyRef Name="UserID" />
+      </Principal>
+      <Dependent Role="Appointment">
+        <PropertyRef Name="LawyerID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Appointment_NormalUser">
+    <End Type="LawyerDBModel.NormalUser" Role="NormalUser" Multiplicity="0..1" />
+    <End Type="LawyerDBModel.Appointment" Role="Appointment" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="NormalUser">
+        <PropertyRef Name="UserID" />
+      </Principal>
+      <Dependent Role="Appointment">
+        <PropertyRef Name="NormalUserID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Rating_Lawyer">
+    <End Type="LawyerDBModel.Lawyer" Role="Lawyer" Multiplicity="0..1" />
+    <End Type="LawyerDBModel.Rating" Role="Rating" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Lawyer">
+        <PropertyRef Name="UserID" />
+      </Principal>
+      <Dependent Role="Rating">
+        <PropertyRef Name="LawyerID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+</Schema>

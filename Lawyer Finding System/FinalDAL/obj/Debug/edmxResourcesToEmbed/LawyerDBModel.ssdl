@@ -1,0 +1,164 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="LawyerDBModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2008" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="Answer">
+    <Key>
+      <PropertyRef Name="AnswerID" />
+    </Key>
+    <Property Name="AnswerID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Answer" Type="varchar" MaxLength="50" />
+    <Property Name="QuestionID" Type="int" />
+    <Property Name="UserID" Type="int" />
+  </EntityType>
+  <EntityType Name="Appointment">
+    <Key>
+      <PropertyRef Name="AppointmentID" />
+    </Key>
+    <Property Name="AppointmentID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="LawyerID" Type="int" />
+    <Property Name="NormalUserID" Type="int" />
+    <Property Name="LawyerConfirm" Type="varchar" MaxLength="50" />
+    <Property Name="NormalUserConfirm" Type="varchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="Lawyer">
+    <Key>
+      <PropertyRef Name="UserID" />
+    </Key>
+    <Property Name="LawyerID" Type="varchar" MaxLength="50" />
+    <Property Name="PhotoPath" Type="varchar" MaxLength="50" />
+    <Property Name="UserID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Password" Type="varchar" MaxLength="500" />
+    <Property Name="Gender" Type="nchar" MaxLength="10" />
+    <Property Name="PractiseArea" Type="varchar" MaxLength="50" />
+    <Property Name="MembershipIdNo" Type="varchar" MaxLength="50" />
+    <Property Name="CareerSummary" Type="varchar" MaxLength="50" />
+    <Property Name="CareerGoals" Type="varchar" MaxLength="50" />
+    <Property Name="Expertise" Type="varchar" MaxLength="50" />
+    <Property Name="EnrollmentYear" Type="varchar" MaxLength="50" />
+    <Property Name="PresentAddress" Type="varchar" MaxLength="50" />
+    <Property Name="PermanentAddress" Type="varchar" MaxLength="50" />
+    <Property Name="NID" Type="varchar" MaxLength="50" />
+    <Property Name="Nationality" Type="varchar" MaxLength="50" />
+    <Property Name="Mobile" Type="varchar" MaxLength="50" />
+    <Property Name="Email" Type="varchar" MaxLength="50" />
+    <Property Name="Name" Type="varchar" MaxLength="50" />
+    <Property Name="OfficeAddress" Type="varchar" MaxLength="50" />
+    <Property Name="ActivationCode" Type="uniqueidentifier" />
+    <Property Name="IsEmailVerified" Type="bit" />
+    <Property Name="ConfirmPassword" Type="varchar" MaxLength="500" />
+    <Property Name="ResetPasswordCode" Type="varchar" MaxLength="500" />
+  </EntityType>
+  <EntityType Name="NormalUser">
+    <Key>
+      <PropertyRef Name="UserID" />
+    </Key>
+    <Property Name="Name" Type="varchar" MaxLength="50" />
+    <Property Name="UserID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="UserName" Type="varchar" MaxLength="50" />
+    <Property Name="Address" Type="varchar" MaxLength="50" />
+    <Property Name="Password" Type="varchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="Question">
+    <Key>
+      <PropertyRef Name="QuestionID" />
+    </Key>
+    <Property Name="QuestionID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Question" Type="varchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="Rating">
+    <Key>
+      <PropertyRef Name="RatingID" />
+    </Key>
+    <Property Name="RatingID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="RatingValue" Type="int" />
+    <Property Name="RatingTime" Type="datetime" />
+    <Property Name="LawyerID" Type="int" />
+  </EntityType>
+  <Association Name="FK_Answer_Lawyer">
+    <End Role="Lawyer" Type="Self.Lawyer" Multiplicity="0..1" />
+    <End Role="Answer" Type="Self.Answer" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Lawyer">
+        <PropertyRef Name="UserID" />
+      </Principal>
+      <Dependent Role="Answer">
+        <PropertyRef Name="UserID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Answer_Question">
+    <End Role="Question" Type="Self.Question" Multiplicity="0..1" />
+    <End Role="Answer" Type="Self.Answer" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Question">
+        <PropertyRef Name="QuestionID" />
+      </Principal>
+      <Dependent Role="Answer">
+        <PropertyRef Name="QuestionID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Appointment_Lawyer">
+    <End Role="Lawyer" Type="Self.Lawyer" Multiplicity="0..1" />
+    <End Role="Appointment" Type="Self.Appointment" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Lawyer">
+        <PropertyRef Name="UserID" />
+      </Principal>
+      <Dependent Role="Appointment">
+        <PropertyRef Name="LawyerID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Appointment_NormalUser">
+    <End Role="NormalUser" Type="Self.NormalUser" Multiplicity="0..1" />
+    <End Role="Appointment" Type="Self.Appointment" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="NormalUser">
+        <PropertyRef Name="UserID" />
+      </Principal>
+      <Dependent Role="Appointment">
+        <PropertyRef Name="NormalUserID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Rating_Lawyer">
+    <End Role="Lawyer" Type="Self.Lawyer" Multiplicity="0..1" />
+    <End Role="Rating" Type="Self.Rating" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Lawyer">
+        <PropertyRef Name="UserID" />
+      </Principal>
+      <Dependent Role="Rating">
+        <PropertyRef Name="LawyerID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="LawyerDBModelStoreContainer">
+    <EntitySet Name="Answer" EntityType="Self.Answer" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Appointment" EntityType="Self.Appointment" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Lawyer" EntityType="Self.Lawyer" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="NormalUser" EntityType="Self.NormalUser" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Question" EntityType="Self.Question" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Rating" EntityType="Self.Rating" Schema="dbo" store:Type="Tables" />
+    <AssociationSet Name="FK_Answer_Lawyer" Association="Self.FK_Answer_Lawyer">
+      <End Role="Lawyer" EntitySet="Lawyer" />
+      <End Role="Answer" EntitySet="Answer" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Answer_Question" Association="Self.FK_Answer_Question">
+      <End Role="Question" EntitySet="Question" />
+      <End Role="Answer" EntitySet="Answer" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Appointment_Lawyer" Association="Self.FK_Appointment_Lawyer">
+      <End Role="Lawyer" EntitySet="Lawyer" />
+      <End Role="Appointment" EntitySet="Appointment" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Appointment_NormalUser" Association="Self.FK_Appointment_NormalUser">
+      <End Role="NormalUser" EntitySet="NormalUser" />
+      <End Role="Appointment" EntitySet="Appointment" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Rating_Lawyer" Association="Self.FK_Rating_Lawyer">
+      <End Role="Lawyer" EntitySet="Lawyer" />
+      <End Role="Rating" EntitySet="Rating" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>
