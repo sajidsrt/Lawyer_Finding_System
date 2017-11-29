@@ -1,0 +1,753 @@
+﻿/*      Custom CSS        */
+
+/*custom font*/
+@import url(http://fonts.googleapis.com/css?family=Montserrat);
+
+/*basic reset*/
+* {margin: 0; padding: 0;}
+
+html {
+	height: 100%;
+	/*Image only BG fallback*/
+	background: url('http://thecodeplayer.com/uploads/media/gs.png');
+	/*background = gradient + image pattern combo*/
+	background: 
+		linear-gradient(rgba(196, 102, 0, 0.2), rgba(155, 89, 182, 0.2)), 
+		url('http://thecodeplayer.com/uploads/media/gs.png');
+}
+
+body {
+	font-family: montserrat, arial, verdana;
+    background-color: transparent;
+}
+
+
+@media (min-width: 768px) {
+  .sm_screen {
+    width: 804px;
+  }
+}
+
+
+.seperator{
+    width: auto;
+    height: 1px;
+    padding-bottom: 1px;
+    margin: auto;
+    background-color: black;
+}
+
+.bodyWrapper{
+    position: relative;
+    height: auto;
+    margin: 0 auto;
+    padding: 0px;
+    width: auto;
+    background-color: transparent;
+}
+
+.btn_box{
+    position: relative;
+    margin-top: 10px;
+}
+
+.form_bg{
+    position: relative;
+    height: auto;
+    background-color: white;
+}
+
+.form_bg .tab-pane .seperator{
+    position: relative;
+    width: 80%;
+    background-color: white;
+}
+
+.form_bg .tab-pane h2{
+    position: relative;
+    color: white;
+    margin: 0px;
+}
+
+.tellUs_container{
+    position: relative;
+    height: auto;
+    padding: 15px;
+    background-color: #f99f51;
+    margin-left: auto;
+    margin-right: auto;
+    color: #fff;
+}
+
+.modaltxt{
+    font-size: 15px;
+    margin-top: 5px;
+    margin-bottom: 6px;
+}
+
+.modaltxt p {
+    position: relative;
+    text-align: center;
+    display: block;
+}
+
+.tellUs{
+    position: relative;
+    font-size: 24px;
+}
+
+.modalInput{
+    position: relative;
+    width: auto;
+    height: auto;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+.modalInput textarea{
+    position: relative;
+    width: 78%;
+}
+
+.modalInput_area{
+    position: relative;
+    margin-left: auto;
+    margin-right: auto;
+    border-radius: 5px;
+    overflow: hidden;
+}
+
+.addFileBox{
+    position: relative;
+    width: auto;
+    height: auto;
+    padding: 0;
+    background-color: #fcba7e;
+    float: left;
+}
+
+.addFileBox #addFileButton {
+    position: relative;
+    cursor: pointer;
+    display: inline-block;
+    width: auto;
+    background-color: white;
+    height:auto;
+    color: #f99f51;
+    font-weight: bolder;
+    padding-bottom: 5px;
+    padding-top: 5px;
+    padding-left: 20px;
+    padding-right: 20px;
+    font-size: 17px;
+    text-align: center;
+}
+
+.addFileBox input[type='file'] {
+    width:auto;
+    height:auto;
+    margin-left: auto;
+    margin-right: auto;
+    opacity:0;
+    padding: 0px;
+    display: inline-block;
+}
+
+#val {
+    width: auto;
+    height:auto;
+    position: absolute;
+    top: 3px;
+    right: 0;
+    margin-bottom: 0px;
+    font-size: 16px;
+    line-height: 25px;
+    text-indent: 10px;
+    pointer-events: none;
+    color: black;
+    padding-right: 10px;
+    z-index: auto;
+}
+
+.nxt_btn{
+    position: relative;
+    width: auto;
+    padding: 8px 30px;
+    font-weight: bolder;
+    font-size: 16px;
+}
+
+
+
+
+
+/******     logInModdalWrapper  ************/
+
+.logInModdalWrapper{
+    position: relative;
+    height: auto;
+    margin: auto;
+    background-color: #f8d4b2;
+    padding-top: 20px;
+    padding-bottom: 60px;
+    border-radius: 5px;
+}
+
+.inputArea{
+    position: relative;
+    height: auto;
+    margin-left: auto;
+    margin-right: auto;
+    position: relative;
+    padding: 1px;
+    background-color: #f99f51;
+}
+
+.usernamePasswordContainer{
+    position: relative;
+    height: 100px;
+    background-color: transparent;
+    margin-top: 80px;
+    margin-bottom: 80px;
+}
+
+.inputArea{
+    position: relative;
+    height: auto;
+}
+
+.usernamePasswordContainer{
+    position: relative;
+    height: auto;
+}
+
+.userNaname_container{
+    position: relative;
+    height: auto;
+    margin-bottom: 25px;
+}
+
+.password_container{
+    position: relative;
+    height: auto;
+    margin-bottom: 15px;
+}
+
+.userNaname_container .icon_color,
+.password_container .icon_color{
+    color: #f99f51;
+    font-size: 18px;
+}
+
+.userNaname_container span,
+.password_container span,
+.userNaname_container input,
+.password_container input{
+    background-color: white;
+    border: 0px;
+}
+
+.userNaname_container ::-webkit-input-placeholder,
+.password_container ::-webkit-input-placeholder  {/* Chrome/Opera/Safari */
+    color: #f99f51;
+    font-size: 18px;
+}
+
+.userNaname_container ::-moz-placeholder,
+.password_container ::-moz-placeholder { /* Firefox 19+ */
+    color: #f99f51;
+    font-size: 18px;
+}
+.userNaname_container :-ms-input-placeholder,
+.password_container :-ms-input-placeholder { /* IE 10+ */
+    color: #f99f51;
+    font-size: 18px;
+}
+.userNaname_container :-moz-placeholder,
+.password_container :-moz-placeholder { /* Firefox 18- */
+    color: #f99f51;
+    font-size: 18px;
+}
+
+.usernamePasswordContainer .checkbox{
+    position: relative;
+    clear: both;
+    float: none;
+    text-align: center;
+}
+
+.usernamePasswordContainer .checkbox label{
+    position: relative;
+    color: white;
+}
+
+#forgotPassword{
+    position: relative;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+#forgotPassword a{
+    position: relative;
+    color: white;
+    padding: 5px;
+}
+
+
+
+.usernamePasswordContainer .LogInBtn{
+    position: relative;
+    height: auto;
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+    background-color: #fcba7e;
+    color: #f99f51;
+    text-align: center;
+    font-size: 22px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    font-weight: bold;
+    border: 0px;
+    border-radius: 0px;
+}
+
+.usernamePasswordContainer .LogInBtn:focus,
+.usernamePasswordContainer .LogInBtn:active{
+    outline: 0;
+    outline-style: none;
+    outline-offset: 0px;
+}
+
+.notAmemberYet{
+    position: relative;
+    height: auto;
+    margin-top: 5px;
+}
+
+.notAmemberYet p{
+    position: relative;
+    color: white;
+    font-size: 16px;
+    font-weight: bold;
+    display: inline-block;
+    float: right;
+}
+
+.notAmemberYet p:hover{
+    cursor: pointer;
+}
+
+
+
+
+
+/************   DisclaimerPolicy    *************/
+
+ .DisclaimerPolicyWrapper{
+    position: relative;
+    height: auto;
+    margin: auto;
+    background-color: #f8d4b2;
+    border-radius: 5px;
+}
+
+.DisclaimerPolicycontentArea{
+    position: relative;
+    height: auto;
+    padding: 15px;
+    background-color: #f99f51;
+    margin-left: auto;
+    margin-right: auto;
+    color: #fff;
+}
+
+ .DisclaimerPolicyWrapper .DisclaimerPolicycontentArea{
+    position: relative;
+    padding-top: 5px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+ .DisclaimerPolicyWrapper .DisclaimerPolicycontentArea .user{
+    position: relative;
+    height: auto;
+    padding: 4px;
+    margin-bottom: 15px;
+}
+
+ .DisclaimerPolicyWrapper .DisclaimerPolicycontentArea .user .userName{
+    position: relative;
+    color: white;
+}
+
+ .DisclaimerPolicyWrapper .DisclaimerPolicycontentArea .user .userName p{
+    position: relative;
+    margin-bottom: 0;
+    font-size: 17px;
+    text-align: right;
+    margin-top: 18px;
+}
+
+ .DisclaimerPolicyWrapper .DisclaimerPolicycontentArea .user .userImg{
+    position: relative;
+    width: 60px;
+    height: 60px;
+    background-color: white;
+    border-radius: 50px;
+    border: 0px;
+}
+
+ .DisclaimerPolicyWrapper .DisclaimerPolicycontentArea .disclaimer,
+ .DisclaimerPolicyWrapper .DisclaimerPolicycontentArea .policy{
+    position: relative;
+    height: auto;
+    border: 4px solid white;
+    padding: 8px;
+    margin-bottom: 15px;
+}
+
+ .DisclaimerPolicyWrapper .DisclaimerPolicycontentArea .disclaimer h1,
+ .DisclaimerPolicyWrapper .DisclaimerPolicycontentArea .policy h1{
+    position: relative;
+    color: white;
+    font-size: 26px;
+    margin: 0;
+}
+
+ .DisclaimerPolicyWrapper .DisclaimerPolicycontentArea .disclaimer .seperator,
+ .DisclaimerPolicyWrapper .DisclaimerPolicycontentArea .policy .seperator{
+    position: relative;
+    left: 2px;
+    width: 80px;
+    margin-top: 2px;
+}
+
+ .DisclaimerPolicyWrapper .DisclaimerPolicycontentArea .disclaimer .disclaimer_Text,
+ .DisclaimerPolicyWrapper .DisclaimerPolicycontentArea .policy .policy_Text{
+    position: relative;
+    height: auto;
+    margin-left: 50px;
+    margin-right: 50px;
+    margin-top: 5px;
+}
+
+ .DisclaimerPolicyWrapper .DisclaimerPolicycontentArea .disclaimer .disclaimer_Text p,
+ .DisclaimerPolicyWrapper .DisclaimerPolicycontentArea .policy .policy_Text p{
+    position: relative;
+    color: white;
+    padding: 3px;
+    font-size: 17px;
+}
+
+
+
+ /***********       provide necessary information       *************/
+
+.step3_Wrapper{
+    position: relative;
+    height: auto;
+    margin: auto;
+    background-color: #f8d4b2;
+    border-radius: 0px;
+}
+
+.formArea{
+    position: relative;
+    height: auto;
+    padding: 15px;
+    background-color: #f99f51;
+    margin-left: auto;
+    margin-right: auto;
+    color: #fff;
+}
+
+.step3_Wrapper .formArea h2{
+    margin: auto;
+    font-size: 30px;
+    color: #ffffff;
+}
+
+.formArea .seperator{
+    width: 230px;
+    height: 1px;
+    padding-bottom: 1px;
+    margin: auto;
+    background-color: white;
+}
+
+.confarmation{
+    position: relative;
+    color: white;
+    font-size: 17px;
+    margin-top: 15px;
+}
+
+.giveInfo{
+    position: relative;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 25px;
+    padding-left: 70px;
+    padding-right: 70px;
+}
+
+.formName{
+    position: relative;
+    border-radius: 0;
+}
+
+.formPadding{
+    position: relative;
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+.form_bottom_margin{
+    position: relative;
+    height: auto;
+    margin-bottom: 5px;
+}
+
+.heightProblem{
+    position: relative;
+    margin-bottom: 0;
+}
+
+.txtPadding{
+    position: relative;
+    padding-left: 0;
+    padding-right: 0;
+}
+
+.user_info{
+    position: relative;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 15px;
+    padding-left: 70px;
+    padding-right: 70px;
+}
+
+
+
+
+/**************  Confirmation Modal   **********/
+
+.confirmationModdalWrapper{
+    position: relative;
+    height: auto;
+    margin: auto;
+    background-color: #f8d4b2;
+    border-radius: 5px;
+}
+
+.thankYouContent{
+    position: relative;
+    height: auto;
+    padding: 15px;
+    background-color: #f99f51;
+    margin-left: auto;
+    margin-right: auto;
+    color: #fff;
+}
+
+.circle{
+    position: relative;
+    height: 150px;
+    width: 150px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 80px;
+    border-radius: 80px;
+    background-color: white;
+}
+
+.thankYouTxt{
+    position: relative;
+    color: white;
+    padding-left: 20px;
+    padding-right: 20px;
+    margin-left: 40px;
+    margin-right: 40px;
+}
+
+.thankYouTxt h2{
+    color: white;
+    font-size: 20px;
+    line-height: 1.5em;
+}
+
+.thankYouTxt p{
+    position: relative;
+    font-size: 16px;
+    text-indent: 55px;
+    margin: auto;
+}
+
+
+.buttonOk{
+    position: relative;
+    width: 70px;
+    letter-spacing: 1px;
+    background-color: #c0db66;
+    color: white;
+    border-radius: 2px;
+    font-weight: bolder;
+}
+
+.buttonOk:hover{
+    -webkit-box-shadow: 7px 6px 24px -7px rgba(0,0,0,0.36);
+    -moz-box-shadow: 7px 6px 24px -7px rgba(0,0,0,0.36);
+    box-shadow: 7px 6px 24px -7px rgba(0,0,0,0.36);
+}
+
+
+
+
+
+
+
+
+/*******************          Wizard           ********************/
+
+.wizard {
+    margin: 20px auto;
+}
+
+    .wizard .nav-tabs {
+        position: relative;
+        margin: 40px auto;
+        margin-bottom: 0;
+        border-bottom-color: #e0e0e0;
+    }
+
+    .wizard > div.wizard-inner {
+        position: relative;
+    }
+
+.connecting-line {
+    height: 2px;
+    background: #e0e0e0;
+    position: absolute;
+    width: 80%;
+    margin: 0 auto;
+    left: 0;
+    right: 0;
+    top: 50%;
+    z-index: 1;
+}
+
+.wizard .nav-tabs > li.active > a,
+.wizard .nav-tabs > li.active > a:hover,
+.wizard .nav-tabs > li.active > a:focus {
+    color: #555555;
+    cursor: default;
+    border: 0;
+    border-bottom-color: transparent;
+}
+
+span.round-tab {
+    width: 70px;
+    height: 70px;
+    line-height: 70px;
+    display: inline-block;
+    border-radius: 100px;
+    background: #fff;
+    border: 2px solid #e0e0e0;
+    z-index: 2;
+    position: absolute;
+    left: 0;
+    text-align: center;
+    font-size: 25px;
+}
+span.round-tab i{
+    color:#555555;
+}
+.wizard li.active span.round-tab {
+    background: #fff;
+    border: 2px solid #5bc0de;
+}
+.wizard li.active span.round-tab i{
+    color: #5bc0de;
+}
+
+span.round-tab:hover {
+    color: #333;
+    border: 2px solid #333;
+}
+
+.wizard .nav-tabs > li {
+    width: 20%;
+}
+
+.wizard li:after {
+    content: " ";
+    position: absolute;
+    left: 46%;
+    opacity: 0;
+    margin: 0 auto;
+    bottom: 0px;
+    border: 5px solid transparent;
+    border-bottom-color: #5bc0de;
+    transition: 0.1s ease-in-out;
+}
+
+.wizard li.active:after {
+    content: " ";
+    position: absolute;
+    left: 46%;
+    opacity: 1;
+    margin: 0 auto;
+    bottom: 0px;
+    border: 10px solid transparent;
+    border-bottom-color: #5bc0de;
+}
+
+.wizard .nav-tabs > li a {
+    width: 70px;
+    height: 70px;
+    margin: 20px auto;
+    border-radius: 100%;
+    padding: 0;
+}
+
+    .wizard .nav-tabs > li a:hover {
+        background: transparent;
+    }
+
+.wizard .tab-pane {
+    position: relative;
+    padding-top: 5px;
+}
+
+@media( max-width : 585px ) {
+
+    .wizard {
+        width: 90%;
+        height: auto !important;
+    }
+
+    span.round-tab {
+        font-size: 16px;
+        width: 50px;
+        height: 50px;
+        line-height: 50px;
+    }
+
+    .wizard .nav-tabs > li a {
+        width: 50px;
+        height: 50px;
+        line-height: 50px;
+    }
+
+    .wizard li.active:after {
+        content: " ";
+        position: absolute;
+        left: 35%;
+    }
+}

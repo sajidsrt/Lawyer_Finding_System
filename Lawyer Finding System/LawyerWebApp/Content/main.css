@@ -1,0 +1,1817 @@
+/********************************       Typography      ********************************/
+
+body {
+  background: #fff;
+  font-family: 'Open Sans', sans-serif;
+  color:#4e4e4e;
+  line-height: 22px;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-weight: 600; 
+  font-family: 'Open Sans', sans-serif;
+  color:#4e4e4e;
+}
+
+h1{
+  font-size: 36px;
+  color:#ffffff;
+}
+
+h2{
+  font-size: 20px;
+}
+
+h3{
+  font-size: 16px;
+  color: #787878;
+  font-weight: 400;
+  line-height: 24px;
+}
+
+h4{
+  font-size: 16px;
+}
+
+a {
+  color: #27a9e1;
+  -webkit-transition: color 300ms, background-color 300ms;
+  -moz-transition: color 300ms, background-color 300ms;
+  -o-transition:  color 300ms, background-color 300ms;
+  transition:  color 300ms, background-color 300ms;
+}
+
+a:hover, a:focus {
+  color: #d43133;
+}
+
+
+.mainWrapper{
+    margin: 0 auto;
+	background: white;
+}
+
+/********************   askLawyercontainer Starts    *********************/
+
+.askLawyercontainer{
+    position: relative;
+    height: auto;
+    background-color: #028bbf;
+    margin: auto;
+	padding: 0;
+    background-size: cover;
+}
+
+.button_holder{
+    position: relative;
+    float: right;
+    width: auto;
+    height: auto;
+    margin-top: 20px;
+    margin-bottom: 50px;
+}
+
+.button_separetor{
+    color: #008bbf;
+    border-radius: 3px;
+    border: 0;
+    padding-left: 15px;
+    padding-right: 15px;
+    font-size: 15px;
+    background-color: white;
+    font-family: OpenSans-Semibold;
+    
+}
+
+.button_holder ul{
+    list-style-type: none;
+}
+
+
+
+/*Carousel Indicator Starts*/
+
+.carousel-indicators{
+    bottom: -10px;
+}
+
+.carousel-indicators li {
+    display: inline-block;
+    background-color: #9a8c8c;
+    box-shadow: inset 1px 1px 1px 1px rgba(0,0,0,0.5);    
+}
+.carousel-indicators .active {
+    background-color: #1d1c1c;
+}
+
+
+/*Carousel Indicator Ends*/
+
+
+
+/* General sizing */
+ul.dropdown-lr {
+  width: 300px;
+}
+
+/* mobile fix */
+@media (max-width: 768px) {
+	.dropdown-lr h3 {
+		color: #eee;
+	}
+	.dropdown-lr label {
+		color: #eee;
+	}
+}
+
+.button_separetor:focus,
+.button_separetor.focus {
+    color: #48B9FB;
+    background-color: #fff;
+    border: 0;
+}
+
+.button_separetor:hover {
+    color: #48B9FB;
+    background-color: #fff;
+    border: 0;
+}
+
+
+
+.logo {
+    position: relative;
+    width: 315px;
+    height: 115px;
+    background-image: url('Images/Logo.png');
+    background-repeat: no-repeat;
+    background-position: center;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.slogaan{
+    position: relative;
+    color: white;
+    font-size: 19px;
+}
+
+.container_problem{
+    margin-bottom: 326px;
+}
+
+.input_box{
+    position: relative;
+    width: 70%;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 10px;
+    overflow: hidden;
+}
+
+.input_area{
+    position: relative;
+    border-radius: 0;
+    margin: auto;
+    overflow: hidden;
+}
+
+.ask_aLawyer_wrapper{
+    position: relative;
+}
+
+.ask_aLawyer_button{
+    position: relative;
+    margin: auto;
+    background-color: #fff;
+    color: #008abe;
+    border: 0;
+    border-radius: 0;
+}
+
+.ask_aLawyer_button:hover {
+    color: #58B2FB;
+    background-color: #fff;
+    border: 0;
+}
+
+.askLawyercontainer .containerFluid_Prob{
+    position: relative;
+    background-color: #82a6cb;
+}
+
+.menuBar{
+    position: relative;
+    background-color: transparent;
+}
+
+nav li{
+    position: relative;
+}
+
+nav li a{
+    position: relative;
+    text-decoration: none;
+    white-space: nowrap;
+    color: white;
+    border: 0;
+}
+
+.justified_border{
+    border: 0;
+    margin: auto;
+    border-radius: 0;
+}
+
+.nav-tabs.justified_border > li > a {
+  margin-right: 0;
+  border-radius: 0px;
+}
+
+
+.dropUp{
+    position: relative;
+    display: inline-block;
+}
+
+.dropUp_content{
+    display: none;
+    position: absolute;
+    background-color: #a1f8f9;
+    min-width: 250px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+}
+
+.dropUp_content a {
+    color: white;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+}
+
+.dropUp_content a:hover {
+    background-color: #f1f1f1;
+    color: black;
+}
+
+.dropUp:hover .dropUp_content {
+    display: block;
+    position: absolute;
+    color: white;
+}
+
+.justified_border li .dropUp_content{
+    width: 140px;
+    border: none;
+    padding-top: 3px;
+    top: auto;
+    bottom: 100%;
+    padding-bottom: 3px;
+    padding-left: 3px;
+    padding-right: 3px;
+    background: #82a6cb;
+    z-index: 1;
+}
+
+
+/********************   slider_wrapper Starts    *********************/
+
+
+.slider_rapper_Container{
+    position: relative;
+    margin-right: auto;
+    margin-left: auto;
+    padding-bottom: 0;
+    margin-top: 20px;
+}
+
+.slider_rapper{
+    position: relative;
+    height: auto;
+    margin: auto;
+    background-color: lightgray;
+}
+
+.slidePadding{
+    position: relative;
+    padding-bottom: 38px;
+}
+
+.Row_Margin{
+    position: relative;
+    margin-right: auto;
+    margin-left: auto;
+}
+
+.colMdPadding{
+    position: relative;
+    padding-right: 5px;
+    padding-left: 5px;
+}
+
+.slideBox{
+    position: relative;
+    height: 300px;
+    margin: 10px 0 0 0;
+    padding-top: 2px;
+    background-color: white;
+    box-shadow: 1px 1px 10px rgba(68,68,68,0.6);
+}
+
+.slideBox img{
+    position: relative;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 50px;
+}
+
+
+
+.customIndicators {
+   position: absolute;
+   bottom: 0px;
+   left: 50%;
+   z-index: 15;
+   width: 60%;
+   padding-left: 0;
+   margin-left: -11%;
+   text-align: right;
+   list-style: none;
+    padding-right: 10px;
+}
+.customIndicators li {
+  display: inline-block;
+  width: 11px;
+  height: 11px;
+  margin: 1px;
+  text-indent: -999px;
+  cursor: pointer;
+  background-color: #923 \9;
+  background-color: rgba(0, 0, 0, 0);
+  border: 1px solid #d4f;
+  border-radius: 0px;
+}
+
+.customIndicators .active {
+  width: 12px;
+  height: 12px;
+  margin: 0;
+  background-color: #fff;
+}
+
+
+
+/********* Hover Effect  starts  **********/
+
+
+.slideTxt{
+    position: relative;
+    height: 300px;
+    padding: 0;
+    margin: 10px 0 0 0;
+    background-color: #26b99b;
+}
+
+.slideTxt img{
+    position: relative;
+    width: 30px;
+    height: auto;
+    margin-left: 20px;
+    margin-top: 20px
+}
+
+.slideTxt h1{
+    position: relative;
+    word-spacing: 5px;
+    margin: auto;
+    color: black;
+    letter-spacing: 2px;
+    font-size: 40px;
+}
+
+.slideTxt p{
+    position: relative;
+    margin: auto;
+    padding: 5px;
+    padding-left: 10px;
+    padding-right: 10px;
+    font-size: 11px;
+    text-align: justify;
+    line-height: 18px;
+}
+
+
+/*.slideBox span:hover:before,
+.slideBox span:hover:after{
+    content: " ";
+}
+
+.slideBox:hover{
+    background-color: greenyellow;
+    content: " ";
+    text-align: justify;
+    padding: 7px;
+    font-size: 0;
+}
+
+.slideBox:hover:before{
+    content: attr(data-hover);
+    text-align: justify;
+    font-size: 14px;
+    word-wrap: break-word;
+    color: black;
+    line-height: .1em;
+}*/
+
+
+
+/********* Hover Effect  ends  **********/
+
+
+
+
+
+
+/*****    MakeAppointment_wrapper starts   *****************/
+
+.MakeAppointment_Container{
+    position: relative;
+    margin-right: auto;
+    margin-left: auto;
+    padding-bottom: 0;
+    margin-top: 20px;
+}
+
+.MakeAppointment_wrapper {
+    position: relative;
+    height: auto;
+    padding-bottom: 20px;
+    padding-right: 10px;
+    padding-top: 10px;
+    margin: auto;
+    background-image: url('Images/1.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-color: transparent;
+}
+
+.containerFluid_find_lawyer_by{
+    padding-left: 0px;
+}
+
+.topButtons{
+    position: relative;
+    height: auto;
+}
+
+.find_lawyer_by{
+    position: relative;
+    height: 40px;
+    border: 0;
+    color: white;
+    background-color: #028bbf;
+    border-radius: 0;
+    font-size: 18px;
+    margin: auto;
+}
+
+.category_box{
+    position: relative;
+    width: 175px;
+    height: 46px;
+    font-size: 20px;
+    color: white;
+    letter-spacing: 2px;
+    margin:2px 0 5px 0;
+    background-color: #ee5a3e;
+    border-radius: 0;
+    background-size: cover;
+    -webkit-clip-path: polygon(0 10%, 99% 0%, 92% 100%, 0% 100%);
+    clip-path: polygon(0 10%, 99% 0%, 92% 100%, 0% 100%);
+}
+
+
+.MakeAppointmentContent{
+    position: relative;
+    height: auto;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 10px;
+}
+
+.MakeAppointmentContent_Subcontainer{
+    position: relative;
+    background-color: #ee5a3e;
+    border-radius: 15px;
+    border: 0;
+    padding: 20px;
+}
+
+.MakeAppointmentContent_Subcontainer p{
+    position: relative;
+    color: white;
+    font-size: 20px;
+    line-height: 30px;
+    text-align: center;
+    word-spacing: 5px;
+}
+
+.find_lawyer{
+    position: relative;
+    margin-top: 260px;
+    padding-right: 5px;
+}
+
+.find_lawyer_button{
+    position: relative;
+    float: right;
+    border: 0;
+    border-radius: 0;
+    color: white;
+    background-color: #028bbf;
+}
+
+
+
+
+
+/******************************  Lawyer_profile_wrapper starts  **************************/
+
+.Lawyer_profile_Container{
+    position: relative;
+    height: auto;
+    margin-right: auto;
+    margin-left: auto;
+    padding: 0;
+    margin-top: 20px;
+}
+
+.Lawyer_profile_Wrapper{
+    position: relative;
+    height: auto;
+    padding: 0;
+    margin: auto;
+    background-color: lightgray;
+}
+
+
+.Lawyer_profile{
+    position: relative;
+    height: auto;
+    padding: 8px 0;
+}
+
+.Lawyer_profile a{
+    color: #ee5a3e;
+}
+
+
+
+.profileImg_padding{
+    padding: 0;
+}
+
+.profileImg {
+    position: relative;
+    height: 340px;
+    background-color: transparent;
+    background-image: url('Images/2.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    padding-top: 100px;
+}
+
+.signUpButton_position{
+    position: relative;
+    margin-top: 200px;
+}
+
+.signUpButton{
+    position: relative;
+    float: right;
+    border: 0;
+    color: #48B9FB;
+}
+
+
+
+
+
+/******************   lawFirm_wrapper starts    ******************/
+
+
+.lawFirm_Container{
+    position: relative;
+    height: auto;
+    margin-right: auto;
+    margin-left: auto;
+    padding: 0;
+    margin-top: 20px;
+}
+
+.lawFirm_profile_Wrapper{
+    position: relative;
+    height: auto;
+    padding: 0;
+    margin: auto;
+    background-color: lightgray;
+}
+
+.lawFirm_profile_Wrapper .profileImg_padding{
+    padding: 0;
+}
+
+    .lawFirm_profile_Wrapper .profileImg {
+        position: relative;
+        height: 340px;
+        background-color: transparent;
+        background-image: url('Images/3.jpg');
+        background-size: cover;
+        background-repeat: no-repeat;
+        padding-top: 100px;
+    }
+
+.signUpButton_position{
+    position: relative;
+    margin-top: 200px;
+}
+
+.lawFirm_profile_Wrapper .signUpButton{
+    position: relative;
+    float: left;
+    border: 0;
+    color: #00a0cB;
+}
+
+.lawFirm_profile_Wrapper .Lawyer_profile{
+    position: relative;
+    height: auto;
+    padding-left: 80px;
+}
+
+
+.hexagon {
+  position: relative;
+  width: 250px; 
+  height: 144.34px;
+  background-color: #ffffff;
+  margin: 72.17px 0;
+    -ms-transform: rotate(30deg);
+    -webkit-transform: rotate(30deg); 
+    transform: rotate(30deg);
+    z-index: auto;
+}
+
+.hexagon:before,
+.hexagon:after {
+  content: "";
+  position: absolute;
+  width: 0;
+  border-left: 125px solid transparent;
+  border-right: 125px solid transparent;
+    z-index: auto;
+}
+
+.hexagon:before {
+  bottom: 100%;
+  border-bottom: 72.17px solid #ffffff;
+    z-index: auto;
+}
+
+.hexagon:after {
+  top: 100%;
+  width: 0;
+  border-top: 72.17px solid #ffffff;
+    z-index: auto;
+}
+
+
+
+
+
+/******************   locality_wrapper starts    ******************/
+
+
+
+.locality_Container{
+    position: relative;
+    height: auto;
+    margin-right: auto;
+    margin-left: auto;
+    padding: 0;
+    margin-top: 20px;
+}
+
+.locality_Wrapper{
+    position: relative;
+    height: auto;
+    padding: 0;
+    margin: auto;
+    background-color: lightgray;
+}
+
+/*.button_leftside{
+    position: relative;
+    height: auto;
+    background-color: transparent;
+    margin-top: 30px;
+    margin-bottom: 30px;
+    margin-left: 20px;
+    margin-right: auto;
+    padding-left: auto;
+}*/
+
+.button_group{
+    position: relative;
+    margin-top: 40px;
+    padding: 0;
+}
+
+.custom_btn{
+    border-radius: 0;
+    font-size: 22px;
+    width: 270px;
+    letter-spacing: 3px;
+    margin-bottom: 7px;
+    margin-left: auto;
+    margin-right: auto;
+    height: 60px;
+    -webkit-box-shadow: -2px 7px 3px -3px rgba(110,110,110,0.39);
+    -moz-box-shadow: -2px 7px 3px -3px rgba(110,110,110,0.39);
+    box-shadow: -2px 7px 3px -3px rgba(110,110,110,0.39);
+}
+
+.area_ColMd{
+    padding-left: 0;
+}
+
+/*.button_rightside{
+    position: relative;
+    height: auto;
+    background-color: transparent;
+    margin-top: 30px;
+    margin-bottom: 30px;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 0;
+    float: left;
+}*/
+
+.map_area_ColMd{
+    position: relative;
+    padding-top: 0;
+}
+
+.map_area{
+    /*position: relative;
+    height: auto;
+    background-image: url(../../Images/icon/6.png);
+    background-repeat: no-repeat;
+    padding-bottom: 200px;*/
+}
+
+.localityTxt{
+    position: relative;
+    padding-bottom: 0;
+}
+
+.localityTxt h2{
+    position: relative;
+    padding: 0;
+    margin-left: -200px;
+    font-size: 28px;
+    color: royalblue;
+}
+
+.localityTxt h1{
+    position: relative;
+    padding: 0;
+    margin-left: -280px;
+    margin-top: 50px;
+    font-size: 24px;
+    color: white;
+}
+
+.localityTxt img{
+    position: relative;
+    float: right;
+    margin-top: -100px;
+    margin-bottom: 10px;
+}
+
+.buttonPosition{
+    position: relative;
+    margin-top: 160px;
+    padding-right: 0;
+    padding-top: 0;
+    padding-bottom: 14px;
+}
+
+.map_area_findLayer_button{
+    position: relative;
+    float: right;
+    border: 0;
+    border-radius: 0;
+    color: white;
+    background-color: #028bbf;
+}
+
+
+
+
+
+
+/******************   needAny_wrapper starts    ******************/
+
+.needAny_Container{
+    position: relative;
+    height: auto;
+    margin-right: auto;
+    margin-left: auto;
+    padding: 0;
+    margin-top: 20px;
+}
+
+.needAny_wrapper {
+    position: relative;
+    height: 340px;
+    padding: 0;
+    margin: auto;
+    background-image: url('Images/4.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-color: transparent;
+}
+
+.manyProblem_colMd{
+    position: relative;
+    padding-left: 80px;
+    padding-right: 80px;
+    padding-top: 70px;
+}
+
+.needAnyContent{
+    position: relative;
+    height: auto;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 10px;
+}
+
+.needAnyContent_Subcontainer{
+    position: relative;
+    background-color: #25b9f7;
+    border-radius: 15px;
+    opacity: .9;
+    -webkit-box-shadow: 0px 0px 17px 2px rgba(0,0,0,0.54);
+    -moz-box-shadow: 0px 0px 17px 2px rgba(0,0,0,0.54);
+    box-shadow: 0px 0px 17px 2px rgba(0,0,0,0.54);
+    padding: 20px;
+}
+
+.needAnyContent_Subcontainer p{
+    position: relative;
+    color: white;
+    font-size: 20px;
+    line-height: 30px;
+    text-align: center;
+    word-spacing: 5px;
+}
+
+.getAnAdrLawyer_ButtonPosition{
+    position: relative;
+    margin-top: 290px;
+    padding-right: 0;
+}
+
+.getAnAdrLawyer_Button{
+    position: relative;
+    float: right;
+    border: 0;
+    border-radius: 0;
+    color: white;
+    background-color: #028bbf;
+}
+
+
+
+
+
+
+/******************   SpecialPurpose_wrapper starts    ******************/
+
+
+.SpecialPurpose_Container{
+    position: relative;
+    height: auto;
+    margin-right: auto;
+    margin-left: auto;
+    padding: 0;
+    margin-top: 20px;
+}
+
+.SpecialPurpose_wrapper{
+    position: relative;
+    height: auto;
+    padding: 0;
+    margin: auto;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-color: gainsboro;
+}
+
+.findLayerIcon{
+    position: relative;
+    height: auto;
+    margin-top: 10px;
+}
+
+/*.setIcon{
+    position: relative;
+    height: auto;
+    background-image: url(../../Images/icon/2.png);
+    background-repeat: no-repeat;
+    background-color: transparent;
+}*/
+
+.findLawyerLogo {
+    position: relative;
+    height: 300px;
+    background-image: url('Images/icon/2.png');
+    background-size: auto 290px;
+    background-repeat: no-repeat;
+    margin-top: 10px;
+    margin-left: 20px;
+    margin-bottom: 20px;
+}
+
+.special_purpose{
+    position: relative;
+    background-color: transparent;
+    margin-top: 30px;
+    margin-left: auto;
+    margin-right: auto;
+    padding-top: 100px;
+    padding-bottom: 100px;
+}
+
+.specialPurpose{
+    color: orangered;
+    font-size: 20px;
+    text-align: center;
+    margin: auto;
+    text-decoration: underline;
+    letter-spacing: 2px;
+}
+
+.chkBox{
+    width: 300px;
+    height: 250px;
+    background-color: transparent;
+    padding: 55px 0 0 30px;
+}
+
+.fnt_style{
+    color: orangered;
+    font-size: 15px;
+    text-align: left;
+}
+
+.chkBox a{
+    position: relative;
+    margin-left: 28px;
+    margin-top: -5px;
+    font-size: 15px;
+}
+
+.SpecialPurpose_buttonPosition{
+    position: relative;
+    float: right;
+    padding-right: 0;
+    margin-top: 10px;
+}
+
+.SpecialPurposefindLayer_button{
+    position: relative;
+    float: right;
+    border: 0;
+    border-radius: 0;
+    margin-top: 20px;
+    margin-bottom: 10px;
+    color: white;
+    background-color: #028bbf;
+}
+
+
+
+
+
+
+/***************** knowYourLegalGroup_wrapper starts     **********/
+
+
+.knowYourLegalGroup{
+    position: relative;
+    height: auto;
+    margin-right: auto;
+    margin-left: auto;
+    padding: 0 ;
+    background-color: transparent;
+    margin-top: 20px;
+}
+
+.knowYourLegalGroup_wrapper{
+    position: relative;
+    height: auto;
+    padding: 0;
+    margin: auto;
+    background-color: skyblue;
+}
+
+@media (min-width: 1500px) {
+  .knowYourContainer {
+    width: 1570px;
+  }
+}
+
+.knowYourContainer{
+    position: relative;
+    height: auto;
+    background-color: white;
+    margin-top: 20px;
+    padding-top: 20px;
+}
+
+.knowYourTxt{
+    position: relative;
+    height: auto;
+    line-height: 1.5em;
+    font-size: 70px;
+    margin-top: 20px;
+    padding: 0;
+    word-spacing: 10px;
+    color: skyblue;
+}
+
+.triangleEffect{
+    position: relative;
+    background-color: white;
+    float: right;
+    margin-top: 20px;
+    -webkit-clip-path: polygon(100% 0, 0 0, 100% 100%);
+    clip-path: polygon(100% 0, 0 0, 100% 100%);
+}
+
+.otherText{
+    position: relative;
+    height: auto;
+    background-color: transparent;
+    margin: auto;
+    padding-top: 30px;
+}
+
+.otherText p{
+    position: relative;
+    color: white;
+    text-align: center;
+    font-size: 40px;
+    line-height: normal;
+    padding: 0;
+}
+
+.haveALook_ButtonPosition{
+    position: relative;
+    margin-bottom: 10px;
+}
+
+.haveALook_Button{
+    position: relative;
+    float: right;
+    border: 0;
+    color: white;
+    background-color: #028bbf;
+}
+
+.LetsHAVE_button{
+    position: relative;
+    margin-top: -240px;
+    border-radius: 10px;
+    word-spacing: 2px;
+}
+
+
+
+
+/***************** amar_chai_wrapper starts     **********/
+
+
+.amar_chai_Container{
+    position: relative;
+    margin-right: auto;
+    margin-left: auto;
+    padding-bottom: 0;
+    margin-top: 20px;
+}
+
+.amar_chai_wrapper {
+    position: relative;
+    height: 340px;
+    padding-bottom: 30px;
+    padding-right: 10px;
+    padding-top: 10px;
+    margin: auto;
+    background-image: url('Images/5.jpg');
+    background-size: cover;
+    background-color: transparent;
+}
+
+.news_updates_col{
+    padding-left: 0;
+}
+.news_updates_group{
+    position: relative;
+    width: auto;
+    height: 150px;
+    background-color: transparent;
+    padding-top: 5px;
+    padding-left: 0;
+    margin: 0;
+}
+
+.blue_background{
+    position: relative;
+    width: 200px;
+    height: 48px;
+    background-color: #008abf;
+    margin-top: 4px;
+}
+
+.news_updates_box{
+    width: 205px;
+    height: 50px;
+    z-index: 2;
+    background-color: #ee5a3e;
+    -ms-transform: scale(0.5,0.5); /* IE 9 */
+    -webkit-transform: scale(0.5,0.5); /* Safari */
+    transform: scale(0.5,0.5); /* Standard syntax */
+    transform: skew(-4deg,-1deg);
+    margin: -79px 0 0 2px;
+    border: 0;
+    border-radius: 0;
+}
+
+.law{
+    color: white;
+    position: relative;
+    font-size: 14px;
+    padding-left: 10px;
+}
+
+.news_updates_box P{
+    position: relative;
+    color: white;
+    text-align: center;
+    font-size: 20px;
+    margin-top: -5px;
+}
+
+.reviewANDanalytics_container{
+    margin-top: 15px;
+}
+
+.reviewANDanalytics_box{
+    width: 205px;
+    height: 50px;
+    z-index: 2;
+    background-color: #ee5a3e;
+    -ms-transform: scale(0.5,0.5); /* IE 9 */
+    -webkit-transform: scale(0.5,0.5); /* Safari */
+    transform: scale(0.5,0.5); /* Standard syntax */
+    transform: skew(-4deg,-1deg);
+    margin: -79px 0 0 2px;
+    border: 0;
+    border-radius: 0;
+}
+
+.reviewANDanalytics_box P{
+    position: relative;
+    color: white;
+    text-align: center;
+    font-size: 16px;
+    margin-top: -5px;
+}
+
+.amarChaiContent{
+    position: relative;
+    height: auto;
+    margin-top: 50px;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 10px;
+}
+
+.amarChaiSubContent{
+    position: relative;
+    background-color: #fafafa;
+    opacity: .7;
+    border-radius: 15px;
+    -webkit-box-shadow: 0px 0px 17px 2px rgba(0,0,0,0.54);
+    -moz-box-shadow: 0px 0px 17px 2px rgba(0,0,0,0.54);
+    box-shadow: 0px 0px 17px 2px rgba(0,0,0,0.54);
+    padding: 20px;
+}
+
+.amarChaiSubContent h1{
+    color: red;
+}
+
+.amarChaiContent p{
+    position: relative;
+    color: #0375a0;
+    font-size: 20px;
+    line-height: 30px;
+    text-align: justify;
+    word-spacing: 5px;
+}
+
+.getupdates_colMd{
+    position: relative;
+    padding-right: 0;
+}
+
+.getupdates_ButtonPosition{
+    position: relative;
+    margin-top: 285px;
+    padding-right: 0;
+}
+
+.getupdates_Button{
+    position: relative;
+    float: right;
+    border: 0;
+    color: white;
+    background-color: #028bbf;
+}
+
+
+
+
+
+
+
+/***************** amar_chai_wrapper starts     **********/
+
+.LawStudent_Container{
+    position: relative;
+    margin-right: auto;
+    margin-left: auto;
+    padding-bottom: 0;
+    margin-top: 20px;
+}
+
+.LawStudent_wrapper {
+    position: relative;
+    height: 340px;
+    padding-bottom: 30px;
+    padding-right: 10px;
+    padding-top: 10px;
+    margin: auto;
+    background-image: url('Images/6.jpg');
+    background-size: cover;
+    background-color: transparent;
+}
+
+.lawStudentContent{
+    position: relative;
+    height: auto;
+    margin-top: 50px;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 10px;
+}
+
+.lawStudentsubContent{
+    position: relative;
+    background-color: #25b9f7;
+    border-radius: 15px;
+    opacity: .9;
+    -webkit-box-shadow: 0px 0px 17px 2px rgba(0,0,0,0.54);
+    -moz-box-shadow: 0px 0px 17px 2px rgba(0,0,0,0.54);
+    box-shadow: 0px 0px 17px 2px rgba(0,0,0,0.54);
+    padding: 20px;
+}
+
+.lawStudentsubContent p{
+    position: relative;
+    color: white;
+    font-size: 20px;
+    line-height: 30px;
+    text-align: justify;
+    word-spacing: 5px;
+}
+
+.studentProfile_ButtonPosition{
+    position: relative;
+    margin-top: 285px;
+    padding-right: 0;
+}
+
+.studentProfile_Button{
+    position: relative;
+    border: 0;
+    border-radius: 0;
+    float: right;
+    color: white;
+    background-color: #028bbf;
+}
+
+
+
+
+
+
+
+/**********************************    lawSchool_wrapper starts   ********************************/
+
+
+.lawSchool_Container{
+    position: relative;
+    margin-right: auto;
+    margin-left: auto;
+    padding-bottom: 0;
+    margin-top: 20px;
+}
+
+.lawSchool_wrapper {
+    position: relative;
+    height: auto;
+    padding-bottom: 30px;
+    padding-right: 10px;
+    padding-top: 10px;
+    margin: auto;
+    background-image: url('Images/7.jpg');
+    background-size: cover;
+    background-color: transparent;
+}
+
+.boxContainer{
+    position: relative;
+    height: auto;
+    margin-top: 228px;
+    padding-bottom: 18px;
+}
+
+.greenBox{
+    width: 160px;
+    height: 64px;
+    float: right;
+    position: relative;
+    margin: 18px 0 0 0;
+    background-color: #7fc464;
+    background-size: cover;
+    -webkit-clip-path: polygon(0 10%, 100% 0%, 92% 100%, 0% 100%);
+    clip-path: polygon(0 10%, 100% 0%, 87% 100%, 0% 100%);
+}
+
+.lawSchool{
+    width: 160px;
+    height: 64px;
+    float: right;
+    position: relative;
+    margin: 21px -157px 0 0;
+    padding: 0;
+    border: 0;
+    border-radius: 0;
+    background-color: #ee5a3e;
+    background-size: cover;
+    -webkit-clip-path: polygon(0 10%, 100% 0%, 92% 100%, 0% 100%);
+    clip-path: polygon(0 10%, 100% 0%, 87% 100%, 0% 100%);
+}
+
+.lawSchool h4{
+    color: white;
+    padding-left: 16px;
+}
+
+.lawSchool p{
+    color: white;
+    font-size: 29px;
+    line-height: normal;
+    text-align:left;
+    padding-left: 5px;
+    padding-bottom: -5px;
+    margin: -8px 0 0 0;
+}
+
+
+
+
+
+
+
+/**********************************    lawSchool_wrapper starts   ********************************/
+
+.problemNsolution_Container{
+    position: relative;
+    margin-right: auto;
+    margin-left: auto;
+    padding-bottom: 0;
+    margin-top: 20px;
+}
+
+.problemNsolution_wrapper {
+    position: relative;
+    height: auto;
+    padding-bottom: 30px;
+    padding-right: 10px;
+    padding-top: 10px;
+    margin: auto;
+    background-image: url('Images/last.jpg');
+    background-size: cover;
+    background-color: transparent;
+}
+
+.social_problem_colMd{
+    position: relative;
+    padding-left: 0;
+}
+
+.social_problem_container{
+    position: relative;
+    padding-top: 5px;
+}
+
+.social_box{
+    width: 120px;
+    height: 30px;
+    position: relative;
+    margin: 4px 0 0 0;
+    padding-top: 5px;
+    color: white;
+    background-color: #74cdd5;
+    background-size: cover;
+    -webkit-clip-path: polygon(0 10%, 100% 0%, 92% 100%, 0% 100%);
+    clip-path: polygon(0 10%, 100% 0%, 87% 100%, 0% 100%);
+    border: 0;
+    border-radius: 0;
+}
+
+.social_box p{
+    font-size: 18px;
+    color: white;
+    text-align: center;
+}
+
+.problem_and_solution{
+    width: 250px;
+    height: 36px;
+    position: relative;
+    margin: 1px 0 5px 0;
+    background-color: #ee5a3e;
+    background-size: cover;
+    -webkit-clip-path: polygon(0 10%, 100% 0%, 96% 100%, 0% 100%);
+    clip-path: polygon(0 10%, 100% 0%, 87% 100%, 0% 100%);
+    border: 0;
+    border-radius: 0;
+}
+
+.problem_and_solution p{
+    position: relative;
+    color: white;
+    word-spacing: 5px;
+    text-align: center;
+    font-size: 18px;
+    padding-top: 3px;
+    margin: auto;
+}
+
+.manyProblem_colMd{
+    position: relative;
+    padding-left: 80px;
+    padding-right: 80px;
+    padding-top: 70px;
+}
+
+.manyProblem_container{
+    position: relative;
+    height: auto;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 10px;
+}
+
+.manyProblem_Subcontainer{
+    position: relative;
+    background-color: black;
+    border-radius: 15px;
+    opacity: .7;
+    -webkit-box-shadow: 0px 0px 17px 2px rgba(0,0,0,0.54);
+    -moz-box-shadow: 0px 0px 17px 2px rgba(0,0,0,0.54);
+    box-shadow: 0px 0px 17px 2px rgba(0,0,0,0.54);
+    padding: 20px;
+}
+
+.manyProblem_Subcontainer p{
+    position: relative;
+    color: white;
+    font-size: 20px;
+    line-height: 30px;
+    text-align: justify;
+    word-spacing: 5px;
+}
+
+
+.manySocial_boxContainer{
+    position: relative;
+    height: auto;
+    padding-right: 0;
+    margin-top: 230px;
+}
+
+.manySocial_greenBox{
+    width: 170px;
+    height: 50px;
+    float: right;
+    position: relative;
+    margin: 1px 0 0 0;
+    background-color: #7fc464;
+    background-size: cover;
+    -webkit-clip-path: polygon(0 10%, 100% 0%, 92% 100%, 0% 100%);
+    clip-path: polygon(0 10%, 100% 0%, 87% 100%, 0% 100%);
+}
+
+.reportAproblem{
+    width: 170px;
+    height: 50px;
+    float: right;
+    position: relative;
+    margin: -48px 3px 0 0;
+    padding: 0;
+    background-color: #ee5a3e;
+    background-size: cover;
+    -webkit-clip-path: polygon(0 10%, 100% 0%, 92% 100%, 0% 100%);
+    clip-path: polygon(0 10%, 100% 0%, 87% 100%, 0% 100%);
+    border: 0;
+    border-radius: 0;
+}
+
+.reportAproblem p{
+    position: relative;
+    color: white;
+    text-align: left;
+    padding-left: 5px;
+    margin-top: 16px;
+    font-size: 15px;
+}
+
+
+
+
+
+
+
+
+
+
+/***************** footer_container starts     **********/
+
+.footer_container{
+    position: relative;
+    height: auto;
+    background-color: #202020;
+    margin-top: 20px;
+    padding: 10px 20px;
+}
+
+.colMdSeparetor{
+    position: relative;
+    margin-top: 15px;
+}
+
+.aboutUs_container{
+    position: relative;
+    padding-top: 4px;
+    padding-left: 40px;
+    padding-right: 40px;
+    background-color: transparent;
+    text-align: justify;
+}
+
+.aboutUs_container h4{
+    font-size: 19px;
+    color: white;
+    word-spacing: 4px;
+}
+
+.aboutUs_container hr{
+    width: 80px;
+    float: left;
+    margin: -5px 0 0 0;
+    padding: 0;
+}
+
+.aboutUs_container strong{
+    color: #337ab7;
+    font-size: 18px;
+    word-spacing: 10px;
+    margin: auto;
+     text-align: justify;
+}
+
+.aboutUs_container p{
+    color: white;
+    font-size: 16px;
+    text-align: left;
+    word-spacing: 5px;
+     text-align: justify;
+}
+
+.forMoreInfo{
+    background-color: #202020;
+}
+
+.forMoreInfo h4{
+    font-size: 19px;
+    color: white;
+    word-spacing: 4px;
+}
+
+.forMoreInfo hr{
+    width: 80px;
+    float: left;
+    margin: -5px 0 0 0;
+    padding: 0;
+}
+
+.seperator{
+    width: 250px;
+    height: 1px;
+    padding-bottom: 1px;
+    background-color: white;
+}
+
+.Info_list ul{
+    padding: 0
+}
+
+.Info_list .rowProblem hr{
+    width: 150PX;
+    margin: 3px 0 0 0;
+}
+
+.forMoreInfo .Info_list .rowProblem li{
+	list-style: none;
+}
+
+.forMoreInfo .Info_list .rowProblem li a{
+    color: white;
+    font-size: 16px;
+    padding-left: 15px;
+    text-decoration: none;
+}
+
+.Info_list .col-md1:hover + .seperator{
+    background-color: #337ab7;
+}
+
+
+/***************     findLawyerIn  starts     ****************/
+
+
+.findLawyerIn{
+    background-color: #202020;
+}
+
+.findLawyerIn h4{
+    font-size: 19px;
+    color: white;
+    word-spacing: 4px;
+}
+
+.findLawyerIn hr{
+    width: 80px;
+    float: left;
+    margin: -5px 0 0 0;
+    padding: 0;
+}
+
+.area_list ul{
+    padding: 0
+}
+
+.area_list .rowProblem hr{
+    width: 150PX;
+    margin: 3px 0 0 0;
+}
+
+.findLawyerIn .area_list .rowProblem li{
+	list-style: none;
+}
+
+.findLawyerIn .area_list .rowProblem li a{
+    color: white;
+    font-size: 16px;
+    padding-left: 15px;
+    text-decoration: none;
+}
+
+.area_list .col-md1:hover + .seperator{
+    background-color: #337ab7;
+}
+
+
+.subscribe_container{
+    width: 90%;
+    height: 100%;
+    padding: 4px 50px 0 10px;
+    background-color: transparent;
+    text-align: justify;
+}
+
+.subscribe_container h4{
+    font-size: 19px;
+    color: white;
+    word-spacing: 4px;
+}
+
+.subscribe_container hr{
+    width: 80px;
+    float: left;
+    margin: -5px 0 0 0;
+    padding: 0;
+}
+
+.subscribe_container p{
+    color: white;
+    font-size: 15px;
+    text-align: left;
+    word-spacing: 5px;
+     text-align: justify;
+}
+
+.subscribeButton,
+.subscribeMail{
+    border-radius: 0;
+}
+
+
+#footer{
+    background-color:black;
+    color:white;
+    clear:both;
+    text-align:left;
+    padding: 15px 15px 15px 95px;
+}
+
+
+
+
+
+
+
+.hiddenDiv {
+    /*visibility: hidden;*/
+    display:none;
+} 
+
+
+/*Multi carosul item CSS Start*/
+.multi-item-carousel .carousel-inner > .item {
+  -webkit-transition: 500ms ease-in-out left;
+  transition: 500ms ease-in-out left;
+}
+.multi-item-carousel .carousel-inner .active.left {
+  left: -25%;
+}
+.multi-item-carousel .carousel-inner .active.right {
+  left: 25%;
+}
+.multi-item-carousel .carousel-inner .next {
+  left: 25%;
+}
+.multi-item-carousel .carousel-inner .prev {
+  left: -25%;
+}
+@media all and (transform-3d), (-webkit-transform-3d) {
+  .multi-item-carousel .carousel-inner > .item {
+    -webkit-transition: 500ms ease-in-out all;
+    transition: 500ms ease-in-out all;
+    -webkit-backface-visibility: visible;
+            backface-visibility: visible;
+    -webkit-transform: none!important;
+            transform: none!important;
+  }
+}
+.multi-item-carousel .carouse-control.left,
+.multi-item-carousel .carouse-control.right {
+  background-image: none;
+}
+/*Multi carosul item CSS Start*/
+
+

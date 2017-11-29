@@ -1,0 +1,1026 @@
+/********* Corrections   **********/
+.containerFluidMargin{
+    padding-right: 0px;
+    padding-left: 0px;
+}
+
+.formGroupMargin{
+    position: relative;
+    margin-top: 8px;
+    margin-bottom: 8px;
+    margin-left: 20px;
+    margin-right: 20px;
+}
+
+.col_md_padding{
+    position: relative;
+    padding-right: 5px;
+    padding-left: 5px;
+}
+
+
+
+/***********     For  Search box    ************/
+
+
+.icon-addon {
+    position: relative;
+    color: #555;
+    display: block;
+}
+
+.icon-addon:after,
+.icon-addon:before {
+    display: table;
+    content: " ";
+}
+
+.icon-addon:after {
+    clear: both;
+}
+
+.icon-addon.addon-md .glyphicon,
+.icon-addon .glyphicon, 
+.icon-addon.addon-md .fa,
+.icon-addon .fa {
+    position: absolute;
+    z-index: 2;
+    left: 10px;
+    font-size: 14px;
+    width: 20px;
+    margin-left: -2.5px;
+    text-align: center;
+    padding: 10px 0;
+    top: 1px
+}
+
+.icon-addon.addon-lg .form-control {
+    line-height: 1.33;
+    height: 36px;
+    font-size: 17px;
+    padding: 8px 16px 8px 40px;
+    border-radius: 5px;
+}
+
+.icon-addon.addon-lg .fa,
+.icon-addon.addon-lg .glyphicon {
+    font-size: 17px;
+    margin-left: 0;
+    left: 11px;
+    top: auto;
+}
+
+.icon-addon.addon-md .form-control,
+.icon-addon .form-control {
+    padding-left: 30px;
+    float: left;
+    font-weight: normal;
+}
+
+.icon-addon .form-control:focus + .glyphicon,
+.icon-addon:hover .glyphicon,
+.icon-addon .form-control:focus + .fa,
+.icon-addon:hover .fa {
+    color: #2580db;
+}
+
+
+
+
+
+/***********   Body starts   **************/
+
+.dashBoardBodyWrapper{
+    position: relative;
+    height: auto;
+    padding: 0px;
+    margin-right: auto;
+    margin-left: auto;
+    margin-bottom: auto;
+    background-color: #ebecf0;
+}
+
+.searchBar{
+    position: relative;
+    height: auto;
+    margin: auto;
+    padding: 1px;
+    background-color: #128bc0;
+}
+
+.right_top_icon{
+    position: relative;
+    width: 50px;
+    height: 50px;
+    background-color: white;
+    border-radius: 50px;
+    border: 0;
+}
+
+
+
+/******************    ProfileDiv starts    *****************/
+
+.profileBackground{
+    position: relative;
+    height: auto;
+    background-color: white;
+}
+
+.profileDiv{
+    position: relative;
+    height: auto;
+    background-color: transparent;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    margin-left: 40px;
+    margin-right: 40px;
+    margin-bottom: 10px;
+}
+
+
+.company_profile_logo{
+    position: relative;
+    width: 120px;
+    height: 120px;
+    border-radius: 60px;
+    margin-left: auto;
+    margin-right: 15px;
+    background-color: #128bc0;
+    float: left;
+}
+
+.profile_info{
+    position: relative;
+    height: auto;
+    padding: 5px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 50px;
+    display: inline-block;
+}
+
+.profile_info h2{
+    position: relative;
+    margin: 0;
+    font-weight: bold;
+}
+
+.sub_info{
+    position: relative;
+    height: auto;
+    padding: 1px;
+    margin-left: 17px;
+    color: black;
+}
+
+.sub_info p{
+    position: relative;
+    margin-bottom: 5px;
+    color: black;
+    line-height: 16px;
+    word-spacing: 2px;
+}
+
+.sub_info strong{
+    position: relative;
+    color: #128bc0;
+    opacity: 1;
+}
+
+
+
+
+/*********************     Title bar     *************************/
+
+
+.title_bar{
+    position: relative;
+    height: auto;
+    background-color: #f6f7f9;
+    padding: 5px;
+    margin-left: 15px;
+    margin-right: 15px;
+    margin-bottom: 2px;
+}
+
+.title_bar p{
+    position: relative;
+    color: #128bc0;
+    font-size: 23px;
+    font-weight: 700;
+    margin-bottom: 0;
+}
+
+
+
+/******************    Dashboard(Right side)     ******************/
+
+.dashBoardContainer{
+    position: relative;
+    height: auto;
+    background-color: transparent;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.menu_list{
+    position: relative;
+    height: auto;
+    background-color: white;
+    padding-top: 10px;
+    padding-bottom: 40px;
+}
+
+.menu_list ul{
+    padding: 0
+}
+
+.menu_list li{
+	list-style: none;
+    padding: 3px 5px 3px 30px;
+    color: #128bc0;
+    font-size: 16px;
+}
+
+.menu_list li:hover{
+    color: black;
+    cursor: pointer;
+}
+
+.view_action{
+    position: relative;
+    height: auto;
+    margin-left: auto;
+    margin-right: auto;
+    background-color: transparent;
+}
+
+
+
+/**************      over_view      *****************/
+
+.over_view{
+    position: relative;
+    height: auto;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 30px;
+}
+
+
+/*************          Right side       *****************/
+.view_Lists{
+    position: relative;
+    height: auto;
+    clear: both;
+    margin-top: 20px;
+    margin-bottom: 25px;
+}
+
+.over_view .view_Lists img{
+    width: 50px; 
+    margin-left:20px; 
+    margin-right: 15px; 
+    float:left;
+}
+
+.overViewText{
+    position: relative;
+    width: 350px;
+    height: auto;
+    padding-right: 50px;
+    word-wrap: break-word;
+    display: inline-block;
+}
+
+.overViewText p{
+    position: relative;
+    width: auto;
+    height: auto;
+    margin-bottom: 2px;
+}
+
+.seperator{
+    width: auto;
+    height: 1px;
+    margin-left: 15px;
+    padding-bottom: 1px;
+    background-color: darkgray;
+}
+
+
+/***********************        Left side       *********************/
+
+.view_Lists_right{
+    position: relative;
+    height: auto;
+    margin-top: 25px;
+    margin-bottom: 40px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.over_view .view_Lists_right img{
+    width: 50px; 
+    margin-left:20px; 
+    margin-right: 15px; 
+    float:left;
+}
+
+.overViewText_right{
+    position: relative;
+    width: 350px;
+    height: auto;
+    line-height: normal;
+    padding-right: 0px;
+    word-wrap: break-word;
+    display: inline-block;
+}
+
+.overViewText_right p{
+    margin-bottom: 5px;
+}
+
+
+/**********************       Firm Details        *********************/
+
+.firm_details_div{
+    position: relative;
+    height: auto;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 30px;
+}
+
+.seperator_1{
+    width: auto;
+    height: 1px;
+    padding-bottom: 1px;
+    margin-bottom: 10px;
+    background-color: darkgray;
+}
+
+.firm_details_div h4{
+    color: black;
+    font-weight: bolder;
+    padding-left: 15px;
+}
+
+.firm_details_div p{
+    color: black;
+    padding-left: 15px;
+    font-size: 16px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+}
+
+.wrap_text{
+    width: 500px;
+    overflow:hidden; 
+    white-space:nowrap; 
+    text-overflow: ellipsis;
+}
+
+.floating_left{
+    position: relative;
+    float: left;
+}
+
+.seeMore{
+    color: #128bc0;!important;
+    font-size: 19px;
+    padding: 2px;
+    display: inline-block;
+}
+
+
+/*********************  Prctic Area  *******************/
+
+.prctic_Area{
+    position: relative;
+    height: auto;
+    margin-left: auto;
+    margin-right: 100px;
+    margin-bottom: 30px;
+}
+
+.prctic_Area h4{
+    color: black;
+    font-weight: bolder;
+    padding-left: 15px;
+}
+
+.edit_area_expand{
+    position: relative;
+    height: auto;
+    background-color: white;
+    margin-left: 25px;
+    margin-right: 25px;
+    margin-bottom: 20px;
+}
+
+.formDiv{
+    position: relative;
+    height: auto;
+    width: 400px;
+    padding: 15px 45px 15px 10px;
+    margin-top: 30px;
+}
+
+.form_style{
+    position: relative;
+    height: auto;
+    margin-bottom: 15px;
+    float: right;
+}
+
+.form_style label{
+    position: relative;
+    height: auto;
+    margin-right: 10px;
+}
+
+
+.leftTop_text{
+    clear: both;
+    position: relative;
+    background-color: transparent;
+    font-size: 18px;
+    padding: 10px;
+}
+
+.button_save{
+    clear: both;
+    position: relative;
+    background-color: #128bc0;
+    color: white;
+    font-size: 16px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 4px;
+    padding-bottom: 2px;
+    padding-top: 2px;
+    padding-left: 26px;
+    padding-right: 26px;
+    border: 0;
+}
+
+.button_cancel{
+    clear: both;
+    position: relative;
+    background-color: #e6e6e6;
+    color: black;
+    font-size: 16px;
+    margin-top: 4px;
+    margin-left: auto;
+    margin-right: auto;
+    padding-bottom: 2px;
+    padding-top: 2px;
+    padding-left: 19px;
+    padding-right: 19px;
+    border: 0 ;
+}
+
+.prctic_areas{
+    position: relative;
+    height: auto;
+    clear: both;
+    margin-bottom: 10px;
+}
+
+.prctic_areas img{
+    width: 50px; 
+    height: auto;
+    margin-left:20px; 
+    margin-right: 15px; 
+    float:left;
+}
+
+.prctic_areas_Text{
+    position: relative;
+    height: auto;
+    padding-right: 50px;
+    word-wrap: break-word;
+    display: inline-block;
+}
+
+.add_prctic_areas_Text p{
+    margin: 0;
+    padding: 12px;
+    font-size: 16px;
+    font-weight: normal;
+    display: inline-block;
+}
+
+.prctic_areas_Text p{
+    color: black;
+    font-size: 16px;
+    padding: 12px;
+    margin: 0;
+    font-weight: bolder;
+}
+
+.prctic_areas_EditText p{
+    color: black;
+    font-size: 16px;
+    margin: 0;
+    padding-top: 12px;
+    padding-bottom: 12px;
+    display:inline-block;
+}
+
+
+
+
+/*********************  Academic Qualification  *******************/
+
+.Specialization_area{
+    position: relative;
+    height: auto;
+    margin-left: auto;
+    margin-right: 100px;
+    margin-bottom: 30px;
+}
+
+.Specialization_area h4{
+    color: black;
+    font-weight: bolder;
+    padding-left: 15px;
+}
+
+.varsity_Container{
+    position: relative;
+    margin-bottom: 100px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.School_container{
+    position: relative;
+    margin: auto;
+}
+
+.QualificationDiv{
+    position: relative;
+    height: auto;
+    clear: both;
+    margin-bottom: 10px;
+}
+
+.QualificationDiv img{
+    width: 50px; 
+    height: auto;
+    margin-left:20px; 
+    margin-right: 15px; 
+    float:left;
+}
+
+.add_Qualification_Text p{
+    margin: 0;
+    padding: 12px;
+    font-size: 16px;
+    font-weight: normal;
+}
+
+.Qualification_Text{
+    position: relative;
+    height: auto;
+    padding-right: 50px;
+    word-wrap: break-word;
+}
+
+.Qualification_Text p{
+    color: black;
+    font-size: 19px;
+    margin: 0;
+    font-weight: bolder;
+}
+
+.sub_texts{
+    position: relative;
+    margin: auto;
+    word-spacing: 4px;
+}
+
+.Qualification_EditText p{
+    color: black;
+    font-size: 16px;
+    margin: 0;
+    padding-top: 12px;
+    padding-bottom: 12px;
+}
+
+
+
+
+/*********************  Specialization  *******************/
+
+.Specialization{
+    position: relative;
+    height: auto;
+    margin-left: auto;
+    margin-right: 100px;
+    margin-bottom: 30px;
+}
+
+.Specialization h4{
+    color: black;
+    font-weight: bolder;
+    padding-left: 15px;
+}
+
+.specializations{
+    position: relative;
+    height: auto;
+    clear: both;
+    margin-bottom: 10px;
+}
+
+.specializations img{
+    width: 50px; 
+    height: auto;
+    margin-left:20px; 
+    margin-right: 15px; 
+    float:left;
+}
+
+.add_specialization_Text{
+    position: relative;
+    height: auto;
+    padding-right: 50px;
+    word-wrap: break-word;
+    display: inline-block;
+}
+
+.add_specialization_Text p{
+    margin: 0;
+    padding: 12px;
+    font-size: 16px;
+    font-weight: normal;
+}
+
+.specialization_Text{
+    position: relative;
+    display: inline-block;
+}
+
+.specialization_Text p{
+    color: black;
+    font-size: 16px;
+    padding: 12px;
+    margin: 0;
+    font-weight: bolder;
+    display: inline-block;
+}
+
+.prctic_areas_EditText p{
+    color: black;
+    font-size: 16px;
+    margin: 0;
+    padding-top: 12px;
+    padding-bottom: 12px;
+}
+
+
+
+
+
+
+/*********************  Language  *******************/
+
+.Language_Area{
+    position: relative;
+    height: auto;
+    margin-left: auto;
+    margin-right: 100px;
+    margin-bottom: 30px;
+}
+
+.Language_Area h4{
+    color: black;
+    font-weight: bolder;
+    padding-left: 15px;
+}
+
+.Languages{
+    position: relative;
+    height: auto;
+    clear: both;
+    margin-bottom: 10px;
+}
+
+.Languages img{
+    width: 50px; 
+    height: auto;
+    margin-left:20px; 
+    margin-right: 15px; 
+    float:left;
+}
+
+.add_Languages_Text{
+    position: relative;
+    height: auto;
+    padding-right: 50px;
+    word-wrap: break-word;
+    display: inline-block;
+}
+
+.Language_Text{
+    position: relative;
+    display: inline-block;
+}
+
+.add_Languages_Text p{
+    margin: 0;
+    padding: 12px;
+    font-size: 16px;
+    font-weight: normal;
+}
+
+.Language_Text p{
+    color: black;
+    font-size: 16px;
+    padding: 12px;
+    margin: 0;
+    font-weight: bolder;
+}
+
+
+
+
+/*********************  Academic Qualification  *******************/
+
+.publications{
+    position: relative;
+    height: auto;
+    margin-left: auto;
+    margin-right: 100px;
+    margin-bottom: 30px;
+}
+
+.publications h4{
+    color: black;
+    font-weight: bolder;
+    padding-left: 15px;
+}
+
+.add_publications{
+    position: relative;
+    height: auto;
+    clear: both;
+    margin-bottom: 10px;
+}
+
+.add_publications img{
+    width: 50px; 
+    height: auto;
+    margin-left:20px; 
+    margin-right: 15px; 
+    float:left;
+}
+
+.add_publications_Text p{
+    margin: 0;
+    padding: 12px;
+    font-size: 16px;
+    font-weight: normal;
+}
+
+.add_publications_Text{
+    position: relative;
+    height: auto;
+    padding-right: 50px;
+    word-wrap: break-word;
+    display: inline-block;
+}
+
+.publication_Text{
+    position: relative;
+    display: inline-block;
+}
+
+.publication_Text p{
+    color: black;
+    font-size: 19px;
+    margin: 0;
+    font-weight: bolder;
+    display: inline-block;
+}
+
+.sub_texts{
+    position: relative;
+    margin: auto;
+    word-spacing: 4px;
+}
+
+.publication_Text_EditText p{
+    color: black;
+    font-size: 16px;
+    margin: 0;
+    padding-top: 12px;
+    padding-bottom: 12px;
+}
+
+
+
+
+
+
+
+/*********************  achievements, awards & grants  *******************/
+
+.achievements_awards_grants{
+    position: relative;
+    height: auto;
+    margin-left: auto;
+    margin-right: 100px;
+    margin-bottom: 30px;
+}
+
+.achievements_awards_grants h4{
+    color: black;
+    font-weight: bolder;
+    padding-left: 15px;
+}
+
+.achievements{
+    position: relative;
+    height: auto;
+    clear: both;
+    margin-bottom: 10px;
+}
+
+.achievements img{
+    width: 50px; 
+    height: auto;
+    margin-left:20px; 
+    margin-right: 15px; 
+    float:left;
+}
+
+.add_achievements_Text p{
+    margin: 0;
+    padding: 12px;
+    font-size: 16px;
+    font-weight: normal;
+}
+
+.add_achievements_Text{
+    position: relative;
+    height: auto;
+    padding-right: 50px;
+    word-wrap: break-word;
+    display: inline-block;
+}
+
+.achievement_Text{
+    position: relative;
+    display: inline-block;
+}
+
+.achievement_Text p{
+    color: black;
+    font-size: 19px;
+    margin: 0;
+    font-weight: bolder;
+}
+
+.sub_texts{
+    position: relative;
+    margin: auto;
+    word-spacing: 4px;
+    display: block;
+}
+
+
+
+
+
+/*********************  achievements, awards & grants  *******************/
+
+.career_summery{
+    position: relative;
+    height: auto;
+    margin-left: auto;
+    margin-right: 100px;
+    margin-bottom: 30px;
+}
+
+.career_summery h4{
+    color: black;
+    font-weight: bolder;
+    padding-left: 15px;
+}
+
+.summery_details{
+    position: relative;
+    height: auto;
+    color: black;
+    word-spacing: 3px;
+    font-size: 17px;
+    padding-bottom: 5px;
+    padding-top: 8px;
+}
+
+
+
+
+/*********************  Listed Lawyer  *******************/
+
+.Listed_Lawyer{
+    position: relative;
+    height: auto;
+    margin-left: auto;
+    margin-right: 100px;
+    margin-bottom: 30px;
+}
+
+.Listed_Lawyer h4{
+    color: black;
+    font-weight: bolder;
+    padding-left: 15px;
+}
+
+.Listed_lawyer_div{
+    position: relative;
+    height: auto;
+    clear: both;
+    margin-bottom: 10px;
+}
+
+.Listed_lawyer_div img{
+    width: 50px; 
+    height: auto;
+    margin-left:20px; 
+    margin-right: 15px; 
+    float:left;
+}
+
+.add_Lawyer_Text{
+    position: relative;
+    height: auto;
+    padding-right: 50px;
+    word-wrap: break-word;
+    display: inline-block;
+}
+
+.add_Lawyer_Text p{
+    margin: 0;
+    padding: 12px;
+    font-size: 16px;
+    font-weight: normal;
+    display: inline-block;
+}
+
+.Lawyer_Text{
+    position: relative;
+    display: inline-block;
+}
+
+.Lawyer_Text p{
+    color: black;
+    font-size: 19px;
+    margin: 0;
+    font-weight: bolder;
+    display: inline-block;
+}
+
+.sub_texts{
+    position: relative;
+    margin: auto;
+    word-spacing: 4px;
+}
+
+
+
+
+
+
+/*******************    Account   Settings      ******************/
+
+
+.left_empty_side{
+    position: relative;
+    height: 400px;
+    background-color: white;
+    padding-top: 10px;
+    padding-bottom: 40px;
+}
+
+.account_settings_wrapper{
+    position: relative;
+    height: auto;
+    margin-top: 12px;
+}
+
+.account_settings_wrapper h4{
+    color: black;
+    font-weight: bolder;
+    padding-left: 15px;
+}
+
+.accountSettings_subtexts{
+    font-weight: 300;
+}
+

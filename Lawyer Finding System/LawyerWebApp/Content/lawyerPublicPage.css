@@ -1,0 +1,348 @@
+/*******************  Accordion    **********************/
+
+div.accordion {
+    background-color: #eee;
+    color: #444;
+    cursor: pointer;
+    padding: 18px;
+    width: 100%;
+    border: none;
+    text-align: left;
+    outline: none;
+    font-size: 15px;
+    transition: 0.4s;
+}
+
+div.accordion.active, div.accordion:hover {
+    background-color: #ddd;
+}
+
+div.panel {
+    background-color: #f2f2f2;
+    max-height: 0;
+    border: 0;
+    border-radius: 0;
+    overflow: hidden;
+    margin-bottom: 1px;;
+    transition: 0.6s ease-in-out;
+    opacity: 0;
+}
+
+div.panel.show {
+    opacity: 1;
+    max-height: none;
+}
+
+
+
+
+
+
+
+/***********   Body starts   **************/
+
+.lawerPublicpageBodyWrapper{
+    height: auto;
+    padding:15px;
+    margin-right: auto;
+    margin-left: auto;
+    margin-bottom: auto;
+    background-color: #e8e8e8;
+}
+
+.profileDiv{
+    position: relative;
+    height: auto;
+    padding: 10px;
+    background-color: white;
+}
+
+.picture_and_NameHoldder{
+    position: relative;
+    height: auto;
+    margin-top: 25px;
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+.profilePicture{
+    position: relative;
+    width: 425px;
+    height: auto;
+    margin-left: auto;
+    margin-right: auto;
+    border-radius: 7px;
+    padding: 4px;
+    background-color: #f9fafc;
+}
+
+.profileInfo{
+    position: relative;
+    width: 425px;
+    height: auto;
+    margin-top: 10px;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 10px;
+}
+
+.profileName{
+    position: relative;
+    font-family: cursive;
+    font-size: 27px;
+}
+
+.profession{
+    position: relative;
+    font-size: 12px;
+}
+
+.experience{
+    position: relative;
+    margin-top: 15px;
+    margin-bottom: auto;
+    margin-right: auto;
+    margin-left: auto;
+}
+
+.previous{
+    position: relative;
+    width: 100px;
+    font-size: 12px;
+    float: left;
+}
+
+.experienceTitle{
+    position: relative;
+    font-size: 12px;
+    margin-left: 25px;
+    font-weight: bolder;
+    float: left;
+}
+
+.education{
+    position: relative;
+    margin-bottom: auto;
+    margin-right: auto;
+    margin-left: auto;
+}
+
+.title_education{
+    position: relative;
+    width: 100px;
+    font-size: 12px;
+    float: left;
+}
+
+.instituteName{
+    position: relative;
+    font-size: 12px;
+    margin-left: 25px;
+    font-weight: bolder;
+    float: left;
+}
+
+.seperator{
+    width: auto;
+    height: 1px;
+    padding-bottom: 1px;
+    background-color: darkgray;
+}
+
+.intro{
+    position: relative;
+    height: auto;
+    margin-right: auto;
+    margin-left: auto;
+    margin-top: 20px;
+}
+
+.bio{
+    position: relative;
+    font-size: 18px;
+}
+
+.details{
+    position: relative;
+    height: auto;
+    margin-right: auto;
+    margin-left: auto;
+    padding: 1px;
+    text-align: inherit;
+}
+
+
+.other_lists{
+    position: relative;
+    height: auto;
+    padding: 10px;
+    margin-top: 10px;
+    background-color: white;
+}
+
+.style_accordion{
+    position: relative;
+    background-color: #9dd1cf !important;
+    font-size: 23px !important;
+    color: white !important;
+}
+
+.style_accordion:hover {
+    position: relative;
+    background-color: #f9d660 !important;
+}
+
+.makeAnAppointment{
+    position: relative !important;
+    background-color: transparent !important;
+    height: auto !important;
+    margin-top: 3px;
+    padding-left: 50px;
+}
+
+.sub_lists{
+    position: relative;
+    height: auto;
+    padding-bottom: 5px;
+}
+
+.practice1{
+    position: relative;
+    height: auto;
+    padding: 8px;
+    font-weight: bolder;
+    font-size: 16px;
+    color: #61c5ae;
+}
+
+.personalDetails{
+    position: relative !important;
+    background-color: transparent !important;
+    height: auto !important;
+    margin-top: 3px;
+    padding-left: 50px;
+}
+
+.practiceArea{
+    position: relative !important;
+    background-color: transparent !important;
+    height: auto !important;
+    margin-top: 3px;
+    padding-left: 50px;
+}
+
+.specialization{
+    position: relative !important;
+    background-color: transparent !important;
+    height: auto !important;
+    margin-top: 3px;
+    padding-left: 50px;
+}
+
+.languageProficiency{
+    position: relative !important;
+    background-color: transparent !important;
+    height: auto !important;
+    margin-top: 3px;
+    padding-left: 50px;
+}
+
+.reference{
+    position: relative !important;
+    background-color: transparent !important;
+    height: auto !important;
+    margin-top: 3px;
+    padding-left: 50px;
+}
+
+
+
+/*****************  Time Line starts   *********************/
+
+.timeLineDiv{
+    position: relative;
+    height: auto;
+    padding: 10px;
+    background-color: white;
+}
+
+.overViewContainer{
+    position: relative;
+    height: auto;
+    background-color: transparent;
+    margin-top: 20px;
+}
+
+.overViewContainer{
+    position: relative;
+    padding: 2px;
+}
+
+.overViewBox{
+    position: relative;
+    background-color: aqua;
+    background-color: #9dd1cf;
+    padding: 7px 7px 7px 30px;
+    font-size: 24px;
+    color: white;
+    -webkit-box-shadow: 10px 10px 10px -4px rgba(0,0,0,0.38);
+    -moz-box-shadow: 10px 10px 10px -4px rgba(0,0,0,0.38);
+    box-shadow: 10px 10px 10px -4px rgba(0,0,0,0.38);
+}
+
+.view_Lists_container{
+    position: relative;
+    height: auto;
+    margin-top: 10px;
+    margin-left: auto;
+    margin-right: auto;
+    padding-bottom: 8px;
+}
+
+.view_Lists{
+    position: relative;
+    height: auto;
+    margin-top: 14px;
+}
+
+.seperator1{
+    width: auto;
+    height: 1px;
+    margin-left: 15px;
+    margin-top: 5px;
+    padding-bottom: 1px;
+    background-color: darkgray;
+}
+
+
+
+
+
+
+
+/********************   footer   ***************/
+
+
+#footer{
+    background-color:black;
+    color:white;
+    clear:both;
+    text-align:left;
+    padding: 15px 15px 15px 95px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+

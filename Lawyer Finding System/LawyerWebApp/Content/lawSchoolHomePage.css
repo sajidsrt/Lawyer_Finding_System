@@ -1,0 +1,660 @@
+@charset "utf-8";
+/**************   Wrapper starts     **********/
+.lawSchoolHomePage_wrpper{
+    height: auto;
+    margin: 0 auto;
+    padding: 0;
+	background: white;
+}
+
+.intro_container{
+    position: relative;
+    height: auto;
+    margin: auto;
+    padding: 5px;
+}
+
+.left_container{
+    position: relative;
+    height: auto;
+    margin-left: auto;
+    margin-right: auto;
+    padding-bottom: 10px;
+}
+
+.lawSchool_logo{
+    position: relative;
+    width: 160px;
+    height: 190px;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 0;
+    background-color: #128bc0;
+}
+
+.profile_name{
+    position: relative;
+    color: #128bc0;
+    margin-left: auto;
+    margin-right: auto;
+    padding-top: 90px;
+    padding-bottom: 15px;
+    text-align: center;
+}
+
+.profile_name p{
+    position: relative;
+    width: 500px;
+    height: auto;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 20px;
+    font-size: 38px;
+    font-weight: bolder;
+}
+
+
+
+
+/**************     search Icon   **************/
+
+.search_icon_div{
+    position: relative;
+    margin: auto;
+    height: auto;
+    padding-bottom: 10px;
+    display:inline-block;
+}
+
+.search_icon{
+    clear: both;
+    position: relative;
+    height: auto;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 146px;
+    color: white;
+    background-color: #128bc0;
+    padding: 8px;
+    z-index: 15;
+}
+
+.search_icon:hover{
+    cursor: pointer;
+}
+
+
+
+
+
+
+/********************  spretor    *********************/
+
+.spretor{
+    position: relative;
+    height: 10px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 10px;
+    background-color: #128bc0;
+}
+
+
+
+
+/*************   Body       ******************/
+
+.bodyWrapper{
+    position: relative;
+    margin-right: 100px;
+    margin-left: 100px;
+}
+
+
+
+
+/********************   slider_wrapper Starts    *********************/
+
+
+.slider_rapper_Container{
+    position: relative;
+    margin-bottom: 15px;
+}
+
+.slider_rapper{
+    position: relative;
+    height: auto;
+    margin: auto;
+    background-color: #ecedef;
+}
+
+.slidePadding{
+    position: relative;
+}
+
+.colMdPadding{
+    position: relative;
+    padding-right: 0px;
+    padding-left: 0px;
+}
+
+.slideBox{
+    position: relative;
+    height: 390px;
+    margin: auto;
+    padding-top: 2px;
+    background-color: #ecedef;
+   /* box-shadow: 1px 1px 10px rgba(68,68,68,0.6);  */
+}
+
+.slideBox img{
+    position: relative;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+
+.customIndicators {
+    position: absolute;
+    width: auto;
+    bottom: 0px;
+    z-index: 15;
+    right: 10px;
+}
+
+.customIndicators li {
+  display: inline-block;
+  width: 11px;
+  height: 11px;
+  margin: 1px;
+  text-indent: -999px;
+  cursor: pointer;
+  background-color: #128bc0 ;
+  /*background-color: rgba(0, 0, 0, 0);*/
+  border: 0;
+  border-radius: 0px;
+    z-index: 15;
+}
+
+.customIndicators .active {
+  width: 12px;
+  height: 12px;
+  margin: 0;
+  background-color: #fff;
+}
+
+
+
+
+
+/***************            Admission container         ****************/
+
+
+.admissionDiv{
+    clear: both;
+    position: relative;
+    height: auto;
+    margin-bottom: 20px;
+    background-color: #ecedef;
+}
+
+.title_bar{
+    clear: both;
+    position: relative;
+    height: auto;
+    display: inline-block;
+    float: none;
+}
+
+.title_bar img{
+    position: relative;
+    width: 60%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.admission_text{
+    position: relative;
+    margin-left: 50px;
+    margin-right: 50px;
+}
+
+
+.admission_text p{
+    position: relative;
+    height: auto;
+    padding: 5px;
+    font-size: 14px;
+    font-weight: 600;
+}
+
+
+
+
+
+/*******************        Offered Programs Div        *****************/
+
+.offeredProgramsDiv{
+    position: relative;
+    height: auto;
+    margin-left: auto;
+    margin-right: auto;
+    padding-top: 20px;
+}
+
+.offeredProgramsTitleBox{
+    position: relative;
+    height: auto;
+    margin-left: auto;
+    margin-right: auto;
+    display: inline-block;
+    background-color: #dd4537;
+    -webkit-box-shadow: 5px 6px 5px 0px rgba(0,0,0,0.15);
+-moz-box-shadow: 5px 6px 5px 0px rgba(0,0,0,0.15);
+box-shadow: 5px 6px 5px 0px rgba(0,0,0,0.15);
+}
+
+.offeredProgramsTitleBox p{
+    position: relative;
+    margin: 5px;
+    padding: 2px;
+    color: white;
+    font-size: 25px;
+    font-weight: bolder;
+}
+
+.programs{
+    position: relative;
+    height: auto;
+    margin-top: 5px;
+    margin-bottom: 40px;
+}
+
+.programButton{
+    clear: both;
+    position: relative;
+    height: auto;
+    margin-left: 10px;
+    margin-right: 10px;
+    margin-top: 20px;
+    padding: 8px;
+    display: block;
+    background-color: #128bc0 ;
+}
+
+.programButton:hover{
+    -webkit-box-shadow: 5px 6px 5px 0px rgba(0,0,0,0.15);
+    -moz-box-shadow: 5px 6px 5px 0px rgba(0,0,0,0.15);
+    box-shadow: 5px 6px 5px 0px rgba(0,0,0,0.15);
+}
+
+.programButton p{
+    position: relative;
+    height: auto;
+    margin-bottom: 0;
+    padding: 3px;
+    color: white;
+    font-size: 20px;
+}
+
+
+
+
+
+/*******************         lists_div          ********************/
+
+.lists_div{
+    position: relative;
+    height: auto;
+    margin-bottom: 20px;
+    background-color: #ecedef;
+}
+
+.listsButton_container{
+    position: relative;
+    height: auto;
+    padding-top: 30px;
+    padding-bottom: 30px;
+    margin-top: 5px;
+    margin-bottom: 5px;
+}
+
+.list_buttons{
+    clear: both;
+    position: relative;
+    height: auto;
+    margin-left: 10px;
+    margin-right: 10px;
+    margin-top: 10px;
+    padding: 8px;
+    display: block;
+    background-color: #128bc0 ;
+}
+
+.list_buttons p{
+    position: relative;
+    height: auto;
+    margin-bottom: 0;
+    padding: 5px;
+    color: white;
+    font-size: 20px;
+}
+
+/**********     content_viewer     ****************/
+
+.content_viewer{
+    position: relative;
+    height: auto;
+    background-color: white;
+    padding: 3px;
+    margin-top: 30px;
+    margin-bottom: 30px;
+}
+
+.contentView{
+    position: relative;
+    height: auto;
+    padding: 5px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 15px;
+    margin-top: 10px;
+}
+
+.contentView p{
+    position: relative;
+    color: black;
+    padding: 2px;
+    margin: 8px;
+}
+
+
+
+
+
+/*****************      Associete Members       ***************/
+
+
+.associeteMembers_container{
+    position: relative;
+    height: auto;
+    margin-bottom: 20px;
+    background-color: #ecedef;
+}
+
+.associeteMembers{
+    position: relative;
+    height: auto;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 20px;
+}
+
+.heading{
+    position: relative;
+    display: inline-block;
+    padding: 5px;
+    margin-bottom: 5px;
+    margin-top: 5px;
+}
+
+.heading p{
+    position: relative;
+    padding: 2px;
+    margin: 0;
+    color: #128bc0;
+    font-size: 22px;
+    font-weight: bold;
+    word-spacing: 5px;
+}
+
+.seperator{
+    width: 150px;
+    height: 2px;
+    padding-bottom: 1px;
+    background-color: gray;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.membersImage_container{
+    position: relative;
+    height: auto;
+    margin-left: auto;
+    margin-right: auto;
+    padding-bottom: 10px;
+    padding-top: 10px;
+    margin-top: 10px;
+}
+
+.membersImage{
+    position: relative;
+    width: 200px;
+    height: 230px;
+    margin-bottom: 20px;
+    background-color: #128bc0;
+    float: none;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.membersImage img{
+    position: relative;
+}
+
+
+
+
+
+/********************       Gallery     *******************/
+
+.gallery_container{
+    position: relative;
+    height: auto;
+    margin-bottom: 20px;
+    padding-bottom: 5px;
+    background-color: #ecedef;
+}
+
+.gallery_wrapper{
+    position: relative;
+    height: auto;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 20px;
+}
+
+.galleryIndictor {
+    position: absolute;
+    width: auto;
+    bottom: -30px;
+    z-index: 15;
+    right: 30px;
+}
+
+.galleryIndictor li {
+  display: inline-block;
+  width: 11px;
+  height: 11px;
+  margin: 1px;
+  text-indent: -999px;
+  cursor: pointer;
+  background-color: #128bc0 ;
+  /*background-color: rgba(0, 0, 0, 0);*/
+  border: 0;
+  border-radius: 0px;
+    z-index: 15;
+}
+
+.galleryIndictor .active {
+  width: 12px;
+  height: 12px;
+  margin: 0;
+  background-color: #fff;
+}
+
+.slideGallery{
+    position: relative;
+    height: auto;
+    padding-bottom: 10px;
+    padding-top: 10px;
+    margin-top: 5px;
+}
+
+.galleryBox{
+    position: relative;
+    height: auto;
+    margin-left: 15px;
+    margin-right: 15px;
+    padding-top: 2px;
+    background-color: #ecedef;
+   /* box-shadow: 1px 1px 10px rgba(68,68,68,0.6);  */
+}
+
+.galleryBox img{
+    position: relative;
+    width: 80%;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+
+
+
+
+/***********************        keepInTouch_container       **************************/
+
+.keepInTouch_container{
+    position: relative;
+    height: auto;
+    margin-bottom: 20px;
+    padding-bottom: 25px;
+    background-color: #ecedef;
+}
+
+.welcome_text{
+    position: relative;
+    height: auto;
+    margin-left: 50px;
+    margin-right: 50px;
+}
+
+.welcome_text p{
+    display: inline-block;
+    color: black;
+    font-size: 22px;
+    padding: 5px;
+}
+
+
+.formNmap{
+    position: relative;
+    height: auto;
+    margin-top: 5px;
+    margin-left: 40px;
+    margin-right: 40px;
+}
+
+.form_container{
+    position: relative;
+    margin-top: 10px;
+}
+
+.btn_container{
+    position: relative;
+}
+
+.sendQuery_button{
+    position: relative;
+    padding-left: 20px;
+    padding-right: 20px;
+    padding-bottom: 3px;
+    padding-top: 3px;
+    margin-left: auto;
+    margin-right: auto;
+    color: white;
+    background-color: #128bc0;
+    border: 0;
+    font-size: 17px;
+    font-weight: normal;
+    letter-spacing: 1px;
+    float: right;
+}
+
+.map_holder{
+    position: relative;
+    height: auto;
+    margin: auto;
+    margin-top: 10px;
+}
+
+.gmap{
+    position: relative;
+    height: auto;
+    margin: auto;
+    padding-left: 10px;
+    padding-right: 10px;
+    background-color: white;
+}
+
+.map_holder .gmap iframe{
+    border: 0;
+    width: 100%;
+    height: 350px;
+    margin-top: 5px;
+}
+
+.copyright_text{
+    position: relative;
+    height: auto;
+    margin-top: 25px;
+    clear: both;
+    float: none;
+    display: inline-block;
+    padding: 3px;
+}
+
+.copyright_text p{
+    position: relative;
+    margin-bottom: 0;
+    color: black;
+    font-size: 15px;
+    word-spacing: 2px;
+    font-weight: 700;
+}
+
+.copyright_text a{
+    position: relative;
+    color: #128bc0;
+    font-size: 18px;
+    font-weight: bolder;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
